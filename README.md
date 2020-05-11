@@ -1,10 +1,10 @@
 # CodigoSenior
-## Projeto Trainee, Code Jr, 2019.1
+## Projeto Trainee, Code Jr, 2020.1
 
 Desenvolvedores:
 - Gabriel Botelho
 - Gabriel do Carmo
-- Pedro dos Campos
+- Pedro  Campos
 - Alana
 - Rodrigo Fayer
 
