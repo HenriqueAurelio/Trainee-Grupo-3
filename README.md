@@ -12,10 +12,6 @@ Desenvolvedores:
 Scrum Master:
 - Henrique
 
-
-Acompanhante:
--
-
 ## GIT TUTORIAL
 ### Primeira configuração
 
