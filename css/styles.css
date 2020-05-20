@@ -1,0 +1,80 @@
+.redes-sociais{
+    list-style: none;
+}
+
+.social li{
+
+    display: inline-block;
+}
+
+.icoredesocial{
+    color: #c20e1a;
+    transition: 0.5s;
+}
+
+.icoredesocial:hover{
+
+    transform: scale(1.2,1.2);
+    transition: 0.5s;
+
+}
+
+.btnContato{
+    background-color: #c20e1a;
+    color: white;
+}
+
+.formico{
+    color: white;
+}
+.formicobg{
+    background-color: #c20e1a !important;
+}
+
+.map{
+    animation-name: entrymove;
+    animation-duration: 2s;
+}
+
+.btnContato:hover {
+    background-color: #a3a0a0;
+    color: #000;
+}
+
+.form{
+
+    animation-name: entrymove;
+    animation-duration: 2s;
+
+}
+
+.formtitles{
+    font-size: 18px;
+    
+}
+
+.newbox:focus{
+    border-color: #c20e1a !important;
+    box-shadow: 0 0 10px #c20e1a !important; 
+}
+
+.icodes{
+    animation-name: undericon;
+    animation-duration: 4s;
+}
+
+
+
+@keyframes entrymove {
+	0% {opacity : 0; transform: translate(0px,-40px);}
+	100% {opacity : 1; transform: translate(0px,0px);}
+}
+
+@keyframes undericon {
+    0% {opacity : 0;}
+    
+    50% {opacity: 0;}
+    
+    100% {opacity : 1}
+}
+
