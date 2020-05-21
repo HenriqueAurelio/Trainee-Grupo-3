@@ -1,13 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Carrois+Gothic+SC&display=swap');
 
 .category-title {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Carrois Gothic SC', sans-serif;
     font-size: 50px;
     margin-top: 40px;
 }
 
 .book-title {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Carrois Gothic SC', sans-serif;
     font-size: 20px;
     text-align: center;
 }
@@ -26,20 +27,22 @@
     margin-bottom: 30px;
 }
 
+.book-title-group {
+    height: 80px;
+}
+
 .book-past-price {
     color: #000;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Carrois Gothic SC', sans-serif;
     text-align: center;
-    margin-top: 40px;
     font-size: 18px;
     text-decoration: line-through;
 }
 
 .book-price {
     color: #c20e1a;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Carrois Gothic SC', sans-serif;
     font-size: 24px;
-    margin-top: 20px;
     text-align: center;
 }
 

@@ -20,8 +20,11 @@ $(document).ready(function() {
         $("#carousel3").attr("src", "assets/carousel-3.png");
     }
 
+    if (w < 576) {
+        $(".book-title").css('font-size', '18px');
+    }
     if (w > 576 && w <= 768) {
-        $(".book-title").css('font-size', '24px');
+        $(".book-title").css('font-size', '19px');
         $(".book-past-price").css('font-size', '20px');
         $(".book-price").css('font-size', '28px');
         $(".btn-product").css('font-size', '18px');
@@ -33,4 +36,4 @@ $(document).ready(function() {
         $(".book-price").css('font-size', '36px');
         $(".btn-product").css('font-size', '22px');
     }
-}); 
+});
