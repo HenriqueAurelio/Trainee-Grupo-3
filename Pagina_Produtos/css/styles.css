@@ -72,6 +72,16 @@
     display: none;
 }
 
+.prcards{
+    width: 184px !important;
+    height: 490px !important;
+    
+}
+.tituloCard{
+    width: 143px !important;
+    height: 95px !important;
+}
+
 @media (max-width:700px){
     .resicon{
         display: inline-block;
