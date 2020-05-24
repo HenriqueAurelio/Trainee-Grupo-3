@@ -100,12 +100,17 @@
     .menujs {
         display: inline;
     }
+    .menujspes {
+        display: inline-block;
+    }
     .formuPes{
         width: 12rem !important;
-        padding: 3px 3px 3px 3px !important;
+        
+       
     }
     .butaoPes{
         width: 3rem !important;
+        margin-top: 2px !important;
     }
     .prcards{
         width: 158px !important;
@@ -156,6 +161,9 @@
     .prcards{
         width: 105px !important;
         height: 309px !important;
+    }
+    .reslista{
+        font-size: 12px;
     }
     
 }
