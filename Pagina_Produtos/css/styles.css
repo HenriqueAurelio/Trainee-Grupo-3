@@ -84,7 +84,7 @@
 
 @media (max-width:700px){
     .resicon{
-        display: inline-block;
+        display: block;
     }
     .reslista{
         display: none;
