@@ -91,7 +91,9 @@
     }
     .resquisa{
         display: none;
+        width: 15rem !important;
     }
+    
     .fa-bars{
         font-size: 2rem;
     }
