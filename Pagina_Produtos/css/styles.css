@@ -81,6 +81,11 @@
     height: 95px !important;
 }
 
+.navgationcontrol{
+    margin-top: 10px !important;
+    margin-left: auto !important;
+}
+
 @media (max-width:700px){
     .resicon{
         display: block;
@@ -126,6 +131,7 @@
     .varlivro{
         height: 25px !important;
     }
+    
 }
 @media (max-width:1000px) and (min-width:710px){
     .formuPes{
@@ -162,6 +168,7 @@
     .reslista{
         font-size: 12px;
     }
+    
 }
 @media (max-width:1025px) and (min-width:1010px){
     .formuPes{
