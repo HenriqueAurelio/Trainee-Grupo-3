@@ -16,19 +16,37 @@
   <body>
     <div class="container">
         <div class="row">
-          <div class="col-4 loginarea">
-              <h1 class="logintexto"><i class="far fa-user userlogin"></i> Login do Cliente</h1>
-            <form class="emailsenha">
-                <div class="form-group emailarea">
-                  <label for="exampleInputEmail1">Endereço de email:</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ex. lirvrariaaurelio@gmail.com">
+          <div class="col-6 loginarea">
+            <div class="emailsenha">
+              <h1 class="logintexto"><img class="loginimagem" src="../img/aurelio_transparent.png"></h1>
+              <label for="validationCustomUsername" class="emailarea">Endereço de email:</label>
+              <div class="input-group emailarea">
+                <div class="input-group-prepend">
+                  <span class="input-group-text userlogin" id="inputGroupPrepend"><i class="fas fa-user"></i></span>
                 </div>
-                <div class="form-group senhaarea">
-                  <label for="exampleInputPassword1">Senha:</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha">
+                <input type="text" class="form-control" id="validationCustomUsername" placeholder="Ex. lirvrariaaurelio@gmail.com" aria-describedby="inputGroupPrepend" required>
+                <div class="invalid-feedback">
+                  Por favor, insira um endereço de email valido.
                 </div>
-                <button type="submit" class="btn btn-product btn-block">Enviar</button>
-              </form>
+              </div>
+              <label for="validationCustomUsername">Senha:</label>
+              <div class="input-group senhaarea">
+                <div class="input-group-prepend">
+                  <span class="input-group-text senicon" id="inputGroupPrepend"><i class="fas fa-key"></i></span>
+                </div>
+                <input type="text" class="form-control" id="validationCustomUsername" placeholder="Senha" aria-describedby="inputGroupPrepend" required>
+                <div class="invalid-feedback">
+                  Senha incoreta por favor tente novamente.
+                </div>
+              </div>
+              <div class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" id="autoSizingCheck">
+                <label class="form-check-label" for="autoSizingCheck">
+                  Lembrar de mim
+                </label>
+              </div>
+              <button type="submit" class="btn btn-product btn-block">Enviar</button>
+            </div>  
           </div>
         </div>
     </div>
