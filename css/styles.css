@@ -11,6 +11,12 @@
     border-radius: 100px !important;
 }
 
+.adjust-eyeicon-crud{
+    margin-left: -1.5px;
+    margin-top: 3px;
+    height: 5px;
+}
+
 .procurar-crud{
     margin-top: 5px;
     font-size: 20px;
