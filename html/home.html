@@ -4,10 +4,48 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" href="../assets/css/styles.css">
     <title>Aurelio Livraria</title>
   </head>
   <body>
+    <!-- Início da navbar -->
+    <nav class="navbar navbar-expand-lg">
+      <nav class="container">
+            <a class="navbar-brand" href="#"><img src="../assets/img/aurelio_transparent.png"></a>
+        <nav class="navbar-light">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+        </nav>  
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                  <a class="nav-link linkestilo" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link linkestilo" href="#">Produtos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link linkestilo" href="#">Sobre Nós</a>
+                 </li>
+                 <li class="nav-item">
+                    <a class="nav-link linkestilo" href="#">Login</a>
+                 </li>
+                 <li class="nav-item">
+                  <a class="nav-link linkestilo" href="#">Contato</a>
+                </li>
+              </ul>
+              <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-dark my-2 my-sm-0" type="submit">Search</button>
+              </form>
+            </div>
+        </nav>
+     </nav>
+     <!-- Final da navbar -->
+
+     <!-- Carousel -->
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
           <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -34,6 +72,9 @@
           <span class="sr-only">Next</span>
         </a>
       </div>
+      <!-- Final do carousel -->
+
+      <!-- Página home (livros e preços) -->
       <div class="container">
             <h1 class="home-category-title mt-4 text-center">Promoção</h1>
             <div class="row book-list">
@@ -192,9 +233,49 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <br>
-        <br>    
+        </div>    
+        <!-- Final da página home -->
+
+        <!-- Início do footer -->
+        <footer class="footerbackground">
+          <div class="container">
+              <div class="row ">
+                  <div class="col-md-3 footer-info">
+                      <h3><img src="../assets/img/aurelio_transparent.png"></h3>
+                  </div>
+                <div class="col-md-3 footer links">
+                  <ul>
+                      <li><i class="ion-ios-arrow-right"><a href="#">Home</a></i></li>   
+  
+                      <li><i class="ion-ios-arrow-right"><a href="#">Produtos</a></i></li> 
+  
+                      <li><i class="ion-ios-arrow-right"><a href="#">Sobre Nós</a></i></li>  
+  
+                      <li><i class="ion-ios-arrow-right"><a href="#">Login</a></i></li>                       
+                  </ul>  
+                </div>
+                <div class="col-md-3">
+                  <h4>Redes Sociais</h4>
+                       <ul class="social">
+                           <li><a href="#" class="instagram"><i class="fa fa-instagram"></i></a></li>
+  
+                           <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li> 
+                       </ul>                                     
+                </div>             
+                <div class="col-md-3 location">
+                  <h4 class="mt-lg-0 mt-sm-4"> Fale Conosco</h4>
+                  <p><i class="fa fa-map-marker"></i> Universidade Federal de Juiz de Fora(UFJF)</p>
+                  <p><i class="fa fa-envelope-o"></i> suporte@aureliolivraria.com</p>                                        
+                  <p><i class="fa fa-phone"></i> (XX)XXXXX-XXXX</p>
+                </div>
+                <div class="col copyright text-center">
+                  <p class="copyright" text-muted>Copyright &copy;Aurelio Livraria 2020</p>
+                </div>
+              </div>
+            </div>
+        </footer>
+        <!-- Final do footer -->
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
