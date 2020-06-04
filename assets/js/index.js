@@ -11,13 +11,13 @@ $(document).ready(function() {
 $(document).ready(function() {
     var w = window.innerWidth;
     if (w <= 576) {
-        $("#carousel1").attr("src", "../assets/carousel-1-mobile.png");
-        $("#carousel2").attr("src", "../assets/carousel-2-mobile.png");
-        $("#carousel3").attr("src", "../assets/carousel-3-mobile.png");
+        $("#carousel1").attr("src", "../assets/img/carousel-3-mobile.png");
+        $("#carousel2").attr("src", "../assets/img/carousel-2-mobile.png");
+        $("#carousel3").attr("src", "../assets/img/carousel-1-mobile.png");
     } else {
-        $("#carousel1").attr("src", "../assets/carousel-1.png");
-        $("#carousel2").attr("src", "../assets/carousel-2.png");
-        $("#carousel3").attr("src", "../assets/carousel-3.png");
+        $("#carousel1").attr("src", "../assets/img/carousel-3.png");
+        $("#carousel2").attr("src", "../assets/img/carousel-2.png");
+        $("#carousel3").attr("src", "../assets/img/carousel-1.png");
     }
 
     if (w < 576) {
