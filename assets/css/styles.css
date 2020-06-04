@@ -3,7 +3,7 @@
     font-size: 13px !important;
 }
 .btn-crud{
-    background-color: #c20e1a !important;
+    background-color: #353a40 !important;
     color: white !important;
 }
 
@@ -22,14 +22,14 @@
     font-size: 20px;
 }
 
-.btn-crud:hover {
-    background-color: #a3a0a0 !important;
-    color: #000 !important;
-}
-
 .newbox-crud:focus{
     border-color: #c20e1a !important;
     box-shadow: 0 0 10px #c20e1a !important; 
+}
+
+.newbox-add-crud:focus{
+    border-color: #353a40 !important;
+    box-shadow: 0 0 10px #353a40 !important; 
 }
 
 .responsive-search-crud{
@@ -37,22 +37,49 @@
 }
 
 .titulo-crud{
+    width: 25%;
     font-size: 18px;
 }
 
 .categoria-crud{
-    width: 25%;
+    width: 20%;
     font-size: 18px;
 }
 
 .preco-crud{
-    width: 25%;
+    width: 15%;
     font-size: 18px;
 }
 
 .acoes-crud {
-    width: 13%;
+    width: 10%;
     font-size: 18px;
+}
+
+.btn-view-crud{
+    margin-left: -2px;
+    background-color: #007bff;
+    color: white;
+}
+
+.btn-view-crud:focus{
+    border-color: #007bff !important;
+    box-shadow: 0 0 10px #007bff !important; 
+}
+
+.btn-edit-crud{
+    background-color: #28a745;
+    color: white;
+}
+
+.btn-edit-crud:focus{
+    border-color: #28a745 !important;
+    box-shadow: 0 0 10px #28a745 !important; 
+}
+
+.btn-delete-crud{
+    background-color: #c20e1a;
+    color: white;
 }
 
 .start-crud {
@@ -65,6 +92,23 @@
 
 .btn-crud-table{
     width: 32px;
+}
+
+.pagination > li > a
+{
+    background-color: white;
+    color: #c20e1a;
+}
+
+.pagination > .active > a{
+    background-color: #c20e1a !important;
+    color: white !important;
+    border: solid 1px #c20e1a !Important;
+}
+
+.pagination-crud-buttons:hover{
+    background-color: #c20e1a !important;
+    color: white !important;
 }
 
 @media (max-width: 1200px){
