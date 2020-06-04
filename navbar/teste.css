@@ -8,16 +8,13 @@
 
 
 .navbar-toggler {
-    width: 5rem !important;
+    width: 5rem;
 }
 
 .navbar-toggler-icon {
-    width: 3rem !important;
+    width: 3rem;
 } 
 
-span .navList {
-    color: #ffffff !important;
-}
 
 .linkestilo {
     text-decoration: none;
