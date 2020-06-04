@@ -80,10 +80,14 @@
     width: 143px !important;
     height: 95px !important;
 }
-
-.navgationcontrol{
+.produtospagination{
+    color: #c20e1a !important;
     margin-top: 10px !important;
-    margin-left: auto !important;
+}
+.intenprpag{
+    text-decoration: none ;
+    color: #c20e1a !important;
+    background-color: white !important;
 }
 
 @media (max-width:700px){
