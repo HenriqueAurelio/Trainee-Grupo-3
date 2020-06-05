@@ -45,12 +45,15 @@
     text-decoration: none;
 }
 .formuPes{
-    width: 195px !important;
+    width: 205px !important;
+    padding-right: 0px;
+    margin-right: 0px !important;
 }
 
 .butaoPes{
     width: 50px !important;
     color: #c20e1a !important ;
+    padding-left: 0px;
 }
 
 .butaoPes:hover{
@@ -89,7 +92,21 @@
     color: #c20e1a !important;
     background-color: white !important;
 }
+.actpag{
+    text-decoration: none;
+    color: white !important;
+    background-color: #c20e1a !important;
+}
+.activepagination{
+    
+    color: white !important;
+    background-color: #c20e1a !important;
+}
 
+/*.page-item.active .page-link{
+    color: white !important;
+    background-color: #c20e1a !important;
+}*/
 @media (max-width:700px){
     .resicon{
         display: block;

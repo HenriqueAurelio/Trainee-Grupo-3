@@ -20,8 +20,12 @@
           <div class="col-md-3">
             <span class="resicon" onclick="openNav()"><i class="fas fa-bars"  ></i></span>
             <form id="resquisa" class="form-inline my-0.3 my-lg-0 resquisa">
-              <input id="formuPes" class="form-control mr-sm-2 formuPes" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
-              <button class="btn btn-outline-danger my-2 my-sm-0 butaoPes" type="submit"><i class="fas fa-search"></i></button>
+              <div class="input-group">
+                <input id="formuPes" class="form-control mr-sm-2 formuPes" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
+                <div class="input-group-append">
+                  <button class="btn btn-outline-danger my-2 my-sm-0 butaoPes" type="submit"><i class="fas fa-search"></i></button>
+                </div>
+              </div>
             </form>            
             <ul id="list-group reslista"class="list-group reslista">
               <li class="list-group-item hicon"><span class="ticon"><i class="fas fa-angle-right"></i>  <a href="#" class="removeblue">Administração</a></span></li>
@@ -173,9 +177,9 @@
               <nav aria-label="Page navigation example">
                 <ul class="pagination produtospagination">
                   <li class="page-item"><a class="page-link intenprpag" href="#">Previous</a></li>
-                  <li class="page-item"><a class="page-link intenprpag" href="#">1</a></li>
-                  <li class="page-item"><a class="page-link intenprpag" href="#">2</a></li>
-                  <li class="page-item"><a class="page-link intenprpag" href="#">3</a></li>
+                  <li id="actpago" class="page-item actpago" onclick="actpago()"><a id="actpagol" class="page-link intenprpag" href="#">1</a></li>
+                  <li id="actpags" class="page-item actpags" onclick="actpags()"><a id="actpagsl" class="page-link intenprpag" href="#">2</a></li>
+                  <li id="actpagt" class="page-item actpagt" onclick="actpagt()"><a id="actpagtl" class="page-link intenprpag" href="#">3</a></li>
                   <li class="page-item"><a class="page-link intenprpag" href="#">Next</a></li>
                 </ul>
               </nav>
