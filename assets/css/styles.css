@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Carrois+Gothic+SC&display=swap');
+
+.navbar {
+    background-color: #c20e1a;
+}
+
+.nav-item {
+    font-size: 180%;  
+}
+
+
+.navbar-toggler {
+    width: 5rem;
+}
+
+.navbar-toggler-icon {
+    width: 3rem;
+} 
+
+
+.linkestilo {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.linkestilo:hover {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.home-category-title {
+    font-family: 'Carrois Gothic SC', sans-serif;
+    font-size: 50px;
+}
+
+.home-book-title {
+    font-family: 'Carrois Gothic SC', sans-serif;
+    font-size: 20px;
+    text-align: center;
+    color: #000;
+}
+
+.home-book-img {
+    box-shadow: 5px 7px 6px #000;
+}
+
+.home-img-zoom {
+    transition: transform .2s;
+    margin: 0 auto;
+}
+  
+.home-img-zoom:hover {
+    transform: scale(1.1);
+    margin-bottom: 30px;
+}
+
+.home-book-title-group {
+    height: 80px;
+}
+
+.home-book-past-price {
+    color: #000;
+    font-family: 'Carrois Gothic SC', sans-serif;
+    text-align: center;
+    font-size: 18px;
+    text-decoration: line-through;
+}
+
+.home-book-price {
+    color: #c20e1a;
+    font-family: 'Carrois Gothic SC', sans-serif;
+    font-size: 24px;
+    text-align: center;
+}
+
+.home-btn-product {
+    background-color: #c20e1a;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff;
+}
+
+.home-btn-product:hover {
+    background-color: #a3a0a0;
+    color: #000;
+}
+
+.btn-product {
+    background-color: #c20e1a;
+    font-family: 'Carrois Gothic', sans-serif;
+    font-size: 16px;
+    width: 100%;
+    padding: 10px;
+    color: white;
+}
+
+.btn-product:hover {
+    background-color: #a3a0a0;
+    color: #000;
+}
+
+.footerbackground {
+    background-color: black;
+    color: #ffffff;
+    bottom: 0px;
+    box-sizing: border-box;
+	width: 100%;
+	text-align: left;
+	font: bold 16px sans-serif;
+	padding: 50px 50px 60px 50px;
+	margin-top: 80px;
+    
+}
+
+.social{
+    padding: 0px;
+}
+
+h4 {
+    padding: 18px 0px;
+}
+
+.social li {
+    display: inline-block;
+    background-color: #ffffff;
+    width: 2rem !important;
+    height: 35px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 30px;
+    padding: 0cm;
+}
+
+.social li a i {
+    padding-top: 4px;
+    color: #fc944b;
+    font-size: 25px;
+    transition:.3s;
+}
+
+.social li a i:hover{
+    text-decoration: none;
+}
+
+.links ul {
+    list-style-type: none;
+    font-size: 18px;  
+    padding: 15px 0px;  
+}
+
+
+.links li a {
+    color: #fc944b;
+    transition: color 0.3s;
+}
+
+.links li a:hover{
+    text-decoration: none;
+}
+
+.locantion {
+    font-size: 18px;
+}
+
+.locantion p  {
+    color: #fc944b;
+    display: inline-block;
+    vertical-align: top;
+    width: 35%
+}
+
+.footer-info  {
+    width: 30%;
+}
