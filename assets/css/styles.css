@@ -48,12 +48,16 @@
     width: 205px !important;
     padding-right: 0px;
     margin-right: 0px !important;
+    margin-top: 2px;
+    height: 39.52px;
 }
 
 .butaoPes{
     width: 50px !important;
     color: #c20e1a !important ;
     padding-left: 0px;
+    margin-top: 2px !important;
+    height: 39.52px;
 }
 
 .butaoPes:hover{
@@ -130,11 +134,12 @@
     }
     .formuPes{
         width: 12rem !important;
-        
+        height: 47.52px;
        
     }
     .butaoPes{
         width: 3rem !important;
+        height: 47.52px;
         margin-top: 2px !important;
     }
     .prcards{
@@ -156,7 +161,7 @@
 }
 @media (max-width:1000px) and (min-width:710px){
     .formuPes{
-        width: 102px !important;
+        width: 109px !important;
     }
     .butaoPes{
         width: 40px !important;
@@ -193,7 +198,7 @@
 }
 @media (max-width:1025px) and (min-width:1010px){
     .formuPes{
-        width: 155px !important;
+        width: 165px !important;
     }
     .butaoPes{
         width: 45px !important;
