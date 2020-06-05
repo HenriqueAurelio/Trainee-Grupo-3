@@ -88,6 +88,28 @@
     color: #000;
 }
 
+.card-title{
+    color: #c20e1a;
+    
+}
+.prcards{
+    margin-top:15px;
+    margin-bottom: 8px;
+}
+
+.btn-product {
+    background-color: #c20e1a;
+    font-family: 'Carrois Gothic', sans-serif;
+    font-size: 16px;
+    width: 100%;
+    padding: 10px;
+    color: white;
+}
+
+.btn-product:hover {
+    background-color: #a3a0a0;
+    color: #000;
+}
 
 .footerbackground {
     background-color: black;
@@ -367,4 +389,229 @@ h4 {
         width: 300px !important;
     }
                         
+}
+
+.tamanhocard {
+    
+    transition: transform .2s; /* Animation */
+    margin: 0 auto;
+}
+.tamanhocard:hover {
+    transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+.ticon:hover{
+    margin-left: 4px;
+    transform: translate(10px, 0);
+}
+
+.removeblue{
+    color: black;
+    text-decoration: none;
+    
+}
+.removeblue:hover{
+    color: black;
+    text-decoration: none;
+}
+.formuPes{
+    width: 195px !important;
+}
+
+.butaoPes{
+    width: 50px !important;
+    color: #c20e1a !important ;
+}
+
+.butaoPes:hover{
+    color: white !important;
+}
+
+.resquisa{
+    margin-bottom: 3px !important;
+}
+
+.varlivro{
+    font-family: 'Roboto', sans-serif ; 
+    font-size: 25px ;
+    color: #c20e1a  ;
+    text-align: left;
+}
+.resicon{
+    display: none;
+}
+
+.prcards{
+    width: 184px !important;
+    height: 490px !important;
+    
+}
+.tituloCard{
+    width: 143px !important;
+    height: 95px !important;
+}
+.produtospagination{
+    color: #c20e1a !important;
+    margin-top: 10px !important;
+}
+.intenprpag{
+    text-decoration: none ;
+    color: #c20e1a !important;
+    background-color: white !important;
+}
+
+@media (max-width:700px){
+    .resicon{
+        display: block;
+    }
+    .reslista{
+        display: none;
+    }
+    .resquisa{
+        display: none;
+        width: 15rem !important;
+    }
+    
+    .fa-bars{
+        font-size: 2rem;
+    }
+    .menujs {
+        display: inline;
+    }
+    .menujspes {
+        display: inline-block;
+    }
+    .formuPes{
+        width: 12rem !important;
+        
+       
+    }
+    .butaoPes{
+        width: 3rem !important;
+        margin-top: 2px !important;
+    }
+    .prcards{
+        width: 158px !important;
+        height: 410px !important;
+    }
+    .tituloCard{
+        font-size: 16px;
+        width: 117px !important;
+        height: 70px !important;
+    }
+    .rescard{
+        height: 175px !important;
+    }
+    .varlivro{
+        height: 25px !important;
+    }
+    
+}
+@media (max-width:1000px) and (min-width:710px){
+    .formuPes{
+        width: 102px !important;
+    }
+    .butaoPes{
+        width: 40px !important;
+    }
+    .tituloCard{
+        font-size: 14px;
+    }
+    .varlivro{
+        font-size: 14px;
+    }
+    .resbopro{
+        font-size: 8px !important;
+        width: 4rem !important;
+        text-align: center;
+        padding-left: 8px;
+    }
+    .menujs {
+        display: inline;
+    }
+    .tituloCard{
+        font-size: 11px !important;
+        width: 66px !important;
+        height: 60px !important;
+    }
+
+    .prcards{
+        width: 105px !important;
+        height: 309px !important;
+    }
+    .reslista{
+        font-size: 12px;
+    }
+    
+}
+@media (max-width:1025px) and (min-width:1010px){
+    .formuPes{
+        width: 155px !important;
+    }
+    .butaoPes{
+        width: 45px !important;
+    }
+    .resbopro{
+        font-size: 12px;
+    }
+    .menujs{
+        display: inline;
+    }
+    .tituloCard{
+        font-size: 18px;
+        width: 110px !important;
+        height: 84px !important;
+    }
+    .prcards{
+        width: 150px !important;
+        height: 428px !important;
+    }
+    .rescard{
+        width: 149px !important;
+        height: 228px !important;
+    }
+}
+@media (max-width:322px){
+    .varlivro{
+        font-size: 18px !important;
+    }
+    .resbopro{
+        font-size: 12px;
+    }
+    .menujs{
+        display: inline;
+    }
+    .tituloCard{
+        font-size: 14px !important;
+        width: 90px !important;
+        height: 66px !important;
+    }
+    .prcards{
+        width: 131px !important;
+        height: 372px !important;
+    }
+    
+}
+@media (max-width:361px) and (min-width:323px){
+    .resbopro{
+        padding-left: 6px;
+    }
+    .menujs{
+        display: inline;
+    }
+    .tituloCard{
+        font-size: 16px !important;
+        width: 102px !important;
+        height: 66px !important;
+
+    }
+    .prcards{
+        width: 151px !important;
+        height: 400px !important;
+    }
+    .rescard{
+        width: 141px !important;
+        height: 200px !important;
+    }
+    
 }
