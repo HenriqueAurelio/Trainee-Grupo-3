@@ -48,6 +48,17 @@
     background-color: #c20e1a;
 }
 
+.senhaicon{
+    background-color: white !important;
+    border-color: #ced4da !important;
+    border-left-color: white !important;
+}
+.senhi :hover{
+    color: #6c757d;
+    background-color: white;
+}
 .loginimagem{
     height: 20rem;
 }
+
+

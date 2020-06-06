@@ -10,45 +10,48 @@
     <link rel="stylesheet" href="../css/styles.css">
     <script src="https://kit.fontawesome.com/307d809775.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Carrois+Gothic&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="../js/scripts.js"></script>
 
     <title>Login</title>
   </head>
   <body>
     <div class="container">
         <div class="row">
-          <div class="col-6 loginarea">
-            <div class="emailsenha">
+            <div class="emailsenha loginarea">
               <h1 class="logintexto"><img class="loginimagem" src="../img/aurelio_transparent.png"></h1>
               <label for="validationCustomUsername" class="emailarea">Endereço de email:</label>
               <div class="input-group emailarea">
                 <div class="input-group-prepend">
                   <span class="input-group-text userlogin" id="inputGroupPrepend"><i class="fas fa-user"></i></span>
                 </div>
-                <input type="text" class="form-control" id="validationCustomUsername" placeholder="Ex. lirvrariaaurelio@gmail.com" aria-describedby="inputGroupPrepend" required>
+                <input type="email" class="form-control" id="validationCustomUsername" placeholder="Ex. lirvrariaaurelio@gmail.com" aria-describedby="inputGroupPrepend" required>
                 <div class="invalid-feedback">
                   Por favor, insira um endereço de email valido.
                 </div>
               </div>
-              <label for="validationCustomUsername">Senha:</label>
+              <label for="inputPassword">Senha:</label>
               <div class="input-group senhaarea">
                 <div class="input-group-prepend">
                   <span class="input-group-text senicon" id="inputGroupPrepend"><i class="fas fa-key"></i></span>
                 </div>
-                <input type="text" class="form-control" id="validationCustomUsername" placeholder="Senha" aria-describedby="inputGroupPrepend" required>
+                <input type="password" class="form-control" id="validationCustomUsername" placeholder="Senha" aria-describedby="inputGroupPrepend" required>
+                <div class="input-group-append senhi">
+                  <button onclick="passview()" class="btn btn-outline-secondary senhaicon" type="button" id="button-addon2"><i id="senhaicon" class="fas fa-eye"></i></button>
+                </div>
                 <div class="invalid-feedback">
                   Senha incoreta por favor tente novamente.
                 </div>
               </div>
               <div class="form-check mb-2">
-                <input class="form-check-input" type="checkbox" id="autoSizingCheck">
+                <input class="form-check-input checkpass" type="checkbox" id="autoSizingCheck">
                 <label class="form-check-label" for="autoSizingCheck">
                   Lembrar de mim
                 </label>
               </div>
               <button type="submit" class="btn btn-product btn-block">Enviar</button>
             </div>  
-          </div>
         </div>
+        
     </div>
 
     <!-- JavaScript (Opcional) -->
