@@ -34,8 +34,8 @@ function actpago(){
     var pagl3 = document.getElementById("actpagtl");
     if(pag1.className === "page-item actpago"){
         pag1.className += " active";
-        pagl1.className += "actpag activepagination";
-        pag2.className = "page-item actpago";
+        pagl1.className += " activepagination";
+        pag2.className = "page-item actpags";
         pagl2.className = "page-link intenprpag";
         pag3.className = "page-item actpagt";
         pagl3.className = "page-link intenprpag";
@@ -50,7 +50,7 @@ function actpags(){
     var pagl3 = document.getElementById("actpagtl");
     if(pag2.className === "page-item actpags"){
         pag2.className += " active";
-        pagl2.className += "actpag activepagination";
+        pagl2.className += " activepagination";
         pag1.className = "page-item actpago";
         pagl1.className = "page-link intenprpag";
         pag3.className = "page-item actpagt";
@@ -65,12 +65,11 @@ function actpagt(){
     var pagl2 = document.getElementById("actpagsl");
     var pagl3 = document.getElementById("actpagtl");
     if(pag3.className === "page-item actpagt"){
-        pag3.className += " active activepagination";
-        pagl3.className += "actpag";
+        pag3.className += " active";
+        pagl3.className += " activepagination";
         pag2.className = "page-item actpags";
         pagl2.className = "page-link intenprpag";
         pag1.className = "page-item actpago";
         pagl1.className = "page-link intenprpag";
     }
-
 }
