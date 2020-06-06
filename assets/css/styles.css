@@ -24,10 +24,12 @@
 
 .nav-link {
     color: #fff;
+    font-size: 18px;
 }
 
 .nav-link:hover {
     color: #fff;
+    font-size: 18px;
 }
 
 .admin-submit-button {
@@ -35,7 +37,6 @@
     color: #fff;
 }
 
-.admin-submit-button:hover {
-    background-color: #a3a0a0;
-    color: #000;
+.admin-navbar-item {
+    width: 25px;
 }
