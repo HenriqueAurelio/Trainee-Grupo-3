@@ -111,6 +111,14 @@
     color: #c20e1a !important;
 }
 
+.font-modaltitle-crud{
+    font-size: 25px;
+}
+
+.font-modalbody-crud{
+    font-size: 16px;
+}
+
 #actpago:hover{
     background-color: none !important;
     color: none !important;
