@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="../assets/css/styles.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css2?family=Carrois+Gothic+SC&display=swap" rel="stylesheet">
+        <script type="text/javascript" src="../assets/js/scripts.js"></script>
         <script src="https://kit.fontawesome.com/9c2b80ca1e.js" crossorigin="anonymous"></script>
 
 	</head>
@@ -80,17 +81,16 @@
               </div>
             <nav aria-label="pagination-crud">
                 <ul class="pagination justify-content-end" id="paginacao-crud-responsive">
-                  <li class="page-item activation-crud-buttons" onclick="activeBtn()"><a class="page-link pagination-crud-buttons newbox-crud" href="#"><</a></li>
-                  <li class="page-item activation-crud-buttons" onclick="activeBtn()"><a class="page-link pagination-crud-buttons newbox-crud" href="#">1</a></li>
-                  <li class="page-item activation-crud-buttons" onclick="activeBtn()"><a class="page-link pagination-crud-buttons newbox-crud" href="#">2</a></li>
-                  <li class="page-item activation-crud-buttons" onclick="activeBtn()"><a class="page-link pagination-crud-buttons newbox-crud" href="#">3</a></li>
-                  <li class="page-item activation-crud-buttons" onclick="activeBtn()"><a class="page-link pagination-crud-buttons newbox-crud" href="#">></a></li>
+                  <li class="page-item"><a class="page-link pagination-crud-buttons newbox-crud" href="#"><</a></li>
+                  <li class="page-item actpago" id="actpago" onclick="actpago()"><a class="page-link pagination-crud-buttons newbox-crud" id="actpagol" href="#">1</a></li>
+                  <li class="page-item actpags" id="actpags" onclick="actpags()"><a class="page-link pagination-crud-buttons newbox-crud" id="actpagsl" href="#">2</a></li>
+                  <li class="page-item actpagt" id="actpagt" onclick="actpagt()"><a class="page-link pagination-crud-buttons newbox-crud" id="actpagtl" href="#">3</a></li>
+                  <li class="page-item"><a class="page-link pagination-crud-buttons newbox-crud" href="#">></a></li>
                 </ul>
               </nav>
         </div>
     
 
-        <script type="text/javascript" src="../assets/js/scripts.js"></script>
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

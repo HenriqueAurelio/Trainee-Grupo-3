@@ -103,12 +103,57 @@
 .pagination > .active > a{
     background-color: #c20e1a !important;
     color: white !important;
-    border: solid 1px #c20e1a !Important;
+    border: solid 1px #c20e1a !important;
 }
 
 .pagination-crud-buttons:hover{
     background-color: white !important;
     color: #c20e1a !important;
+}
+
+#actpago:hover{
+    background-color: none !important;
+    color: none !important;
+}
+
+#actpags:hover{
+    background-color: none !important;
+    color: none !important;
+}
+
+#actpagt:hover{
+    background-color: none !important;
+    color: none !important;
+}
+
+#actpagol:hover{
+    background-color: none !important;
+    color: none !important;
+}
+
+#actpagsl:hover{
+    background-color: none !important;
+    color: none !important;
+}
+
+#actpagtl:hover{
+    background-color: none !important;
+    color: none !important; 
+}
+
+#actpagol:focus{
+    border-color: #c20e1a !important;
+    box-shadow: 0 0 10px #c20e1a !important; 
+}
+
+#actpagsl:focus{
+    border-color: #c20e1a !important;
+    box-shadow: 0 0 10px #c20e1a !important; 
+}
+
+#actpagtl:focus{
+    border-color: #c20e1a !important;
+    box-shadow: 0 0 10px #c20e1a !important; 
 }
 
 @media (max-width: 1200px){
