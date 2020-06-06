@@ -107,8 +107,8 @@
 }
 
 .pagination-crud-buttons:hover{
-    background-color: #c20e1a !important;
-    color: white !important;
+    background-color: white !important;
+    color: #c20e1a !important;
 }
 
 @media (max-width: 1200px){
