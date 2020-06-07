@@ -1,9 +1,9 @@
 .loginarea{
     width: 330px !important;
     font-family: 'Carrois Gothic', sans-serif;
-    margin-right: 50rem;
+    /*margin-right: 50rem;
     margin-left: 25rem;
-    margin-top: 2rem !important;
+    margin-top: 2rem !important;*/
     
 }
 .logintexto{
@@ -21,6 +21,7 @@
 .senhaarea{
     width: 20rem !important;
     margin-bottom: 1rem !important;
+    outline: none !important;
 }
 
 .userlogin{
@@ -42,23 +43,52 @@
     background-color: #a3a0a0;
     color: #000;
 }
-
 .senicon{
     color: white;
     background-color: #c20e1a;
 }
-
 .senhaicon{
-    background-color: white !important;
-    border-color: #ced4da !important;
-    border-left-color: white !important;
+    background-color: transparent !important;
+    border-color: #ced4da !important;    
+}
+.senhi{
+    color: #6c757d;
+    outline: none !important;
 }
 .senhi :hover{
-    color: #6c757d;
+    color: #424243;
     background-color: white;
 }
 .loginimagem{
     height: 20rem;
 }
-
-
+#autoSizingCheck{
+    all: unset;
+    border: 1px solid #6c757d;
+  width: 12.68px;
+  height: 12.68px;
+  display: inline-block;
+}
+#autoSizingCheck:checked{
+  background-color: #c20e1a;
+  width: 12.68px;
+  height: 12.68px;
+}
+.checkpass{
+    padding-left: 0px;
+}
+@media (max-width:323px){
+    .loginarea{
+        width: 280px !important;
+    }
+    .loginimagem{
+        width: 18rem !important;
+        height: 18rem !important;
+    }
+    .emailarea{
+        width: 18rem !important;
+    }
+    .senhaarea{
+        width: 18rem !important;
+    }
+}

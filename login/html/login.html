@@ -16,7 +16,7 @@
   </head>
   <body>
     <div class="container">
-        <div class="row">
+        <div class="row justify-content-center">
             <div class="emailsenha loginarea">
               <h1 class="logintexto"><img class="loginimagem" src="../img/aurelio_transparent.png"></h1>
               <label for="validationCustomUsername" class="emailarea">Endereço de email:</label>
@@ -34,20 +34,23 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text senicon" id="inputGroupPrepend"><i class="fas fa-key"></i></span>
                 </div>
-                <input type="password" class="form-control" id="validationCustomUsername" placeholder="Senha" aria-describedby="inputGroupPrepend" required>
+                <input type="password" class="form-control border-right-0 " id="validationCustomUsername" placeholder="Senha" aria-describedby="inputGroupPrepend" required>
                 <div class="input-group-append senhi">
-                  <button onclick="passview()" class="btn btn-outline-secondary senhaicon" type="button" id="button-addon2"><i id="senhaicon" class="fas fa-eye"></i></button>
+                  <span class="input-group-text senhaicon border-left-0" onclick="passview()"><i id="senhaicon" class="fas fa-eye"></i></span>
                 </div>
+                <!--<div class="input-group-append senhi">
+                  <button onclick="passview()" class="btn btn-outline-secondary senhaicon" type="button" id="button-addon2"><i id="senhaicon" class="fas fa-eye"></i></button>
+                </div> -->
                 <div class="invalid-feedback">
                   Senha incoreta por favor tente novamente.
                 </div>
               </div>
-              <div class="form-check mb-2">
-                <input class="form-check-input checkpass" type="checkbox" id="autoSizingCheck">
+              <div class="form-check mb-2 custom-checkbox checkpass" >
+                <input class="form-check-input" style="background-color: #red !important" type="checkbox" checked id="autoSizingCheck">
                 <label class="form-check-label" for="autoSizingCheck">
                   Lembrar de mim
                 </label>
-              </div>
+              </div>              
               <button type="submit" class="btn btn-product btn-block">Enviar</button>
             </div>  
         </div>
