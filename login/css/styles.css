@@ -1,9 +1,6 @@
 .loginarea{
     width: 330px !important;
     font-family: 'Carrois Gothic', sans-serif;
-    /*margin-right: 50rem;
-    margin-left: 25rem;
-    margin-top: 2rem !important;*/
     
 }
 .logintexto{
@@ -62,21 +59,7 @@
 .loginimagem{
     height: 20rem;
 }
-#autoSizingCheck{
-    all: unset;
-    border: 1px solid #6c757d;
-  width: 12.68px;
-  height: 12.68px;
-  display: inline-block;
-}
-#autoSizingCheck:checked{
-  background-color: #c20e1a;
-  width: 12.68px;
-  height: 12.68px;
-}
-.checkpass{
-    padding-left: 0px;
-}
+
 @media (max-width:323px){
     .loginarea{
         width: 280px !important;
