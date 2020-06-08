@@ -1,3 +1,329 @@
+.fontcontato{
+
+    font-family: 'Carrois Gothic SC', sans-serif !important;
+    font-size: 13px !important;
+
+}
+
+
+.redes-sociais-contato{
+    list-style: none;
+}
+
+.social-contato li{
+
+    display: inline-block;
+}
+
+.icoredesocial-contato{
+    color: #c20e1a;
+    transition: 0.5s;
+}
+
+.icoredesocial-contato:hover{
+
+    transform: scale(1.2,1.2);
+    transition: 0.5s;
+
+}
+
+.btnContato{
+    background-color: #c20e1a;
+    color: white;
+}
+
+.formico-contato{
+    color: white;
+}
+.formicobg-contato{
+    background-color: #c20e1a !important;
+}
+
+.mapcontact{
+    box-shadow: 0px 0px 20px 0px black;
+    animation-name: entrymove;
+    animation-duration: 2s;
+}
+
+.btnContato:hover {
+    background-color: #a3a0a0;
+    color: #000;
+}
+
+.form-contato{
+
+    animation-name: entrymove;
+    animation-duration: 2s;
+
+}
+
+.formtitles-contato{
+    font-size: 18px;
+    
+}
+.removeblue:hover{
+    color: black;
+    text-decoration: none;
+}
+.newbox-contato:focus{
+    border-color: #c20e1a !important;
+    box-shadow: 0 0 10px #c20e1a !important; 
+}
+
+.icodes-contato{
+    animation-name: undericon;
+    animation-duration: 4s;
+}
+
+.responsive-contato{
+    padding-left: 60px;
+}
+
+
+@keyframes entrymove {
+	0% {opacity : 0; transform: translate(0px,-40px);}
+	100% {opacity : 1; transform: translate(0px,0px);}
+}
+
+@keyframes undericon {
+    0% {opacity : 0;}
+    
+    50% {opacity: 0;}
+    
+    100% {opacity : 1}
+}
+.activepagination{
+    
+    color: white !important;
+    background-color: #c20e1a !important;
+}
+@media (max-width:700px){
+}
+@media (max-width: 991px){
+
+    .responsive-contato{
+        padding-left: 210px;    
+    }
+    
+}
+
+@media (max-width: 767px){
+
+    .responsive-contato{
+        padding-left: 130px;    
+    }    
+}
+@media (max-width:1000px) and (min-width:710px){
+        
+}
+
+
+@media (max-width: 426px){
+
+    .responsive-contato{
+        padding-left: 57px;    
+    }
+
+}
+
+@media (max-width: 384px){
+
+    .responsive-contato{
+     padding-left: 45px;    
+    }
+    
+}
+@media (max-width:1025px) and (min-width:1010px){
+}
+@media (max-width: 365px){
+
+    .responsive-contato{
+        padding-left: 40px;    
+    }
+
+    .responsive-contato{
+        margin-left: -8px;
+    }
+        
+}
+
+@media (max-width: 360px){
+
+    .responsive-contato{
+        padding-left: 35px;    
+    }
+            
+}
+
+@media (max-width: 355px){
+
+    .responsive-contato{
+        padding-left: 30px;    
+    }
+                
+}
+
+@media (max-width: 350px){
+
+    .responsive-contato{
+        padding-left: 25px;    
+    }
+                    
+}
+
+@media (max-width: 345px){
+
+    .responsive-contato{
+        padding-left: 20px;    
+    }
+                        
+}
+
+@media (max-width: 340px){
+
+    .responsive-contato{
+        padding-left: 15px;    
+    }
+                    
+}
+
+@media (max-width: 335px){
+
+    .responsive-contato{
+        padding-left: 10px;    
+    }
+                    
+}
+
+@media (max-width: 330px){
+
+    .responsive-contato{
+        padding-left: 5px;    
+    }
+                    
+}
+
+@media (max-width: 325px){
+
+    .responsive-contato{
+        padding-left: 0px;    
+    }
+
+    .mapcontact{
+        margin-left: -8px !important;
+        width: 300px !important;
+    }
+                        
+}
+      
+.footerbackground {
+    background-color: #928c8c;
+    color: #ffffff;
+    bottom: 0px;
+    box-sizing: border-box;
+	width: 100%;
+	text-align: left;
+    font: bold 16px;
+    font-family: 'Carrois Gothic SC', sans-serif !important;;
+	padding: 50px 50px 60px 50px;
+	margin-top: 80px;
+}
+@media (max-height:800px){
+	footer { position: static; }
+	header { padding-top:40px; }
+}
+
+.contatos-footer{
+    padding: 0px;
+    text-align: center;
+    width: 60%;
+}
+
+.virtual {
+    padding: 18px 0px;
+}
+
+.contatos-footer li {
+    display: inline-block;
+    width: 2rem ;
+    height: 35px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 30px;
+    padding: 0cm;
+}
+
+.contatos-footer li a i {
+    padding-top: 4px;
+    color: #ffffff;
+    font-size: 25px;
+    transition:.3s;
+}
+
+.contatos-footer li a i:hover{
+    text-decoration: none;
+}
+
+.footer-links ul {
+    list-style-type: none;
+    font-size: 18px;  
+    padding: 15px 0px;;  
+}
+
+
+.footer-links li a {
+    color: #ffffff;
+    transition: color 0.3s;
+}
+
+.footer-links li a:hover{
+    text-decoration: none;
+}
+
+.copyright {
+    margin-bottom: -20px;
+    margin-top: 10px;
+    
+}
+.footer-info  {
+    width: 30%;
+}
+
+.navbar {
+    background-color: #c20e1a;
+}
+
+.nav-item {
+    font-size: 180%;  
+}
+
+
+.navbar-toggler {
+    width: 5rem;
+}
+
+.navbar-toggler-icon {
+    width: 3rem;
+} 
+
+
+.linkestilo {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.linkestilo:hover {
+    text-decoration: none;
+    color: #ffffff;
+}      
+    
+
+
+
+
+
+
+
 /*Produtos inicio*/
 
 .card-title{
@@ -260,4 +586,4 @@
     
 }
 
-/*FIM pagina Produtos*/
+/*FIM pagina Produtos
