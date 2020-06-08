@@ -1,3 +1,4 @@
+//Inicio Pagina Produtos
 function openNav(){
     var x = document.getElementById("list-group reslista");
     var y = document.getElementById("resquisa");
@@ -73,3 +74,4 @@ function actpagt(){
         pagl1.className = "page-link intenprpag";
     }
 }
+//Fim pagina Produtos
