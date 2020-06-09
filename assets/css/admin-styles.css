@@ -1,0 +1,42 @@
+.admin-logo-text {
+    color: #fff;
+    text-decoration: none;
+}
+
+.admin-logo-text:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+.admin-sidebar {
+   position: fixed;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   z-index: 100;
+   padding: 48px 0 0;
+}
+
+.navbar .navbar-toggler {
+    background-color: #212529;
+    right: 1rem;
+}
+
+.nav-link {
+    color: #fff;
+    font-size: 18px;
+}
+
+.nav-link:hover {
+    color: #fff;
+    font-size: 18px;
+}
+
+.admin-submit-button {
+    background-color: #c20e1a;
+    color: #fff;
+}
+
+.admin-navbar-item {
+    width: 25px;
+}
