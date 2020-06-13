@@ -3,12 +3,12 @@
 }
 
 .nav-item {
-    font-size: 180%;  
+    font-size: 173%;  
 }
 
 
 .navbar-toggler {
-    width: 5rem;
+    width: 3rem;
 }
 
 .navbar-toggler-icon {
@@ -26,5 +26,10 @@
     color: #ffffff;
 }
 
+@media only screen and (min-width:1024px) and (max-width:1024px){
+    .laptopoff{
+        display: none !important;
+    }
+}
 
 
