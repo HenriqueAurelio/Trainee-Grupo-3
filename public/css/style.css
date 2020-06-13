@@ -1,0 +1,35 @@
+.navbar {
+    background-color: #c20e1a;
+}
+
+.nav-item {
+    font-size: 173%;  
+}
+
+
+.navbar-toggler {
+    width: 3rem;
+}
+
+.navbar-toggler-icon {
+    width: 3rem;
+} 
+
+
+.linkestilo {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.linkestilo:hover {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+@media only screen and (min-width:1024px) and (max-width:1024px){
+    .laptopoff{
+        display: none !important;
+    }
+}
+
+

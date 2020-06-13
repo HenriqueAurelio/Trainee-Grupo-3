@@ -25,4 +25,8 @@ class PagesController
 
         return view('admin/editarprodutos', compact('produto', 'categorias'));
     }
+
+    public function sobre() {
+        return view('site/sobre');
+    }
 }
