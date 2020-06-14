@@ -964,3 +964,14 @@
     }
 
 }
+
+.btn-edit-indexcrud-margin-adjustment{
+    margin-top: -31px;
+    margin-left: 26px;
+}
+
+.btn-delete-indexcrud-margin-adjustment{
+    margin-top: -56px;
+    margin-left: 70px;
+    margin-right: -17px;
+}

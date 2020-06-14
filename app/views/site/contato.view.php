@@ -5,50 +5,16 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />  
         <title>Contato</title>
-		<link rel="stylesheet" href="../assets/css/styles.css">
+		<link rel="stylesheet" href="../../../public/css/styles.css">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 		<script src="https://kit.fontawesome.com/9c2b80ca1e.js" crossorigin="anonymous"></script>
 		<link href="https://fonts.googleapis.com/css2?family=Carrois+Gothic+SC&display=swap" rel="stylesheet">
 	</head> 
 	
 	<body> 
-		<!-- Início da navbar -->
-		<nav class="navbar navbar-expand-lg">
-			<nav class="container">
-				  <a class="navbar-brand" href="#"><img src="../assets/img/aurelio_transparent.png"></a>
-			  <nav class="navbar-light">
-				  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				  </button>
-			  </nav>  
-				  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-					<ul class="navbar-nav mr-auto">
-					  <li class="nav-item">
-						<a class="nav-link linkestilo" href="#">Home</a>
-					  </li>
-					  <li class="nav-item">
-						<a class="nav-link linkestilo" href="#">Produtos</a>
-					  </li>
-					  <li class="nav-item">
-						  <a class="nav-link linkestilo" href="#">Sobre Nós</a>
-					   </li>
-					   <li class="nav-item">
-						  <a class="nav-link linkestilo" href="#">Login</a>
-					   </li>
-					   <li class="nav-item">
-						<a class="nav-link linkestilo" href="#">Contato</a>
-					  </li>
-					</ul>
-					<form class="form-inline my-2 my-lg-0">
-					  <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-					  <button class="btn btn-dark my-2 my-sm-0" type="submit">Search</button>
-					</form>
-				  </div>
-			  </nav>
-		   </nav>
-		
-		<!-- Fim da navbar -->
 
+		<?php include 'includes/navbar.view.php' ?>		
+		
 		<!-- Início do Contatos -->
 		<div class="container text-center fontcontato">
 			<div class="row">
@@ -114,57 +80,13 @@
 			</div>
 		</div>
 		<!-- Fim do Contato -->
-		
-		<!-- Início do Footer -->
 
-		<footer class="footerbackground">
-			<div class="container">
-				<div class="row ">
-					<div class="col-md-3 footer-info">
-						<h3><img src="../assets/img/img.png"></h3>
-					</div>
-				  <div class="col-md-3 footer-links">
-					<ul>
-						<li><i class="ion-ios-arrow-right"><a href="#">Home</a></i></li>   
-	
-						<li><i class="ion-ios-arrow-right"><a href="#">Produtos</a></i></li> 
-	
-						<li><i class="ion-ios-arrow-right"><a href="#">Sobre Nós</a></i></li>  
-	
-						<li><i class="ion-ios-arrow-right"><a href="#">Login</a></i></li>
-	
-						<li><i class="ion-ios-arrow-right"><a href="#">Contato</a></i></li>                    
-					</ul>  
-				  </div>
-				  <div class="col-md-3">
-					<h4 class="virtual">Redes Sociais</h4>
-						 <ul class="contatos-footer">
-							 <li><a href="#" class="instagram"><i class="fa fa-instagram"></i></a></li>
-	
-							 <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li> 
-						 </ul>                                     
-				  </div>             
-				  <div class="col-md-3 location">
-					<h4 class="mt-lg-0 mt-sm-4"> Fale Conosco</h4>
-					<p><i class="fa fa-map-marker"></i> Universidade Federal de Juiz de Fora(UFJF)</p>
-					<p><i class="fa fa-envelope-o"></i> suporte@aureliolivraria.com</p>                                        
-					<p><i class="fa fa-phone"></i> (XX)XXXXX-XXXX</p>
-				  </div>                         
-				</div>          
-			   </div>
-			  </div><br><br>
-			  <div class="row">
-				<div class="col copyright text-center">
-				  <p class="copyright" text-muted>Copyright &copy;Aurelio Livraria 2020</p>
-				</div>
-		  </footer>
-
-		  <!-- Fim do footer -->
+		<?php include 'includes/footer2.view.php' ?>		
 				
 				
 		
 		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-		<script type="text/javascript" src="../assets/js/jquery.mask.min.js"></script>
+		<script type="text/javascript" src="../../../public/js/jquery.mask.min.js"></script>
 		<script type="text/javascript">
 		$(document).ready(function() {
 			$("#telefonecontato").mask("(00) 00000-0000")
