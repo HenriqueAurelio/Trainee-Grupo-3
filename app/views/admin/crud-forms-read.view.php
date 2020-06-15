@@ -70,11 +70,11 @@
                 <div class="col-lg-10 col-md-9">
                     <h2>Detalhes do livro</h2>
                     <div>
-                        <h4>Nome: <span><?= $produto[0]->nome; ?></span></h4>
-                        <h4>Categoria: <span><?= $produto[0]->categoria[0]->nome; ?></span></h4>
-                        <h4>Preço: <span><?= $produto[0]->preco; ?></span></h4>
-                        <h4>Descrição: <span><?= $produto[0]->descricao; ?></span></h4>
-                        <input type="hidden" name="id" value="<?= $produto[0]->id; ?>">
+                        <h4>Nome: <span><?= $produto->nome; ?></span></h4>
+                        <h4>Categoria: <span><?= $produto->categoria->nome; ?></span></h4>
+                        <h4>Preço: <span><?= $produto->preco; ?></span></h4>
+                        <h4>Descrição: <span><?= $produto->descricao; ?></span></h4>
+                        <input type="hidden" name="id" value="<?= $produto->id; ?>">
                     </div>
                 </div>
             </div>

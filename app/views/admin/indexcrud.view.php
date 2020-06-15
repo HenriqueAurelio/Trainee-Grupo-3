@@ -44,7 +44,7 @@
                         <tr>
                             
                             <th class="font-adjustment-crud" scope="row"><?= $produto->nome ?></th>
-                            <td class="font-adjustment-crud"><?= $produto->categoria[0]->nome ?></td>
+                            <td class="font-adjustment-crud"><?= $produto->categoria->nome ?></td>
                             <td class="font-adjustment-crud"><?= $produto->preco ?></td>
                             <td class="font-adjustment-crud"><a href="">
                               <form method="POST" action="produtos/ler">

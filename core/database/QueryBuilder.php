@@ -57,7 +57,7 @@ class QueryBuilder
 
         $statement->execute();
 
-        return $statement->fetchAll(PDO::FETCH_CLASS);
+        return $statement->fetch(PDO::FETCH_OBJ);
 
     }
 
@@ -69,7 +69,7 @@ class QueryBuilder
 
         $statement->execute();
 
-        return $statement->fetchAll(PDO::FETCH_OBJ);
+        return $statement->fetch(PDO::FETCH_OBJ);
 
     }
 

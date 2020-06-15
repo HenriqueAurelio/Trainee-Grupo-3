@@ -50,7 +50,9 @@ class ProductsController
     {
         $produto=App::get('database')->selectOne('produtos', $_POST['id']);
         
-        $produto[0]->categoria=App::get('database')->selectCategory('nome', 'categoria', $produto[0]->categoria_id);
+        $produto->categoria=App::get('database')->selectCategory('nome', 'categoria', $produto->categoria_id);
+
+        //die(var_dump($produto));
 
         return view('admin/crud-forms-read', compact('produto'));
         

@@ -76,25 +76,25 @@
                     <div class="col-lg-2 col-md-3"></div>
                     <div class="col-lg-10 col-md-9 form-group">
                         <label for="exampleFormControlInput1">Nome</label>
-                        <input type="text" name="nome" value="<?= $produto[0]->nome; ?>" class="form-control" id="exampleFormControlInput1" placeholder="Nome do livro">
+                        <input type="text" name="nome" value="<?= $produto->nome; ?>" class="form-control" id="exampleFormControlInput1" placeholder="Nome do livro">
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-lg-2 col-md-3"></div>
                     <div class="col-lg-5 col-md-4 form-group">
                         <label for="exampleFormControlInput2">Categoria</label>
-                        <input type="number" name="categoria_id" value="<?= $produto[0]->categoria_id; ?>" class="form-control" id="exampleFormControlInput2" placeholder="Categoria do livro">
+                        <input type="number" name="categoria_id" value="<?= $produto->categoria_id; ?>" class="form-control" id="exampleFormControlInput2" placeholder="Categoria do livro">
                     </div>
                     <div class="col-lg-5 col-md-5 form-group">
                         <label for="exampleFormControlNumber1">Preço</label>
-                        <input type="number" step="0.01" min="0" name="preco" value="<?= $produto[0]->preco; ?>" class="form-control" id="exampleFormControlNumber1" placeholder="Preço do livro">
+                        <input type="number" step="0.01" min="0" name="preco" value="<?= $produto->preco; ?>" class="form-control" id="exampleFormControlNumber1" placeholder="Preço do livro">
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-lg-2 col-md-3"></div>
                     <div class="col-lg-10 col-md-9 form-group">
                         <label for="exampleFormControlTextarea1">Descrição</label>
-                        <textarea class="form-control" name="descricao" id="exampleFormControlTextarea1" rows="3"><?= $produto[0]->descricao; ?></textarea>
+                        <textarea class="form-control" name="descricao" id="exampleFormControlTextarea1" rows="3"><?= $produto->descricao; ?></textarea>
                     </div>
                 </div>
                 <div class="row">
@@ -103,7 +103,7 @@
                         <div class="form-group">
                             <label for="exampleFormControlFile1">Foto</label>
                             <input type="file" name="foto" class="form-control-file" id="exampleFormControlFile1">
-                            <input type="hidden" name="id" value="<?= $produto[0]->id; ?>">
+                            <input type="hidden" name="id" value="<?= $produto->id; ?>">
                           </div>    
                     </div>
                 </div>
