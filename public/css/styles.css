@@ -978,4 +978,12 @@
 
 .site-about-group {
     background-color: #d9d9d9;
-}    
+}
+
+.btn-go-back {
+    background-color: #c20e1a;
+}
+
+.white {
+    color: #fff;
+}

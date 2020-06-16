@@ -7,17 +7,17 @@ use App\Core\App;
 class ProductsController
 {
     public function index() {
-        $produtos = App::get('database')->selectAll('produtos');
+        $produtos = App::get('database')->selectAllProducts('produtos');
 
         foreach($produtos as $produto) {
-            $produto->categoria = App::get('database')->selectAttr('categorias', 'nome', $produto->categoria_id);
+            $produto->categoria = App::get('database')->selectAttrProducts('categorias', 'nome', $produto->categoria_id);
         }
 
         return view('admin/products/produtos', compact('produtos'));
     }
 
     public function create() {
-        App::get('database')->insert('produtos', [
+        App::get('database')->insertProducts('produtos', [
             'nome' => $_POST['nome'],
             'preco' => $_POST['preco'],
             'foto' => $_POST['foto'],
@@ -29,7 +29,7 @@ class ProductsController
     }
 
     public function update() {
-        App::get('database')->edit('produtos', [
+        App::get('database')->editProducts('produtos', [
             'nome' => $_POST['nome'],
             'preco' => $_POST['preco'],
             'foto' => $_POST['foto'],
@@ -41,15 +41,15 @@ class ProductsController
     }
 
     public function show() {
-        $produto = App::get('database')->read('produtos', $_POST['id']);
+        $produto = App::get('database')->readProducts('produtos', $_POST['id']);
 
-        $produto->categoria = App::get('database')->selectAttr('categorias', 'nome', $produto->categoria_id);
+        $produto->categoria = App::get('database')->selectAttrProducts('categorias', 'nome', $produto->categoria_id);
         
         return view('admin/products/produto_unico', compact('produto'));
     }
 
     public function delete() {
-        App::get('database')->delete('produtos', $_POST['id']);
+        App::get('database')->deleteProducts('produtos', $_POST['id']);
 
         return redirect('produtos');
     }

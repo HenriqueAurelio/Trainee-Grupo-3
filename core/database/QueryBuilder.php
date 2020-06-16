@@ -15,7 +15,7 @@ class QueryBuilder
         $this->pdo = $pdo;    
     }
 
-    public function selectAll($table)
+    public function selectAllProducts($table)
     {
       $statement = $this->pdo->prepare("select * from {$table}");
 
@@ -24,7 +24,7 @@ class QueryBuilder
       return $statement->fetchAll(PDO::FETCH_CLASS);
     }
 
-    public function selectAttr($table, $attr, $id) {
+    public function selectAttrProducts($table, $attr, $id) {
         $statement = $this->pdo->prepare("select {$attr} from {$table} WHERE id = {$id}");
 
         $statement->execute();
@@ -32,7 +32,7 @@ class QueryBuilder
         return $statement->fetch(PDO::FETCH_OBJ);
     }
 
-    public function insert($table, $params)
+    public function insertProducts($table, $params)
     {
       $sql = sprintf(
           'insert into %s (%s) values (%s)',
@@ -50,7 +50,7 @@ class QueryBuilder
       }
     }
 
-    public function edit($table, $params, $id)
+    public function editProducts($table, $params, $id)
     {
         $i = 1;
         $sql = "update " . $table . " SET ";
@@ -74,7 +74,7 @@ class QueryBuilder
         }
     }
     
-    public function read($table, $id)
+    public function readProducts($table, $id)
     {
       $sql = "SELECT * FROM " . $table . " WHERE id = {$id}";
 
@@ -84,7 +84,7 @@ class QueryBuilder
       return $statement->fetch(PDO::FETCH_OBJ);
     }
 
-    public function delete($table, $id)
+    public function deleteProducts($table, $id)
     {
         $sql = "DELETE FROM " . $table . " WHERE id = {$id}";
 

@@ -11,7 +11,7 @@ class PagesController
     }
 
     public function createProduct() {
-        $categorias = App::get('database')->selectAll('categorias');
+        $categorias = App::get('database')->selectAllProducts('categorias');
 
         return view('admin/products/formprodutos', compact('categorias'));
     }
@@ -19,9 +19,9 @@ class PagesController
     public function editarProduto() {
         $id = $_POST['id'];
 
-        $categorias = App::get('database')->selectAll('categorias');
+        $categorias = App::get('database')->selectAllProducts('categorias');
 
-        $produto = App::get('database')->read('produtos', $id);
+        $produto = App::get('database')->readProducts('produtos', $id);
 
         return view('admin/products/editarprodutos', compact('produto', 'categorias'));
     }
