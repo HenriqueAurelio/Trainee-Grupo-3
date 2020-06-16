@@ -10,3 +10,5 @@ $router->post('produtos', 'ProductsController@create');
 $router->post('produtos/editar', 'ProductsController@update');
 $router->post('produtos/mostrar', 'ProductsController@show');
 $router->post('produtos/deletar', 'ProductsController@delete');
+
+$router->get('sobre', 'PagesController@sobre');
