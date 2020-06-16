@@ -43,8 +43,8 @@ class ProductsController
     public function show() {
         $produto = App::get('database')->read('produtos', $_POST['id']);
 
-        $produto[0]->categoria = App::get('database')->selectAttr('categorias', 'nome', $produto[0]->categoria_id);
-
+        $produto->categoria = App::get('database')->selectAttr('categorias', 'nome', $produto->categoria_id);
+        
         return view('admin/produto_unico', compact('produto'));
     }
 

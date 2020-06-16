@@ -17,13 +17,12 @@
             <a class="admin-logo-text navbar-brand" href="#">
                <img id="admin-navbar-logo" src="../../../public/img/aurelio_transparent.png" width="80" height="80">
             </a>
-            <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler d-md-none collapsed" id="toggle-button" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
         </nav>
 
         <div class="container-fluid">
-            <div class="row">
                 <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-dark admin-sidebar collapse">
                     <div class="pt-3 mt-5">
                         <ul class="nav flex-column">
@@ -65,7 +64,6 @@
                         </ul>
                     </div>
                 </nav>
-            </div>
         </div>
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

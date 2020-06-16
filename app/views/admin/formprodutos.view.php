@@ -12,7 +12,7 @@
         <title>Aurelio Livraria - Admin</title>    
     </head>
     <body>
-    <?php require('includes/nav.php'); ?>
+    <?php require('includes/head.php'); ?>
                 <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-2 col-md-3"></div>

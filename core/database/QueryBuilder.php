@@ -29,7 +29,7 @@ class QueryBuilder
 
         $statement->execute();
 
-        return $statement->fetchAll(PDO::FETCH_ASSOC);
+        return $statement->fetch(PDO::FETCH_OBJ);
     }
 
     public function insert($table, $params)
@@ -81,7 +81,7 @@ class QueryBuilder
       $statement = $this->pdo->prepare($sql);
       $statement->execute();
 
-      return $statement->fetchAll(PDO::FETCH_CLASS);
+      return $statement->fetch(PDO::FETCH_OBJ);
     }
 
     public function delete($table, $id)

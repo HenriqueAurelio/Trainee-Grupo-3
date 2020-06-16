@@ -31,8 +31,8 @@ use App\Core\App;
                         <div class="col-lg-2 col-md-3"></div>
                         <div class="col-lg-10 col-md-9 form-group">
                             <label for="exampleFormControlInput1">Nome</label>
-                            <input required type="text" value="<?= utf8_encode($produto[0]->nome); ?>" name="nome" class="form-control" id="exampleFormControlInput1" placeholder="Nome do livro">
-                            <input type="hidden" value="<?= $produto[0]->id; ?>" name="id">
+                            <input required type="text" value="<?= utf8_encode($produto->nome); ?>" name="nome" class="form-control" id="exampleFormControlInput1" placeholder="Nome do livro">
+                            <input type="hidden" value="<?= $produto->id; ?>" name="id">
                         </div>
                     </div>
                     <div class="row">
@@ -41,7 +41,7 @@ use App\Core\App;
                             <label for="categoria">Categoria</label>
                             <select required class="custom-select" id="categoria" name="categoria_id">
                                 <?php foreach ($categorias as $categoria) : ?>
-                                    <?php if ($categoria->id == $produto[0]->categoria_id) : ?>
+                                    <?php if ($categoria->id == $produto->categoria_id) : ?>
                                         <option selected value="<?= $categoria->id ?>"><?= utf8_encode($categoria->nome) ?></option>
                                     <?php else : ?>
                                         <option value="<?= $categoria->id ?>"><?= utf8_encode($categoria->nome) ?></option>
@@ -51,14 +51,14 @@ use App\Core\App;
                         </div>
                         <div class="col-lg-5 col-md-5 form-group">
                             <label for="exampleFormControlInput2">Preço</label>
-                            <input required value="<?= utf8_encode($produto[0]->preco); ?>" type="text" name="preco" class="form-control" id="exampleFormControlInput2" placeholder="Preço do livro">
+                            <input required value="<?= utf8_encode($produto->preco); ?>" type="text" name="preco" class="form-control" id="exampleFormControlInput2" placeholder="Preço do livro">
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-lg-2 col-md-3"></div>
                         <div class="col-lg-10 col-md-9 form-group">
                             <label for="exampleFormControlTextarea1">Descrição</label>
-                            <textarea required class="form-control" name="descricao" id="exampleFormControlTextarea1"><?php echo trim(utf8_encode($produto[0]->descricao)); ?></textarea>
+                            <textarea required class="form-control" name="descricao" id="exampleFormControlTextarea1"><?php echo trim(utf8_encode($produto->descricao)); ?></textarea>
                         </div>
                     </div>
                     <div class="row">
@@ -69,7 +69,7 @@ use App\Core\App;
                                 <input required type="file" name="foto" class="form-control-file" id="exampleFormControlFile1">
                             </div>
                             <div>
-                                <img alt="Capa do livro" src="../../../public/img/<?= $produto[0]->foto; ?>" height="200" width="150">
+                                <img alt="Capa do livro" src="../../../public/img/<?= $produto->foto; ?>" height="200" width="150">
                             </div>      
                         </div>
                     </div>
