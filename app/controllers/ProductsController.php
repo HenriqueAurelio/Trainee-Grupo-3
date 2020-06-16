@@ -13,7 +13,7 @@ class ProductsController
             $produto->categoria = App::get('database')->selectAttr('categorias', 'nome', $produto->categoria_id);
         }
 
-        return view('admin/produtos', compact('produtos'));
+        return view('admin/products/produtos', compact('produtos'));
     }
 
     public function create() {
@@ -25,7 +25,7 @@ class ProductsController
             'categoria_id' => $_POST['categoria_id']
         ]);
 
-        return redirect('admin/produtos');
+        return redirect('produtos');
     }
 
     public function update() {
@@ -37,7 +37,7 @@ class ProductsController
             'categoria_id' => $_POST['categoria_id']
         ], $_POST['id']);
 
-        return redirect('admin/produtos');
+        return redirect('produtos');
     }
 
     public function show() {
@@ -45,12 +45,12 @@ class ProductsController
 
         $produto->categoria = App::get('database')->selectAttr('categorias', 'nome', $produto->categoria_id);
         
-        return view('admin/produto_unico', compact('produto'));
+        return view('admin/products/produto_unico', compact('produto'));
     }
 
     public function delete() {
         App::get('database')->delete('produtos', $_POST['id']);
 
-        return redirect('admin/produtos');
+        return redirect('produtos');
     }
 }

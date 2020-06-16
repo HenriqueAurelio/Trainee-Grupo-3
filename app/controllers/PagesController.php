@@ -13,7 +13,7 @@ class PagesController
     public function createProduct() {
         $categorias = App::get('database')->selectAll('categorias');
 
-        return view('admin/formprodutos', compact('categorias'));
+        return view('admin/products/formprodutos', compact('categorias'));
     }
 
     public function editarProduto() {
@@ -23,7 +23,7 @@ class PagesController
 
         $produto = App::get('database')->read('produtos', $id);
 
-        return view('admin/editarprodutos', compact('produto', 'categorias'));
+        return view('admin/products/editarprodutos', compact('produto', 'categorias'));
     }
 
     public function sobre() {
