@@ -70,10 +70,11 @@
                 <div class="col-lg-10 col-md-9">
                     <h2>Detalhes do livro</h2>
                     <div>
-                        <h4>Nome: <span><?= $produto->nome; ?></span></h4>
-                        <h4>Categoria: <span><?= $produto->categoria->nome; ?></span></h4>
-                        <h4>Preço: <span><?= $produto->preco; ?></span></h4>
-                        <h4>Descrição: <span><?= $produto->descricao; ?></span></h4>
+                    <img class="img-view-crud" src="../../../public/img/<?= $produto->foto; ?>"></img>
+                        <h4 class="titles-view-crud">Nome: <span><?= $produto->nome; ?></span></h4>
+                        <h4 class="titles-view-crud">Categoria: <span><?= $produto->categoria->nome; ?></span></h4>
+                        <h4 class="titles-view-crud">Preço: <span><?= $produto->preco; ?></span></h4>
+                        <h4 class="titles-view-crud">Descrição: <span><?= $produto->descricao; ?></span></h4>
                         <input type="hidden" name="id" value="<?= $produto->id; ?>">
                     </div>
                 </div>
