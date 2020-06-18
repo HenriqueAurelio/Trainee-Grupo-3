@@ -38,7 +38,7 @@
             <div class="row">
                 <div class="col-lg-2 col-md-3"></div>
                 <div class="col-lg-10 col-md-9">
-                  <a href="/produtos"><button class="btn btn-go-back btn-sm"><i class="fas fa-arrow-left mr-1 white"></i></button></a>
+                  <a href="/admin/produtos"><button class="btn btn-go-back btn-sm"><i class="fas fa-arrow-left mr-1 white"></i></button></a>
                   <button type="submit" form="form-edit" class="btn btn-edit-crud btn-crud-table newbox-crud btn-sm ml-2"><i class="fas fa-edit mr-1"></i></button>
                   <form method="POST" id="form-edit" action="/editarproduto">
                       <input type="hidden" value="<?=$produto->id; ?>" name="id">

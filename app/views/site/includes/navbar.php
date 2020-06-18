@@ -3,12 +3,13 @@
       <head>
             <meta charset="utf-8">
             <link rel="stylesheet" href="../../../../public/css/style.css">
+            <link rel="stylesheet" href="../../../../public/css/styles.css">
             <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
             <title>Aurelio Livraria</title>
             <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
      </head>
      <body>
-        <nav class="navbar navbar-expand-lg">
+        <nav class="navbar navbar-site navbar-expand-lg">
           <div class="container">
                 <a class="navbar-brand" href="#"><img src="../../../../public/img/aurelio_transparent.png" width="80" height="80"></a>
             <nav class="navbar-light">
@@ -22,13 +23,13 @@
                       <a class="nav-link linkestilo" href="#">Produtos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link linkestilo" href="#">Sobre Nós</a>
+                        <a class="nav-link linkestilo" href="/sobre">Sobre Nós</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link linkestilo" href="#">Login</a>
+                        <a class="nav-link linkestilo" href="/admin">Login</a>
                      </li>
                      <li class="nav-item">
-                      <a class="nav-link linkestilo" href="#">Contato</a>
+                      <a class="nav-link linkestilo" href="/contato">Contato</a>
                     </li>
                   </ul>
                   <div class="pesquisa">

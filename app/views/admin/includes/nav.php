@@ -14,9 +14,11 @@
     </head>
     <body>
         <nav class="navbar navbar-dark crud-navbar sticky-top" id="crud-sidebar">
-            <a class="admin-logo-text navbar-brand" href="#">
-               <img id="admin-navbar-logo" src="../../../public/img/aurelio_transparent.png" width="80" height="80">
-            </a>
+            <div>
+                <a class="admin-logo-text navbar-brand" href="#">
+                    <img id="admin-navbar-logo" src="../../../public/img/aurelio_transparent.png" width="80" height="80">
+                </a>
+            </div>
             <button class="navbar-toggler d-md-none collapsed" id="toggle-button" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -28,17 +30,17 @@
                         <ul class="nav flex-column">
                             <li class="nav-item">
                                 <a class="nav-link" href="#">
-                                    Bem-vindo, Gabriel!
+                                    Bem-vindo!
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active" href="/">
+                                <a class="nav-link active" href="/admin/home">
                                     <i class="fas fa-home admin-navbar-item"></i>
                                    <span class="admin-navbar-item">Home</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/produtos">
+                                <a class="nav-link" href="/admin/produtos">
                                     <i class="fas fa-book-open admin-navbar-item"></i>
                                     <span class="admin-navbar-item">Livros</span>
                                 </a>
@@ -56,10 +58,12 @@
                                 </a>
                             </li>
                             <li class="nav-item mt-3">
-                                <a class="nav-link" href="#">
-                                    <i class="fas fa-sign-out-alt admin-navbar-item"></i>
-                                    Sair
-                                </a>
+                                <form method="POST" action="/logout">
+                                    <button class="nav-link button-form-logout" type="submit">
+                                        <i class="fas fa-sign-out-alt admin-navbar-item"></i>
+                                        Sair
+                                    </button>
+                                </form>    
                             </li>
                         </ul>
                     </div>

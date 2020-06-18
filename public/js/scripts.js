@@ -93,7 +93,13 @@ function passview(){
 
     if (eyespass.className === "fas fa-eye"){
         eyespass.className = "fas fa-eye-slash";
+        document.getElementById("input-password").type = "password";
     } else {
         eyespass.className = "fas fa-eye";
+        document.getElementById("input-password").type = "text";
     }
 }
+
+$(document).ready(function() {
+    console.log($("#actual-page").val());
+});

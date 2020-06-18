@@ -63,8 +63,8 @@ class Router
                 ...explode('@', $this->routes[$requestType][$uri])
             );
         }
-
-        throw new Exception('No route defined for this URI.');
+        
+        throw new \Exception('No route defined for this URI.');
     }
 
     /**

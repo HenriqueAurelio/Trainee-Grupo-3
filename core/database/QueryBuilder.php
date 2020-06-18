@@ -25,6 +25,32 @@ class QueryBuilder
         return $statement->fetchAll(PDO::FETCH_CLASS);
     }
 
+    public function selectLimitProducts($table, $offset) {
+        $statement = $this->pdo->prepare("select * from {$table} LIMIT {$offset}, 5");
+
+        $statement->execute();
+
+        return $statement->fetchAll(PDO::FETCH_CLASS);
+    }
+
+    public function insertProducts($table, $params)
+    {
+        $sql = sprintf(
+            'insert into %s (%s) values (%s)',
+            $table,
+            implode(', ', array_keys($parameters)),
+            ':' . implode(', :', array_keys($parameters))
+        );
+
+        try {
+            $statement = $this->pdo->prepare($sql);
+
+            $statement->execute($parameters);
+        } catch (\Exception $e) {
+            //
+        }
+         
+    }
     public function insert($table, $parameters)
     {
         $sql = sprintf(
@@ -71,7 +97,27 @@ class QueryBuilder
         return $statement->fetch(PDO::FETCH_OBJ);
          
     }
+
+    public function readLogin($table, $email)
+    {
+        $sql = "SELECT * FROM " . $table . " WHERE email = '{$email}'";
+
+        $statement = $this->pdo->prepare($sql);
+        $statement->execute();
+  
+        return $statement->fetch(PDO::FETCH_OBJ);
+    }
+    
     public function delete($table, $id)
+    {
+       $sql = "DELETE FROM " . $table . " WHERE id = :id";
+        $qry = $this->pdo->prepare($sql);
+        $qry->bindValue(":id", $id);
+        $qry->execute();
+
+    }
+
+    public function deleteProducts($table, $id)
     {
        $sql = "DELETE FROM " . $table . " WHERE id = :id";
         $qry = $this->pdo->prepare($sql);
