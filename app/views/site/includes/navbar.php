@@ -22,13 +22,13 @@
                       <a class="nav-link linkestilo" href="#">Produtos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link linkestilo" href="#">Sobre Nós</a>
+                        <a class="nav-link linkestilo" href="/sobre">Sobre Nós</a>
                      </li>
                      <li class="nav-item">
                         <a class="nav-link linkestilo" href="#">Login</a>
                      </li>
                      <li class="nav-item">
-                      <a class="nav-link linkestilo" href="#">Contato</a>
+                      <a class="nav-link linkestilo" href="/contato">Contato</a>
                     </li>
                   </ul>
                   <div class="pesquisa">
