@@ -9,11 +9,10 @@ class ProductsController
 {
     public function index() {
         $produtos = App::get('database')->selectAllProducts('produtos');
-
+        die(var_dump($produtos));
         foreach($produtos as $produto) {
             $produto->categoria = App::get('database')->selectAttrProducts('categorias', 'nome', $produto->categoria_id);
         }
-
         session_start();
         if (!isset($_SESSION['email'])) {
             return redirect('admin');
