@@ -1,4 +1,4 @@
-    <body>
+
       <footer class="footerbackground">
         <div class="container">
             <div class="row ">
@@ -40,4 +40,3 @@
               <p class="copyright" text-muted>Copyright &copy;Aurelio Livraria 2020</p>
             </div>
       </footer>
-    </body>
