@@ -1,0 +1,30 @@
+.navbar {
+    background-color: #c20e1a;
+}
+
+.nav-item {
+    font-size: 180%;  
+}
+
+
+.navbar-toggler {
+    width: 5rem;
+}
+
+.navbar-toggler-icon {
+    width: 3rem;
+} 
+
+
+.linkestilo {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.linkestilo:hover {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+
+

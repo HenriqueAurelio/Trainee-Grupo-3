@@ -1,0 +1,72 @@
+.admin-logo-text {
+    color: #fff;
+    text-decoration: none;
+}
+
+.admin-logo-text:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+.admin-sidebar {
+   position: fixed;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   z-index: 100;
+   padding: 48px 0 0;
+}
+
+.navbar .navbar-toggler {
+    background-color: #212529;
+    right: 1rem;
+}
+
+.nav-link {
+    color: #fff;
+    font-size: 18px;
+}
+
+.nav-link:hover {
+    color: #fff;
+    font-size: 18px;
+}
+
+.admin-submit-button {
+    background-color: #c20e1a;
+    color: #fff;
+}
+
+.admin-navbar-item {
+    width: 25px;
+}
+
+.img-view-crud{
+    float:left;
+}
+
+.admin-initial-logo{
+    width: 250px;
+}
+
+.admin-initial-title{
+    font-size: 40px;
+}
+
+.newbox-add-crud:focus{
+    border-color: #353a40 !important;
+    box-shadow: 0 0 10px #353a40 !important; 
+}
+
+.btn-crud{
+    background-color: #353a40 !important;
+    color: white !important;
+}
+
+.cabecalho-crud{
+    border-radius: 100px !important;
+}
+
+.admin-init-crud-buttons{
+    width: 200px;
+}
