@@ -975,3 +975,36 @@
     margin-left: 70px;
     margin-right: -17px;
 }
+
+.book-info {
+    font-size: 20px;
+}
+
+.display-none {
+    display: none;
+}
+
+.about-icon {
+    color: #c20e1a;
+}
+
+.site-about-text {
+    font-family: 'Carrois Gothic SC', sans-serif;
+}
+
+.site-about-group {
+    background-color: #d9d9d9;
+}
+
+.btn-go-back {
+    background-color: #c20e1a;
+}
+
+.white {
+    color: #fff;
+}
+
+.button-form-logout {
+    background-color: #343a40;
+    border: 0px;
+}

@@ -70,3 +70,7 @@
 .admin-init-crud-buttons{
     width: 200px;
 }
+
+.table-books-admin {
+    border-right: 1px solid #dee2e6 !important;
+}
