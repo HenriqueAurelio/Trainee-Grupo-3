@@ -109,4 +109,13 @@ class QueryBuilder
         $statement = $this->pdo->prepare($sql);
         $statement->execute();
     }
+
+    public function read($table, $value) {
+
+        $statement = $this->pdo->prepare("select * from {$table} WHERE id = {$value}");
+
+        $statement->execute();
+
+        return $statement->fetch(PDO::FETCH_OBJ);
+    }
 }

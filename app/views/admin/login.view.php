@@ -7,18 +7,18 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="../../../public/css/styles.css">
     <script src="https://kit.fontawesome.com/307d809775.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Carrois+Gothic&display=swap" rel="stylesheet">
 
     <title>Login</title>
   </head>
   <body>
+  <?php require($_SERVER['DOCUMENT_ROOT'].'/app/views/site/includes/navbar.php'); ?>
     <div class="container">
       <form method="POST" action="/login">
         <div class="row justify-content-center">
             <div class="emailsenha loginarea">
-              <h1 class="logintexto"><img class="loginimagem" src="../assets/img/aurelio_transparent.png"></h1>
+              <h1 class="logintexto"><img class="loginimagem" src="../../../public/img/aurelio_transparent.png"></h1>
               <?php 
                   if(!empty($message)) {
                     ?><div class="alert alert-danger" role="alert">
@@ -63,6 +63,7 @@
         </div>
       </form>
     </div>
+    <?php require($_SERVER['DOCUMENT_ROOT'].'/app/views/site/includes/footer.php'); ?>
 
     <!-- JavaScript (Opcional) -->
     <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->

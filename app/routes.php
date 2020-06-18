@@ -1,7 +1,6 @@
 <?php
 
 $router->get('admin', 'PagesController@login');
-// $router->get('admin/home', 'PagesController@home');
 $router->get('admin/novoproduto', 'PagesController@createProduct');
 $router->post('editarproduto', 'PagesController@editarProduto');
 $router->get('sobre', 'PagesController@sobre');
@@ -15,3 +14,9 @@ $router->post('produtos/limite', 'ProductsController@indexLimit');
 
 $router->post('login', 'LoginController@makeLogin');
 $router->post('logout', 'LoginController@logout');
+
+$router->post('informacoes-produto', 'ProductsController@produtoInfo');
+
+$router->get('contato', 'PagesController@contato');
+
+$router->get('admin/home', 'PagesController@admin');

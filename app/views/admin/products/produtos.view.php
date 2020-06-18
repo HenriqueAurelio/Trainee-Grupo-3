@@ -12,13 +12,11 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
         <title>Painel Administrativo</title>
-        <link rel="stylesheet" href="../../../../public/css/styles.css">
-        <link rel="stylesheet" href="../../../../public/css/admin-styles.css">
         <link href="https://fonts.googleapis.com/css2?family=Carrois+Gothic+SC&display=swap" rel="stylesheet">
         <script src="https://kit.fontawesome.com/9c2b80ca1e.js" crossorigin="anonymous"></script>
 	</head>
 	<body>
-        <?php require($_SERVER['DOCUMENT_ROOT'].'/app/views/admin/includes/head.php'); ?>
+        <?php require($_SERVER['DOCUMENT_ROOT'].'/app/views/admin/includes/nav.php'); ?>
         <div class = "container font-crud">
             <div class="row">
                 <div class="col-lg-2 col-md-3"></div>
