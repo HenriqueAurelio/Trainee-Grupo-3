@@ -7,9 +7,6 @@ use PDO;
 class QueryBuilder
 {
 
-<<<<<<< HEAD
-    
-=======
     protected $pdo;
 
 
@@ -121,5 +118,4 @@ class QueryBuilder
 
         return $statement->fetch(PDO::FETCH_OBJ);
     }
->>>>>>> master
 }

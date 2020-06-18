@@ -29,8 +29,8 @@
 }
 
 .btnContato{
-    background-color: #c20e1a;
-    color: white;
+    background-color: #c20e1a !important;
+    color: white !important;
 }
 
 .formico-contato{
@@ -47,8 +47,8 @@
 }
 
 .btnContato:hover {
-    background-color: #a3a0a0;
-    color: #000;
+    background-color: #a3a0a0 !important;
+    color: #000 !important;
 }
 
 .form-contato{
@@ -290,7 +290,7 @@
     width: 30%;
 }
 
-.navbar {
+.navbar-site {
     background-color: #c20e1a;
 }
 
@@ -397,17 +397,17 @@
 }
 
 .btn-product {
-    background-color: #c20e1a;
+    background-color: #c20e1a !important;
     font-family: 'Carrois Gothic', sans-serif;
     font-size: 16px;
     width: 100%;
     padding: 10px;
-    color: white;
+    color: white !important;
 }
 
 .btn-product:hover {
-    background-color: #a3a0a0;
-    color: #000;
+    background-color: #a3a0a0 !important;
+    color: #000 !important;
 }
 
 .tamanhocard {
