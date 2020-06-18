@@ -290,6 +290,10 @@
     width: 30%;
 }
 
+.navbar {
+    background-color: #c20e1a;
+}
+
 .nav-item {
     font-size: 180%;  
 }
@@ -958,32 +962,5 @@
     #search-bar-crud{
         text-align: center !important;
     }
-}
 
-.book-info {
-    font-size: 20px;
-}
-
-.display-none {
-    display: none;
-}
-
-.about-icon {
-    color: #c20e1a;
-}
-
-.site-about-text {
-    font-family: 'Carrois Gothic SC', sans-serif;
-}
-
-.site-about-group {
-    background-color: #d9d9d9;
-}
-
-.btn-go-back {
-    background-color: #c20e1a;
-}
-
-.white {
-    color: #fff;
 }

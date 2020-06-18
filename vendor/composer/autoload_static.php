@@ -4,29 +4,32 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit5679945a23d428f03de595eae28238ba
+class ComposerStaticInit2a49053a959e39c3b834c03f7dc3521f
 {
     public static $files = array (
         '5ec26a44593cffc3089bdca7ce7a56c3' => __DIR__ . '/../..' . '/core/helpers.php',
     );
 
     public static $classMap = array (
-        'App\\Controllers\\PagesController' => __DIR__ . '/../..' . '/app/controllers/PagesController.php',
-        'App\\Controllers\\ProductsController' => __DIR__ . '/../..' . '/app/controllers/ProductsController.php',
+        'App\\Controllers\\CategoriasController' => __DIR__ . '/../..' . '/app/controllers/CategoriasController.php',
         'App\\Core\\App' => __DIR__ . '/../..' . '/core/App.php',
         'App\\Core\\Database\\Connection' => __DIR__ . '/../..' . '/core/database/Connection.php',
         'App\\Core\\Database\\QueryBuilder' => __DIR__ . '/../..' . '/core/database/QueryBuilder.php',
         'App\\Core\\Request' => __DIR__ . '/../..' . '/core/Request.php',
         'App\\Core\\Router' => __DIR__ . '/../..' . '/core/Router.php',
-        'ComposerAutoloaderInit5679945a23d428f03de595eae28238ba' => __DIR__ . '/..' . '/composer/autoload_real.php',
+        'ComposerAutoloaderInit2a49053a959e39c3b834c03f7dc3521f' => __DIR__ . '/..' . '/composer/autoload_real.php',
         'Composer\\Autoload\\ClassLoader' => __DIR__ . '/..' . '/composer/ClassLoader.php',
-        'Composer\\Autoload\\ComposerStaticInit5679945a23d428f03de595eae28238ba' => __DIR__ . '/..' . '/composer/autoload_static.php',
+        'Composer\\Autoload\\ComposerStaticInit2a49053a959e39c3b834c03f7dc3521f' => __DIR__ . '/..' . '/composer/autoload_static.php',
+        'ErrorHandler' => __DIR__ . '/../..' . '/composer-setup.php',
+        'HttpClient' => __DIR__ . '/../..' . '/composer-setup.php',
+        'Installer' => __DIR__ . '/../..' . '/composer-setup.php',
+        'NoProxyPattern' => __DIR__ . '/../..' . '/composer-setup.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->classMap = ComposerStaticInit5679945a23d428f03de595eae28238ba::$classMap;
+            $loader->classMap = ComposerStaticInit2a49053a959e39c3b834c03f7dc3521f::$classMap;
 
         }, null, ClassLoader::class);
     }
