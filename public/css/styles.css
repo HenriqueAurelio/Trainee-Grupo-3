@@ -744,6 +744,7 @@
 }
 
 .procurar-crud{
+    width: 500px !important;
     margin-top: 5px;
     font-size: 20px;
 }
@@ -783,16 +784,19 @@
 }
 
 .btn-view-crud{
-    margin-left: -2px;
+
+    margin-left: 2px;
+    padding-left: 2px !important;
     background-color: #007bff;
     color: white;
 }
-
 .btn-view-crud:focus{
     border-color: #007bff !important;
     box-shadow: 0 0 10px #007bff !important; 
 }
-
+.vasco{
+    padding-left: 5px !important;
+}
 .btn-edit-crud{
     background-color: #28a745;
     color: white;
@@ -814,6 +818,7 @@
 
 .font-adjustment-crud{
     font-size: 16px;
+
 }
 
 .btn-crud-table{
