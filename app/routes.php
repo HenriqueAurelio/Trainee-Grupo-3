@@ -2,10 +2,11 @@
 
 
 
-    $router->get('produtos-site', 'PagesController@productsSite');
-
     $router->post('informacoes-produto', 'ProductsController@produtoInfo');
 
+    $router->get('contato', 'PagesController@contato');
+
+    
 
 
 ?>

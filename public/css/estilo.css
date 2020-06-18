@@ -8,7 +8,7 @@
 	text-align: left;
     font: bold 16px;
     font-family: 'Carrois Gothic SC', sans-serif !important;;
-	padding: 50px 50px 60px 50px;
+	padding: 30px 50px 60px 50px;
 	margin-top: 80px;
 }
 @media (max-height:800px){
@@ -40,7 +40,6 @@
     padding-top: 4px;
     color: #ffffff;
     font-size: 25px;
-    transition:.3s;
 }
 
 .contatos-footer li a i:hover{
@@ -49,14 +48,14 @@
 
 .footer-links ul {
     list-style-type: none;
-    font-size: 18px;  
-    padding: 15px 0px;;  
+    font-size: 18px;
+    padding: 15px 0px;  
+    text-align: center;  
 }
 
 
 .footer-links li a {
     color: #ffffff;
-    transition: color 0.3s;
 }
 
 .footer-links li a:hover{
@@ -69,7 +68,24 @@
     
 }
 
-
-.footer-info  {
-    width: 30%;
+@media(max-width:576px){
+    .footer-info{ 
+    clear: both;
+    min-width: 130px;
+    margin: auto;
 }
+}
+
+.footer-info{
+    width: 150px;
+    height: 150px;
+}
+
+.footer-conosco{
+    list-style: none;
+    
+}
+
+
+
+

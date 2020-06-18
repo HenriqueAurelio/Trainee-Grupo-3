@@ -6,11 +6,11 @@ class PagesController
 
 {
 
-    public function productsSite()
+    public function contato()
 
     {
 
-        return view('site/produtos.site');
+        return view('site/contato');
 
     }
 

@@ -290,10 +290,6 @@
     width: 30%;
 }
 
-.navbar {
-    background-color: #c20e1a;
-}
-
 .nav-item {
     font-size: 180%;  
 }
@@ -962,16 +958,32 @@
     #search-bar-crud{
         text-align: center !important;
     }
-
 }
 
-.btn-edit-indexcrud-margin-adjustment{
-    margin-top: -31px;
-    margin-left: 26px;
+.book-info {
+    font-size: 20px;
 }
 
-.btn-delete-indexcrud-margin-adjustment{
-    margin-top: -56px;
-    margin-left: 70px;
-    margin-right: -17px;
+.display-none {
+    display: none;
+}
+
+.about-icon {
+    color: #c20e1a;
+}
+
+.site-about-text {
+    font-family: 'Carrois Gothic SC', sans-serif;
+}
+
+.site-about-group {
+    background-color: #d9d9d9;
+}
+
+.btn-go-back {
+    background-color: #c20e1a;
+}
+
+.white {
+    color: #fff;
 }
