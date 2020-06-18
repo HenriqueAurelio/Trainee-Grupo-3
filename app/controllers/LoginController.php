@@ -22,7 +22,7 @@ class LoginController
         else {
             session_start();
             $_SESSION['email'] = $_POST['email'];
-            return view('admin/index');
+            return view('admin/admin-inicio');
         }
     }
 

@@ -10,13 +10,17 @@ class PagesController
         return view('admin/login');
     }
 
-    /* public function home() {
+    public function admin()
+
+    {
+
         session_start();
         if (!isset($_SESSION['email'])) {
-            return redirect('');
+            return redirect('admin');
         }
-        return view('admin/index');
-    } */
+        return view('admin/admin-inicio');
+
+    }
 
     public function homeSite() {
         return view('site/home');
@@ -48,5 +52,13 @@ class PagesController
 
     public function sobre() {
         return view('site/sobre');
+    }
+    
+    public function contato()
+
+    {
+
+        return view('site/contato');
+
     }
 }

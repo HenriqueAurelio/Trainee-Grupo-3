@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Core\App;
 
 class ProductsController
+
 {
     public function index() {
         $produtos = App::get('database')->selectAllProducts('produtos');
@@ -84,4 +85,14 @@ class ProductsController
 
         return redirect('admin/produtos');
     }
+
+    public function produtoInfo()
+
+    {
+
+        $produto=App::get('database')->read('produtos', $_POST['id']);
+
+        return view('site/produto-info', compact('produto'));
+        
+    } 
 }

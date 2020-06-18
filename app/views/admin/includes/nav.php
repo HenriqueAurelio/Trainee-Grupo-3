@@ -14,9 +14,11 @@
     </head>
     <body>
         <nav class="navbar navbar-dark crud-navbar sticky-top" id="crud-sidebar">
-            <a class="admin-logo-text navbar-brand" href="#">
-               <img id="admin-navbar-logo" src="../../../public/img/aurelio_transparent.png" width="80" height="80">
-            </a>
+            <div>
+                <a class="admin-logo-text navbar-brand" href="#">
+                    <img id="admin-navbar-logo" src="../../../public/img/aurelio_transparent.png" width="80" height="80">
+                </a>
+            </div>
             <button class="navbar-toggler d-md-none collapsed" id="toggle-button" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
