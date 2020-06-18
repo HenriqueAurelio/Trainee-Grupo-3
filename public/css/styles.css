@@ -987,3 +987,8 @@
 .white {
     color: #fff;
 }
+
+.button-form-logout {
+    background-color: #343a40;
+    border: 0px;
+}

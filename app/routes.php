@@ -1,14 +1,17 @@
 <?php
 
-$router->get('', 'PagesController@home');
-$router->get('novoproduto', 'PagesController@createProduct');
+$router->get('admin', 'PagesController@login');
+// $router->get('admin/home', 'PagesController@home');
+$router->get('admin/novoproduto', 'PagesController@createProduct');
 $router->post('editarproduto', 'PagesController@editarProduto');
 $router->get('sobre', 'PagesController@sobre');
 
-$router->get('produtos', 'ProductsController@index');
+$router->get('admin/produtos', 'ProductsController@index');
 $router->post('produtos', 'ProductsController@create');
 $router->post('produtos/editar', 'ProductsController@update');
 $router->post('produtos/mostrar', 'ProductsController@show');
 $router->post('produtos/deletar', 'ProductsController@delete');
+$router->post('produtos/limite', 'ProductsController@indexLimit');
 
-$router->get('sobre', 'PagesController@sobre');
+$router->post('login', 'LoginController@makeLogin');
+$router->post('logout', 'LoginController@logout');

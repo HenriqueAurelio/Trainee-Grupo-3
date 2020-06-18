@@ -7,25 +7,31 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../../../public/css/styles.css">
     <script src="https://kit.fontawesome.com/307d809775.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Carrois+Gothic&display=swap" rel="stylesheet">
-    <script type="text/javascript" src="../assets/js/scripts.js"></script>
 
     <title>Login</title>
   </head>
   <body>
     <div class="container">
-      <form>
+      <form method="POST" action="/login">
         <div class="row justify-content-center">
             <div class="emailsenha loginarea">
               <h1 class="logintexto"><img class="loginimagem" src="../assets/img/aurelio_transparent.png"></h1>
+              <?php 
+                  if(!empty($message)) {
+                    ?><div class="alert alert-danger" role="alert">
+                    <?= $message[0]; ?>
+                  </div> <?php
+                  } 
+              ?>
               <label for="validationCustomUsername" class="emailarea">Endereço de email:</label>
               <div class="input-group emailarea">
                 <div class="input-group-prepend">
                   <span class="input-group-text userlogin" id="inputGroupPrepend"><i class="fas fa-user"></i></span>
                 </div>
-                <input type="email" class="form-control" id="validationCustomUsername" placeholder="Ex. lirvrariaaurelio@gmail.com" aria-describedby="inputGroupPrepend" required>
+                <input name="email" type="email" class="form-control" id="validationCustomUsername" placeholder="Ex. livrariaaurelio@gmail.com" aria-describedby="inputGroupPrepend" required>
                 <div class="invalid-feedback">
                   Por favor, insira um endereço de email valido.
                 </div>
@@ -35,9 +41,9 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text senicon" id="inputGroupPrepend"><i class="fas fa-key"></i></span>
                 </div>
-                <input type="password" class="form-control border-right-0 " id="validationCustomUsername" placeholder="Senha" aria-describedby="inputGroupPrepend" required>
+                <input id="input-password" name="senha" type="password" class="form-control border-right-0 " id="validationCustomUsername" placeholder="Senha" aria-describedby="inputGroupPrepend" required>
                 <div class="input-group-append senhi">
-                  <span class="input-group-text senhaicon border-left-0" onclick="passview()"><i id="senhaicon" class="fas fa-eye"></i></span>
+                  <span class="input-group-text senhaicon border-left-0" onclick="passview()"><i id="senhaicon" class="fas fa-eye-slash"></i></span>
                 </div>
                 <!--<div class="input-group-append senhi">
                   <button onclick="passview()" class="btn btn-outline-secondary senhaicon" type="button" id="button-addon2"><i id="senhaicon" class="fas fa-eye"></i></button>
@@ -63,5 +69,6 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="../../../../public/js/scripts.js"></script>
   </body>
 </html>

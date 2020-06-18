@@ -24,7 +24,7 @@
 
                   <li><i class="ion-ios-arrow-right"><a href="#">Produtos</a></i></li> 
 
-                  <li><i class="ion-ios-arrow-right"><a href="#">Sobre Nós</a></i></li>  
+                  <li><i class="ion-ios-arrow-right"><a href="/sobre">Sobre Nós</a></i></li>  
 
                   <li><i class="ion-ios-arrow-right"><a href="#">Login</a></i></li>
 

@@ -28,17 +28,17 @@
                         <ul class="nav flex-column">
                             <li class="nav-item">
                                 <a class="nav-link" href="#">
-                                    Bem-vindo, Gabriel!
+                                    Bem-vindo!
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active" href="/">
+                                <a class="nav-link active" href="/admin/home">
                                     <i class="fas fa-home admin-navbar-item"></i>
                                    <span class="admin-navbar-item">Home</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/produtos">
+                                <a class="nav-link" href="/admin/produtos">
                                     <i class="fas fa-book-open admin-navbar-item"></i>
                                     <span class="admin-navbar-item">Livros</span>
                                 </a>
@@ -56,10 +56,12 @@
                                 </a>
                             </li>
                             <li class="nav-item mt-3">
-                                <a class="nav-link" href="#">
-                                    <i class="fas fa-sign-out-alt admin-navbar-item"></i>
-                                    Sair
-                                </a>
+                                <form method="POST" action="/logout">
+                                    <button class="nav-link button-form-logout" type="submit">
+                                        <i class="fas fa-sign-out-alt admin-navbar-item"></i>
+                                        Sair
+                                    </button>
+                                </form>    
                             </li>
                         </ul>
                     </div>

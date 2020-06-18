@@ -1,4 +1,8 @@
-<?php $i = 0; ?>
+<?php 
+    $i = 0;
+    $limit = 5;
+    $num_pages = ceil(count($produtos) / $limit);
+?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -25,7 +29,7 @@
             <div class="row">
                     <div class="col-lg-2 col-md-3"></div>
                     <div class="col-lg-5 col-md-4" id="add-crud-responsive">
-                        <a href="/novoproduto"><button type="button" class="btn newbox-add-crud btn-crud btn-lg mb-5 mt-5 cabecalho-crud"><i class="fas fa-plus mr-3"></i>Adicionar</button></a>
+                        <a href="/admin/novoproduto"><button type="button" class="btn newbox-add-crud btn-crud btn-lg mb-5 mt-5 cabecalho-crud"><i class="fas fa-plus mr-3"></i>Adicionar</button></a>
                     </div>
                     <div class="col-lg-5 col-md-5" id="search-bar-crud">    
                         <div class="input-group mt-5 mb-5 responsive-search-crud float-right">
@@ -47,25 +51,25 @@
                                 </tr>
                             </thead>
                             <tbody>
-                            <?php foreach ($produtos as $produto) : ?>
+                            <?php foreach ($produtos_limite as $produto) : ?>
                                 <tr class="border-top border-bottom">
                                     <th class="font-adjustment-crud" scope="row" ><?= utf8_encode($produto->nome); ?></th>
                                     <td class="font-adjustment-crud"><?= utf8_encode($produto->categoria->nome); ?></td>
                                     <td class="font-adjustment-crud">R$ <?= utf8_encode($produto->preco) ?></td>
                                     <td class="font-adjustment-crud border-right-0">
-                                        <form method="POST" action="produtos/mostrar">
+                                        <form method="POST" action="/produtos/mostrar">
                                             <input type="hidden" value="<?= $produto->id; ?>" name="id">
                                             <button type="submit" class="btn btn-view-crud btn-crud-table newbox-crud btn-sm view-table-crud"><i class="fas fa-eye adjust-eyeicon-crud"></i></button>
                                         </form>
                                     </td>
                                     <td class="font-adjustment-crud border-0">    
-                                        <form method="POST" action="editarproduto">
+                                        <form method="POST" action="/editarproduto">
                                             <input type="hidden" value="<?= $produto->id; ?>" name="id">
                                             <button type="submit" class="btn btn-edit-crud btn-crud-table newbox-crud btn-sm ml-2"><i class="fas fa-edit mr-1"></i></button>
                                         </form>
                                     </td>
                                     <td class="font-adjustment-crud border-0 table-books-admin">
-                                    <form method="POST" action="produtos/deletar">
+                                    <form method="POST" action="/produtos/deletar">
                                         <input type="hidden" value="<?= $produto->id; ?>" name="id">
                                         <button type="button" class="btn btn-delete-crud btn-crud-table newbox-crud btn-sm ml-2" data-toggle="modal" data-target="#exampleModalCenter<?= $i; ?>"><i class="far fa-trash-alt"></i></button>
                                         <div class="modal fade" id="exampleModalCenter<?= $i; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -98,18 +102,57 @@
                 </div>    
             </div>
 
+            <?php
+                $ids = array();
+                foreach($produtos as $produto) {
+                    array_push($ids, $produto->id);
+                } 
+                $actual_page = array_search($produtos_limite[0]->id, $ids);
+                $possible = $actual_page + 5;
+                if ($possible <= count($produtos)) {
+                    $exists = 1;
+                }
+                else {
+                    $exists = 0;
+                }
+            ?>
+
             <nav aria-label="pagination-crud">
                 <ul class="pagination justify-content-end" id="paginacao-crud-responsive">
-                  <li class="page-item"><a class="page-link pagination-crud-buttons newbox-crud" href="#"><</a></li>
-                  <li class="page-item actpago" id="actpago" onclick="actpago()"><a class="page-link pagination-crud-buttons newbox-crud" id="actpagol" href="#">1</a></li>
-                  <li class="page-item actpags" id="actpags" onclick="actpags()"><a class="page-link pagination-crud-buttons newbox-crud" id="actpagsl" href="#">2</a></li>
-                  <li class="page-item actpagt" id="actpagt" onclick="actpagt()"><a class="page-link pagination-crud-buttons newbox-crud" id="actpagtl" href="#">3</a></li>
-                  <li class="page-item"><a class="page-link pagination-crud-buttons newbox-crud" href="#">></a></li>
+                  <li class="page-item">
+                    <form method="POST" action="/produtos/limite">
+                    <?php if ($actual_page == 0) : ?>
+                        <input type="hidden" name="offset" value="<?= $actual_page; ?>" />
+                    <?php else : ?>
+                        <input type="hidden" name="offset" value="<?= ($actual_page - 5); ?>" />
+                    <?php endif; ?>       
+                    <button type="submit" class="page-link pagination-crud-buttons newbox-crud"><</button>
+                    </form>
+                   </li>
+                  <?php for ($j = 1; $j <= $num_pages; $j++) : ?>
+                    <li class="page-item actpago">
+                        <form method="POST" action="/produtos/limite">
+                            <input id="actual_page" type="hidden" name="offset" value="<?= ($j*5)-5; ?>"/>
+                            <button type="submit" class="page-link pagination-crud-buttons newbox-crud"><?= $j; ?></a>
+                        </form>
+                    </li>
+                  <?php endfor; ?>
+                  <li class="page-item">
+                    <form method="POST" action="/produtos/limite">
+                    <?php if ($exists == 1) : ?>
+                        <input type="hidden" name="offset" value="<?= ($actual_page + 5); ?>" />
+                    <?php else : ?>
+                        <input type="hidden" name="offset" value="<?= $actual_page; ?>" />
+                    <?php endif; ?>        
+                    <button type="submit" class="page-link pagination-crud-buttons newbox-crud">></button>
+                    </form>
+                   </li>
                 </ul>
               </nav>
         </div>
         
         <script src="../../../../public/js/admin-script.js"></script>
+        <script src="../../../../public/js/scripts.js"></script>
     </body>
 
 

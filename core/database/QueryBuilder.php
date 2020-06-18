@@ -32,6 +32,14 @@ class QueryBuilder
         return $statement->fetch(PDO::FETCH_OBJ);
     }
 
+    public function selectLimitProducts($table, $offset) {
+        $statement = $this->pdo->prepare("select * from {$table} LIMIT {$offset}, 5");
+
+        $statement->execute();
+
+        return $statement->fetchAll(PDO::FETCH_CLASS);
+    }
+
     public function insertProducts($table, $params)
     {
       $sql = sprintf(
@@ -82,6 +90,16 @@ class QueryBuilder
       $statement->execute();
 
       return $statement->fetch(PDO::FETCH_OBJ);
+    }
+
+    public function readLogin($table, $email)
+    {
+        $sql = "SELECT * FROM " . $table . " WHERE email = '{$email}'";
+
+        $statement = $this->pdo->prepare($sql);
+        $statement->execute();
+  
+        return $statement->fetch(PDO::FETCH_OBJ);
     }
 
     public function deleteProducts($table, $id)
