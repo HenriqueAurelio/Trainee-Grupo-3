@@ -5,19 +5,19 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Página Produto</title>
-        <link rel="stylesheet" href="../assets/css/products.style.css">
+        <link rel="stylesheet" href="../../../public/css/products.style.css">
     </head>
     <body class="product-page">
         <div class="container page">
             <div class="img-box">
-                <img class="vizualizacao" src="../assets/img/zinco.jpg">
+                <img class="vizualizacao" src="../../../public/img/<?= $produto->foto; ?>">
             </div>
             <div class="text-box">
-                <h1 class="name">Meninos de zinco<br><span class="alteracao">Svetlana Aleksiévitch</span></h1>
+                <h1 class="name"><?= $produto->nome ?><br><span class="alteracao">Svetlana Aleksiévitch</span></h1>
                 <p class="product-description">
-                    Meninos de zinco provocou enorme controvérsia por seu olhar perspicaz e angustiante sobre as realidades da guerra. A brutalidade da guerra soviético-afegã é retratada neste livro extraordinário, com o olhar sempre preciso e humano de Svetlana Aleksiévitch.
+                    <?= $produto->descricao ?>
                 </p>
-                <h2 class="valor">R$ 80,00</h2>
+                <h2 class="valor">R$ <?= $produto->preco ?></h2>
                 <button class="botao">Comprar</button>
             </div>
         </div>
