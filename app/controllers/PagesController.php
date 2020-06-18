@@ -25,7 +25,7 @@ class PagesController
     public function createProduct() {
         session_start();
         if (!isset($_SESSION['email'])) {
-            return redirect('');
+            return redirect('admin');
         }
         $categorias = App::get('database')->selectAllProducts('categorias');
 
@@ -35,7 +35,7 @@ class PagesController
     public function editarProduto() {
         session_start();
         if (!isset($_SESSION['email'])) {
-            return redirect('');
+            return redirect('admin');
         }
         $id = $_POST['id'];
 

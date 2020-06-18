@@ -15,7 +15,7 @@ class ProductsController
 
         session_start();
         if (!isset($_SESSION['email'])) {
-            return redirect('');
+            return redirect('admin');
         }
 
         $produtos_limite = App::get('database')->selectLimitProducts('produtos', 0);
@@ -35,7 +35,7 @@ class ProductsController
 
         session_start();
         if (!isset($_SESSION['email'])) {
-            return redirect('');
+            return redirect('admin');
         }
 
         $produtos_limite = App::get('database')->selectLimitProducts('produtos', $_POST['offset']);
