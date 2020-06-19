@@ -22,17 +22,14 @@ class ComposerStaticInit2a49053a959e39c3b834c03f7dc3521f
         'App\\Core\\Request' => __DIR__ . '/../..' . '/core/Request.php',
         'App\\Core\\Router' => __DIR__ . '/../..' . '/core/Router.php',
         'ComposerAutoloaderInit2a49053a959e39c3b834c03f7dc3521f' => __DIR__ . '/..' . '/composer/autoload_real.php',
-        'Composer\\Autoload\\ClassLoader' => __DIR__ . '/..' . '/composer/ClassLoader.php',
+        'ComposerAutoloaderInitdc847c494bd926f7652783e4f97fa4e0' => __DIR__ . '/../..' . '/crudusuario/vendor/composer/autoload_real.php',
+        'Composer\\Autoload\\ClassLoader' => __DIR__ . '/../..' . '/crudusuario/vendor/composer/ClassLoader.php',
         'Composer\\Autoload\\ComposerStaticInit2a49053a959e39c3b834c03f7dc3521f' => __DIR__ . '/..' . '/composer/autoload_static.php',
+        'Composer\\Autoload\\ComposerStaticInitdc847c494bd926f7652783e4f97fa4e0' => __DIR__ . '/../..' . '/crudusuario/vendor/composer/autoload_static.php',
         'ErrorHandler' => __DIR__ . '/../..' . '/composer-setup.php',
         'HttpClient' => __DIR__ . '/../..' . '/composer-setup.php',
         'Installer' => __DIR__ . '/../..' . '/composer-setup.php',
         'NoProxyPattern' => __DIR__ . '/../..' . '/composer-setup.php',
-        'ComposerAutoloaderInit5679945a23d428f03de595eae28238ba' => __DIR__ . '/..' . '/composer/autoload_real.php',
-        'ComposerAutoloaderInitdc847c494bd926f7652783e4f97fa4e0' => __DIR__ . '/../..' . '/crudusuario/vendor/composer/autoload_real.php',
-        'Composer\\Autoload\\ClassLoader' => __DIR__ . '/../..' . '/crudusuario/vendor/composer/ClassLoader.php',
-        'Composer\\Autoload\\ComposerStaticInit5679945a23d428f03de595eae28238ba' => __DIR__ . '/..' . '/composer/autoload_static.php',
-        'Composer\\Autoload\\ComposerStaticInitdc847c494bd926f7652783e4f97fa4e0' => __DIR__ . '/../..' . '/crudusuario/vendor/composer/autoload_static.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

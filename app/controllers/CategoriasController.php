@@ -10,12 +10,17 @@ class CategoriasController
      * Show all users.
      */
     public function index()
-    {
+    {   
+        session_start();
+        if (!isset($_SESSION['email'])) {
+            return redirect('admin');
+        }
         $categorias = App::get('database')->selectAll('categorias');
 
         return view('admin/categorias', compact('categorias'));
+       
     }
-
+    
     /**
      * Store a new user in the database.
      */
