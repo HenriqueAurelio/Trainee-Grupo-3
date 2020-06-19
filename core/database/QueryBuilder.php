@@ -182,6 +182,16 @@ class QueryBuilder
         return $statement->fetch(PDO::FETCH_OBJ);
     }
 
+    public function editmodifi($table, $id)
+    {
+        $statement = $this->pdo->prepare("select * from {$table} WHERE id = $id");
+
+        $statement->execute();
+
+        return $statement->fetch(PDO::FETCH_OBJ);
+      
+      
+    }
 }
 
 

@@ -15,3 +15,7 @@ $(document).ready(function() {
 });
 
 $('#exampleFormControlInput2').maskMoney({prefix:'R$ ', allowNegative: true, thousands:'.', decimal:',', affixesStay: false});
+
+$('form').submit(function() {
+    $(this).find("button[type='submit']").prop('disabled',true);
+});

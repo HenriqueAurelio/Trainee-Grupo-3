@@ -60,7 +60,7 @@
                     <div class="row">
                         <div class="col-lg-11 col-8"></div>
                         <div class="col-lg-1 col-4">
-                            <button type="submit" class="btn admin-submit-button">Cadastrar</button>
+                            <button id="btnClick" type="submit" class="btn admin-submit-button">Cadastrar</button>
                         </div>    
                     </div>    
                 </form>    
