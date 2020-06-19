@@ -54,35 +54,37 @@
                                 <button type="submit" class="btn btn-edit-crud btn-crud-table newbox-crud btn-sm ml-2 vasco"><i class="fas fa-edit mr-1"></i></button>
                               </form>
                               <form class="crudform">
-                                <button type="button" class="btn btn-delete-crud btn-crud-table newbox-crud btn-sm ml-2 vasco" data-toggle="modal" data-target="#exampleModalCenter <?= $i; ?>" ><i class="far fa-trash-alt"></i></button>
+                                <button type="button" class="btn btn-delete-crud btn-crud-table newbox-crud btn-sm ml-2 vasco" data-toggle="modal" data-target="#exampleModalCenter<?= $i; ?>" ><i class="far fa-trash-alt"></i></button>
                               </form>
                               </div>
-                            </td>
-                            
-                            <div class="modal fade" id="exampleModalCenter <?= $i; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                              <div class="modal fade" id="exampleModalCenter<?= $i; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                               <div class="modal-dialog modal-dialog-centered" role="document">
                                 <div class="modal-content">
                                   <div class="modal-header">
-                                    <h5 class="modal-title font-modaltitle-crud" id="exampleModalLongTitle">Excluir Livro</h5>
+                                    <h5 class="modal-title font-modaltitle-crud" id="exampleModalLongTitle">Excluir Categoria</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                       <span aria-hidden="true">&times;</span>
                                     </button>
                                   </div>
                                   <div class="modal-body font-modalbody-crud">
-                                    Tem certeza que deseja excluir este livro?
+                                    Tem certeza que deseja excluir esta categoria?
                                   </div>
                                   
                                   <div class="modal-footer">
                                     <form method="POST" action="/categorias/delete">
                                       <input type="hidden" name="id" value="<?= $categoria->id ?>">
-                                      <button type="submit" class="btn ">Sim</button>
+                                      <button type="submit" class="btn btn-primary">Sim</button>
                                     </form>
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Não</button>
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Não</button>
                                   </div>
                                 </div>
                               </div>
                             </div>
+                            </td>
+                            
+                            
                         </tr>
+                        <?php $i++; ?>
                       <?php endforeach; ?>
                     </tbody>
                 </table>

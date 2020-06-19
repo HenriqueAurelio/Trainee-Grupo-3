@@ -15,7 +15,7 @@
     <body>
         <nav class="navbar navbar-dark crud-navbar sticky-top">
             <a class="admin-logo-text navbar-brand" href="#">
-               <img id="admin-navbar-logo" src="../assets/img/aurelio_transparent.png" width="80" height="80">
+               <img id="admin-navbar-logo" src="..\public\img\aurelio_transparent.png" width="80" height="80">
             </a>
             <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
