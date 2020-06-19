@@ -11,6 +11,10 @@ class UsersController
      */
     public function index()
     {
+        session_start();
+        if (!isset($_SESSION['email'])) {
+            return redirect('admin');
+        }
         $users = App::get('database')->selectAll('usuarios');
 
         return view('admin/users', compact('users'));
