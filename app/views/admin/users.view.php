@@ -8,7 +8,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
         <title>Painel Administrativo</title>
-        <link rel="stylesheet" href="../public/css/styles.css">
+        <link rel="stylesheet" href="../public/css/style.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css2?family=Carrois+Gothic+SC&display=swap" rel="stylesheet">
         <script type="text/javascript" src="../assets/js/scripts.js"></script>
@@ -29,7 +29,7 @@
                         </div>
                     </div>
             </div>
-            <div class = "table-responsive">
+            <div class = "table-sm-responsive">
                 <table class="table table-striped table-bordered">
                     <thead>
                         <tr>
@@ -43,35 +43,37 @@
                             <tr>
                                 <td class="font-adjustment-crud"><?= $user->email; ?></td>
                                 <td class="font-adjustment-crud"><?= $user->senha; ?></td>
-                                <td class="font-adjustment-crud">
-                                  <form method="POST" action="usuarios/visualizar">
-                                    <input name="id" type="hidden" value="<?= $user->id ?>">
-                                    <button type="submit" class="btn btn-view-crud btn-crud-table newbox-crud btn-sm view-table-crud"><i class="fas fa-eye adjust-eyeicon-crud"></i></button>
-                                  </form>
-                                  <form method="POST" action="usuarios/editar">
-                                    <input name="id" type="hidden" value="<?= $user->id ?>"> 
-                                    <button type="submit" class="btn btn-edit-crud btn-crud-table newbox-crud btn-sm ml-2"><i class="fas fa-edit mr-1"></i></button>
-                                  </form> 
-                                  <button type="button" class="btn btn-delete-crud btn-crud-table newbox-crud btn-sm ml-2" data-toggle="modal" data-target="#exampleModalCenter <?= $i; ?>"><i class="far fa-trash-alt"></i></button>
+                                <td class="font-adjustment-crud border-right-0">
+                                  <div class="row">
+                                    <form method="POST" action="usuarios/visualizar" class="ml-4">
+                                      <input name="id" type="hidden" value="<?= $user->id ?>">
+                                      <button type="submit" class="btn btn-view-crud btn-crud-table newbox-crud btn-sm view-table-crud"><i class="fas fa-eye adjust-eyeicon-crud"></i></button>
+                                    </form>
+                                    <form method="POST" action="usuarios/editar">
+                                      <input name="id" type="hidden" value="<?= $user->id ?>"> 
+                                      <button type="submit" class="btn btn-edit-crud btn-crud-table newbox-crud btn-sm ml-2"><i class="fas fa-edit mr-1"></i></button>
+                                    </form> 
+                                    <button type="button" class="btn btn-delete-crud btn-crud-table newbox-crud btn-sm ml-2" data-toggle="modal" data-target="#exampleModalCenter <?= $i; ?>"><i class="far fa-trash-alt"></i></button>
+                                  </div>
                                 </td>
                                 <div class="modal fade" id="exampleModalCenter <?= $i; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                     <div class="modal-dialog modal-dialog-centered" role="document">
                                       <div class="modal-content">
                                         <div class="modal-header">
-                                          <h5 class="modal-title font-modaltitle-crud" id="exampleModalLongTitle">Excluir Livro</h5>
+                                          <h5 class="modal-title font-modaltitle-crud" id="exampleModalLongTitle">Excluir Usuário</h5>
                                           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                           </button>
                                         </div>
                                         <div class="modal-body font-modalbody-crud">
-                                          Tem certeza que deseja excluir este livro?
+                                          Tem certeza que deseja excluir este usuário?
                                         </div>
                                         <div class="modal-footer">
                                         <form method="POST" action="usuarios/deletar">
                                             <input type="hidden" name="id" value="<?= $user->id ?>"> 
                                             <button type="submit" class="btn btn-primary">Sim</button>
                                         </form>  
-                                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Não</button>
+                                          <button type="button" class="btn btn-danger" data-dismiss="modal">Não</button>
                                         </div>
                                       </div>
                                     </div>
@@ -86,13 +88,13 @@
                 <div class="modal-dialog modal-dialog-centered" role="document">
                   <div class="modal-content">
                     <div class="modal-header">
-                      <h5 class="modal-title font-modaltitle-crud" id="exampleModalLongTitle">Excluir Livro</h5>
+                      <h5 class="modal-title font-modaltitle-crud" id="exampleModalLongTitle">Excluir Usuário</h5>
                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                       </button>
                     </div>
                     <div class="modal-body font-modalbody-crud">
-                      Tem certeza que deseja excluir este livro?
+                      Tem certeza que deseja excluir este usuário?
                     </div>
                     <div class="modal-footer">
                     <form method=POST action=usuario/deletar>
