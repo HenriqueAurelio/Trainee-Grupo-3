@@ -40,8 +40,8 @@
                     </thead>
                     <tbody>
                       <tr>
-                        <th><?= $categoriasRead->nome ?><th>
-                    <tr>
+                        <th><?= $categoriasRead->nome ?></th>
+                    </tr>
                     </tbody>
                 </table>
             </div>
