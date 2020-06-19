@@ -13,7 +13,7 @@
         <title>Aurelio Livraria - Admin</title>    
     </head>
     <body>
-        <nav class="navbar navbar-dark crud-navbar sticky-top">
+        <nav class="navbar-dark crud-navbar sticky-top">
             <a class="admin-logo-text navbar-brand" href="#">
                <img id="admin-navbar-logo" src="..\public\img\aurelio_transparent.png" width="80" height="80">
             </a>
