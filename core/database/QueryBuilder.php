@@ -203,6 +203,15 @@ class QueryBuilder
 
          
     }
+    public function categoriaspr($table, $id)
+    {
+        
+        $statement = $this->pdo->prepare("select * from {$table} WHERE categoria_id LIKE '%{$id}%'");
+        
+        $statement->execute();
+
+        return $statement->fetchAll(PDO::FETCH_CLASS);
+    }
 
 }
 
