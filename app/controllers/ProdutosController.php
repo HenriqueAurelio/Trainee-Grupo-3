@@ -12,14 +12,14 @@ class ProdutosController
     public function inventario()
     {
         $produtos = App::get('database')->selectAll('produtos');
-        $categorias = App::get('database')->selectAll('categorias');
+        $categorias = App::get('database')->selectAlfCat('categorias');
 
         return view('site/products', compact('produtos','categorias'));
     }
 
     public function teste()
     {   
-        $categorias = App::get('database')->selectAll('categorias');
+        $categorias = App::get('database')->selectAlfCat('categorias');
         $produtos = App::get('database')->pesquisa('produtos', $_POST['pesquisa']);
         
         return view('site/products', compact('produtos','categorias'));
@@ -27,7 +27,7 @@ class ProdutosController
 
     public function categoriasPr()
     {   
-        $categorias = App::get('database')->selectAll('categorias');
+        $categorias = App::get('database')->selectAlfCat('categorias');
         $produtos = App::get('database')->categoriaspr('produtos',$_POST['Catid']);
         
         

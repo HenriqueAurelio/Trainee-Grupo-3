@@ -212,6 +212,14 @@ class QueryBuilder
 
         return $statement->fetchAll(PDO::FETCH_CLASS);
     }
+    public function selectAlfCat($table)
+    {
+        $statement = $this->pdo->prepare("select * from {$table} ORDER BY nome");
+
+        $statement->execute();
+
+        return $statement->fetchAll(PDO::FETCH_CLASS);
+    }
 
 }
 
