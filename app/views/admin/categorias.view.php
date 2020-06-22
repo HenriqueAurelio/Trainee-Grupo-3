@@ -1,12 +1,29 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<?php $i=0; ?>
+<?php
+    $i = 0;
+    if (isset($categorias_limite)) {
+        $limit = 5;
+        $num_pages = ceil(count($categorias) / $limit);
+        $ids = array();
+        foreach($categorias as $categoria) {
+            array_push($ids, $categoria->id);
+        } 
+        $actual_page = array_search($categorias_limite[0]->id, $ids);
+        $possible = $actual_page + 5;
+        if ($possible <= count($categorias)) {
+            $exists = 1;
+        }
+        else {
+            $exists = 0;
+        }
+    }    
+?>
 	<head> 
 
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
         <title>Painel Administrativo</title>
-        <link rel="stylesheet" href="../public/css/style.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css2?family=Carrois+Gothic+SC&display=swap" rel="stylesheet">
         <script type="text/javascript" src="../../../../assets/js/scripts.js"></script>
@@ -15,89 +32,139 @@
 	</head>
 	
 	<body>
+        <?php require($_SERVER['DOCUMENT_ROOT'].'/app/views/admin/includes/nav.php'); ?>
         <div class = "container font-crud">
-            <h1 class="mt-5 pt-3 start-crud">Categorias</h1>
+        <div class="row">
+                <div class="col-lg-2 col-md-3"></div>
+                <div class="col-lg-10 col-md-9">
+                    <h1 class="mt-5 pt-3 start-crud">Categorias</h1>
+                </div>    
+            </div>    
             <div class="row">
-                    <div class="col-md-3" id="add-crud-responsive">
-                        <a href="categorias/cadastrar"><button type="button" class="btn newbox-add-crud btn-crud btn-lg mb-5 mt-5 cabecalho-crud"><i class="fas fa-plus mr-3"></i>Adicionar</button><a>
+                <div class="col-lg-2 col-md-3"></div>
+                <div class="col-lg-5 col-md-4" id="add-crud-responsive">
+                    <a href="/categorias/cadastrar"><button type="button" class="btn newbox-add-crud btn-crud btn-lg mb-5 mt-5 cabecalho-crud"><i class="fas fa-plus mr-3"></i>Adicionar</button></a>
+                </div>
+                <div class="col-lg-5 col-md-5" id="search-bar-crud">    
+                    <div class="input-group mt-5 mb-5 responsive-search-crud float-right">
+                        <span class = "procurar-crud">Pesquisar:</span>
+                        <form action="/categorias/pesquisa" method="POST">
+                            <input name="pesquisa" type="text" class="form-control float-right newbox-crud input-crud-responsive cabecalho-crud ml-3" placeholder="Categoria..." aria-label="Recipient's username" aria-describedby="basic-addon2">
+                            <button class="btn btn-outline-danger my-2 my-sm-0 butaoPes" type="submit"><i class="fas fa-search"></i></button>   
+                        </form>
                     </div>
+                </div>
             </div>
-            <div class="row d-flex justify-content-end">
-                    <div class="col-md-4" id="search-bar-crud">    
-                        <div class="input-group mt-5 mb-5 responsive-search-crud ">
-                            <span class = "procurar-crud">Pesquisar:</span><input type="text" class="form-control  newbox-crud input-crud-responsive cabecalho-crud ml-3" placeholder="Categoria" aria-label="Recipient's username" aria-describedby="basic-addon2">
-                        </div>
-                    </div>
-            </div>
-            <div class = "table-sm-responsive">
-                <table class="table table-striped table-bordered">
-                    <thead>
-                        <tr>
-                            <th class="categoria-crud" scope="col">Categoria</th>
-                            <th class="acoes-crud" scope="col">Ações</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                      <?php foreach ($categorias as $categoria) : ?>
-                        <tr>
-                            <td class="font-adjustment-crud"><?= $categoria->nome; ?></td>
-                            <td class="border-right-0">
-                              <div class="row">
-                              <form  method="POST" action="categorias/mostrar" class="ml-4">
-                                <input  class="btn-crud-table" type="hidden" name="id" value="<?= $categoria->id ?>">
-                                <button type="submit" class="btn btn-view-crud btn-crud-table newbox-crud btn-sm view-table-crud vasco"><i class="fas fa-eye adjust-eyeicon-crud"></i></button>
-                              </form>
-                            
-                              <form method="POST" action="categorias/editar" >
-                                <input class="btn-crud-table" type="hidden" name="id" value="<?= $categoria->id ?>">
-                                <button type="submit" class="btn btn-edit-crud btn-crud-table newbox-crud btn-sm ml-2 vasco"><i class="fas fa-edit mr-1"></i></button>
-                              </form>
-                              <form class="crudform">
-                                <button type="button" class="btn btn-delete-crud btn-crud-table newbox-crud btn-sm ml-2 vasco" data-toggle="modal" data-target="#exampleModalCenter<?= $i; ?>" ><i class="far fa-trash-alt"></i></button>
-                              </form>
-                              </div>
-                              <div class="modal fade" id="exampleModalCenter<?= $i; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                              <div class="modal-dialog modal-dialog-centered" role="document">
-                                <div class="modal-content">
-                                  <div class="modal-header">
-                                    <h5 class="modal-title font-modaltitle-crud" id="exampleModalLongTitle">Excluir Categoria</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                      <span aria-hidden="true">&times;</span>
-                                    </button>
+            <div class="row">
+              <div class="col-lg-2 col-md-3"></div>
+              <div class="col-lg-10 col-md-9">
+              <div class="row">
+                    <div class="col-md-4 offset-md-8">
+                        <?php if (isset($categorias_limite)) : ?>
+                            <?php if (($actual_page + 5) <= count($categorias)) : ?>
+                                <p class="counter-products">Mostrando <?= $actual_page; ?>-<?= $actual_page+5; ?>/<?= count($categorias); ?> categorias</p>
+                            <?php else : ?>
+                                <p class="counter-products">Mostrando <?= $actual_page; ?>-<?= count($categorias); ?>/<?= count($categorias); ?> categorias</p>
+                            <?php endif; ?>
+                        <?php endif; ?>    
+                    </div>    
+                </div>  
+                <div class = "table-sm-responsive">
+                    <table class="table table-striped table-bordered">
+                        <thead>
+                            <tr>
+                                <th class="categoria-crud" scope="col">Categoria</th>
+                                <th class="acoes-crud" scope="col">Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                          <?php foreach ($categorias_limite as $categoria) : ?>
+                            <tr>
+                                <td class="font-adjustment-crud"><?= $categoria->nome; ?></td>
+                                <td class="border-right-0">
+                                  <div class="row">
+                                  <form  method="POST" action="categorias/mostrar" class="ml-4">
+                                    <input  class="btn-crud-table" type="hidden" name="id" value="<?= $categoria->id ?>">
+                                    <button type="submit" class="btn btn-view-crud btn-crud-table newbox-crud btn-sm view-table-crud vasco"><i class="fas fa-eye adjust-eyeicon-crud"></i></button>
+                                  </form>
+                                
+                                  <form method="POST" action="categorias/editar" >
+                                    <input class="btn-crud-table" type="hidden" name="id" value="<?= $categoria->id ?>">
+                                    <button type="submit" class="btn btn-edit-crud btn-crud-table newbox-crud btn-sm ml-2 vasco"><i class="fas fa-edit mr-1"></i></button>
+                                  </form>
+                                  <form class="crudform">
+                                    <button type="button" class="btn btn-delete-crud btn-crud-table newbox-crud btn-sm ml-2 vasco" data-toggle="modal" data-target="#exampleModalCenter<?= $i; ?>" ><i class="far fa-trash-alt"></i></button>
+                                  </form>
                                   </div>
-                                  <div class="modal-body font-modalbody-crud">
-                                    Tem certeza que deseja excluir esta categoria?
-                                  </div>
-                                  
-                                  <div class="modal-footer">
-                                    <form method="POST" action="/categorias/delete">
-                                      <input type="hidden" name="id" value="<?= $categoria->id ?>">
-                                      <button type="submit" class="btn btn-primary">Sim</button>
-                                    </form>
-                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Não</button>
+                                  <div class="modal fade" id="exampleModalCenter<?= $i; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                  <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content">
+                                      <div class="modal-header">
+                                        <h5 class="modal-title font-modaltitle-crud" id="exampleModalLongTitle">Excluir Categoria</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                          <span aria-hidden="true">&times;</span>
+                                        </button>
+                                      </div>
+                                      <div class="modal-body font-modalbody-crud">
+                                        Tem certeza que deseja excluir esta categoria?
+                                      </div>
+                                      
+                                      <div class="modal-footer">
+                                        <form method="POST" action="/categorias/delete">
+                                          <input type="hidden" name="id" value="<?= $categoria->id ?>">
+                                          <button type="submit" class="btn btn-primary">Sim</button>
+                                        </form>
+                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Não</button>
+                                      </div>
+                                    </div>
                                   </div>
                                 </div>
-                              </div>
-                            </div>
-                            </td>
-                            
-                            
-                        </tr>
-                        <?php $i++; ?>
-                      <?php endforeach; ?>
-                    </tbody>
-                </table>
-            </div>
+                                </td>
+                                
+                                
+                            </tr>
+                            <?php $i++; ?>
+                          <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                  </div>
+                </div>              
+              </div>
             
-            <nav aria-label="pagination-crud">
-                <ul class="pagination justify-content-end" id="paginacao-crud-responsive">
-                  <li class="page-item"><a class="page-link pagination-crud-buttons newbox-crud" href="#"><</a></li>
-                  <li class="page-item actpago" id="actpago" onclick="actpago()"><a class="page-link pagination-crud-buttons newbox-crud" id="actpagol" href="#">1</a></li>
-                  <li class="page-item actpags" id="actpags" onclick="actpags()"><a class="page-link pagination-crud-buttons newbox-crud" id="actpagsl" href="#">2</a></li>
-                  <li class="page-item actpagt" id="actpagt" onclick="actpagt()"><a class="page-link pagination-crud-buttons newbox-crud" id="actpagtl" href="#">3</a></li>
-                  <li class="page-item"><a class="page-link pagination-crud-buttons newbox-crud" href="#">></a></li>
-                </ul>
-              </nav>
+              <?php if(isset($categorias_limite)) : ?>
+                <nav aria-label="pagination-crud">
+                    <ul class="pagination justify-content-end" id="paginacao-crud-responsive">
+                    <li class="page-item">
+                        <form method="POST" action="/categorias/limite">
+                        <?php if ($actual_page == 0) : ?>
+                            <input type="hidden" name="offset" value="<?= $actual_page; ?>" />
+                        <?php else : ?>
+                            <input type="hidden" name="offset" value="<?= ($actual_page - 5); ?>" />
+                        <?php endif; ?>       
+                        <button type="submit" class="page-link pagination-crud-buttons newbox-crud"><</button>
+                        </form>
+                    </li>
+                    <?php for ($j = 1; $j <= $num_pages; $j++) : ?>
+                        <li class="page-item actpago">
+                            <form method="POST" action="/categorias/limite">
+                                <input id="actual_page" type="hidden" name="offset" value="<?= ($j*5)-5; ?>"/>
+                                <button type="submit" class="page-link pagination-crud-buttons newbox-crud"><?= $j; ?></a>
+                            </form>
+                        </li>
+                    <?php endfor; ?>
+                    <li class="page-item">
+                        <form method="POST" action="/categorias/limite">
+                        <?php if ($exists == 1) : ?>
+                            <input type="hidden" name="offset" value="<?= ($actual_page + 5); ?>" />
+                        <?php else : ?>
+                            <input type="hidden" name="offset" value="<?= $actual_page; ?>" />
+                        <?php endif; ?>        
+                        <button type="submit" class="page-link pagination-crud-buttons newbox-crud">></button>
+                        </form>
+                    </li>
+                    </ul>
+                </nav>
+            <?php endif; ?> 
         </div>
     
 

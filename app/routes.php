@@ -7,6 +7,7 @@ $router->post('categorias/editar', 'CategoriasController@editform');
 $router->post('categorias/editado', 'CategoriasController@update');
 $router->post('categorias/mostrar', 'CategoriasController@show');
 $router->get('categorias/voltar', 'CategoriasController@retuindex');
+$router->post('categorias/limite', 'CategoriasController@indexLimit');
 
 $router->get('admin', 'PagesController@login');
 $router->get('admin/novoproduto', 'PagesController@createProduct');
@@ -42,6 +43,7 @@ $router->post('usuarios/editar', 'UsersController@edituser');
 $router->post('usuarios/editado', 'UsersController@update');
 $router->post('usuarios/visualizar', 'UsersController@show');
 $router->get('usuarios/voltar', 'UsersController@usersreturn');
+$router->post('usuarios/limite', 'UsersController@indexLimit');
 
 $router->get('produtos', 'ProdutosController@inventario');
 $router->post('produtos/pesquisa', 'ProdutosController@teste');

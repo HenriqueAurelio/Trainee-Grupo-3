@@ -1,5 +1,23 @@
 <!DOCTYPE html>
-<?php $i = 0; ?>
+<?php
+    $i = 0;
+    if (isset($users_limite)) {
+        $limit = 5;
+        $num_pages = ceil(count($users) / $limit);
+        $ids = array();
+        foreach($users as $user) {
+            array_push($ids, $user->id);
+        } 
+        $actual_page = array_search($users_limite[0]->id, $ids);
+        $possible = $actual_page + 5;
+        if ($possible <= count($users)) {
+            $exists = 1;
+        }
+        else {
+            $exists = 0;
+        }
+    }    
+?>
 
 <html lang="pt-br">
 
@@ -8,7 +26,6 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
         <title>Painel Administrativo</title>
-        <link rel="stylesheet" href="../public/css/style.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css2?family=Carrois+Gothic+SC&display=swap" rel="stylesheet">
         <script type="text/javascript" src="../assets/js/scripts.js"></script>
@@ -17,18 +34,43 @@
 	</head>
 	
 	<body>
+  <?php require($_SERVER['DOCUMENT_ROOT'].'/app/views/admin/includes/nav.php'); ?>
         <div class = "container font-crud">
-            <h1 class="mt-5 pt-3 start-crud">Usuários</h1>
+        <div class="row">
+                <div class="col-lg-2 col-md-3"></div>
+                <div class="col-lg-10 col-md-9">
+                    <h1 class="mt-5 pt-3 start-crud">Usuários</h1>
+                </div>    
+            </div>    
             <div class="row">
-                    <div class="col-md-6" id="add-crud-responsive">                        
-                       <a href="usuarios/cadastrar"><button type="button" class="btn newbox-add-crud btn-crud btn-lg mb-5 mt-5 cabecalho-crud"><i class="fas fa-plus mr-3"></i>Adicionar</button></a>
+                    <div class="col-lg-2 col-md-3"></div>
+                    <div class="col-lg-5 col-md-4" id="add-crud-responsive">
+                        <a href="/usuarios/cadastrar"><button type="button" class="btn newbox-add-crud btn-crud btn-lg mb-5 mt-5 cabecalho-crud"><i class="fas fa-plus mr-3"></i>Adicionar</button></a>
                     </div>
-                    <div class="col-md-6" id="search-bar-crud">    
+                    <div class="col-lg-5 col-md-5" id="search-bar-crud">    
                         <div class="input-group mt-5 mb-5 responsive-search-crud float-right">
-                            <span class = "procurar-crud">Pesquisar:</span><input type="text" class="form-control float-right newbox-crud input-crud-responsive cabecalho-crud ml-3" placeholder="Livro, Categoria..." aria-label="Recipient's username" aria-describedby="basic-addon2">
+                            <span class = "procurar-crud">Pesquisar:</span>
+                            <form method="POST">
+                                <input name="pesquisa" type="text" class="form-control float-right newbox-crud input-crud-responsive cabecalho-crud ml-3" placeholder="Usuário..." aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                <button class="btn btn-outline-danger my-2 my-sm-0 butaoPes" type="button"><i class="fas fa-search"></i></button>   
+                            </form>
                         </div>
                     </div>
             </div>
+            <div class="row">
+                <div class="col-lg-2 col-md-3"></div>
+                <div class="col-lg-10 col-md-9">
+                    <div class="row">
+                        <div class="col-md-4 offset-md-8">
+                            <?php if (isset($users_limite)) : ?>
+                                <?php if (($actual_page + 5) <= count($users)) : ?>
+                                    <p class="counter-products">Mostrando <?= $actual_page; ?>-<?= $actual_page+5; ?>/<?= count($users); ?> usuários</p>
+                                <?php else : ?>
+                                    <p class="counter-products">Mostrando <?= $actual_page; ?>-<?= count($users); ?>/<?= count($users); ?> usuários</p>
+                                <?php endif; ?>
+                            <?php endif; ?>    
+                        </div>    
+                    </div>  
             <div class = "table-sm-responsive">
                 <table class="table table-striped table-bordered">
                     <thead>
@@ -39,7 +81,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach($users as $user) : ?>
+                        <?php foreach($users_limite as $user) : ?>
                             <tr>
                                 <td class="font-adjustment-crud"><?= $user->email; ?></td>
                                 <td class="font-adjustment-crud"><?= $user->senha; ?></td>
@@ -47,7 +89,7 @@
                                   <div class="row">
                                     <form method="POST" action="usuarios/visualizar" class="ml-4">
                                       <input name="id" type="hidden" value="<?= $user->id ?>">
-                                      <button type="submit" class="btn btn-view-crud btn-crud-table newbox-crud btn-sm view-table-crud"><i class="fas fa-eye adjust-eyeicon-crud"></i></button>
+                                      <button type="submit" class="btn btn-view-crud btn-crud-table newbox-crud btn-sm ml-2"><i class="fas fa-eye adjust-eyeicon-crud ml-1"></i></button>
                                     </form>
                                     <form method="POST" action="usuarios/editar">
                                       <input name="id" type="hidden" value="<?= $user->id ?>"> 
@@ -106,15 +148,40 @@
                   </div>
                 </div>
               </div>
-            <nav aria-label="pagination-crud">
-                <ul class="pagination justify-content-end" id="paginacao-crud-responsive">
-                  <li class="page-item"><a class="page-link pagination-crud-buttons newbox-crud" href="#"><</a></li>
-                  <li class="page-item actpago" id="actpago" onclick="actpago()"><a class="page-link pagination-crud-buttons newbox-crud" id="actpagol" href="#">1</a></li>
-                  <li class="page-item actpags" id="actpags" onclick="actpags()"><a class="page-link pagination-crud-buttons newbox-crud" id="actpagsl" href="#">2</a></li>
-                  <li class="page-item actpagt" id="actpagt" onclick="actpagt()"><a class="page-link pagination-crud-buttons newbox-crud" id="actpagtl" href="#">3</a></li>
-                  <li class="page-item"><a class="page-link pagination-crud-buttons newbox-crud" href="#">></a></li>
-                </ul>
-              </nav>
+              <?php if(isset($users_limite)) : ?>
+                <nav aria-label="pagination-crud">
+                    <ul class="pagination justify-content-end" id="paginacao-crud-responsive">
+                    <li class="page-item">
+                        <form method="POST" action="/usuarios/limite">
+                        <?php if ($actual_page == 0) : ?>
+                            <input type="hidden" name="offset" value="<?= $actual_page; ?>" />
+                        <?php else : ?>
+                            <input type="hidden" name="offset" value="<?= ($actual_page - 5); ?>" />
+                        <?php endif; ?>       
+                        <button type="submit" class="page-link pagination-crud-buttons newbox-crud"><</button>
+                        </form>
+                    </li>
+                    <?php for ($j = 1; $j <= $num_pages; $j++) : ?>
+                        <li class="page-item actpago">
+                            <form method="POST" action="/usuarios/limite">
+                                <input id="actual_page" type="hidden" name="offset" value="<?= ($j*5)-5; ?>"/>
+                                <button type="submit" class="page-link pagination-crud-buttons newbox-crud"><?= $j; ?></a>
+                            </form>
+                        </li>
+                    <?php endfor; ?>
+                    <li class="page-item">
+                        <form method="POST" action="/usuarios/limite">
+                        <?php if ($exists == 1) : ?>
+                            <input type="hidden" name="offset" value="<?= ($actual_page + 5); ?>" />
+                        <?php else : ?>
+                            <input type="hidden" name="offset" value="<?= $actual_page; ?>" />
+                        <?php endif; ?>        
+                        <button type="submit" class="page-link pagination-crud-buttons newbox-crud">></button>
+                        </form>
+                    </li>
+                    </ul>
+                </nav>
+            <?php endif; ?> 
         </div>
     
 

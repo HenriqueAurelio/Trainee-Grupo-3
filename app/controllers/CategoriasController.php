@@ -17,8 +17,21 @@ class CategoriasController
         }
         $categorias = App::get('database')->selectAll('categorias');
 
-        return view('admin/categorias', compact('categorias'));
+        $categorias_limite = App::get('database')->selectLimitProducts('categorias', 0);
+
+        return view('admin/categorias', compact('categorias', 'categorias_limite'));
        
+    }
+
+    public function indexLimit() {
+        session_start();
+        if (!isset($_SESSION['email'])) {
+            return redirect('admin');
+        }
+        $categorias = App::get('database')->selectAll('categorias');
+        $categorias_limite = App::get('database')->selectLimitProducts('categorias', $_POST['offset']);
+
+        return view('admin/categorias', compact('categorias', 'categorias_limite'));
     }
     
     /**

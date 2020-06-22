@@ -16,8 +16,20 @@ class UsersController
             return redirect('admin');
         }
         $users = App::get('database')->selectAll('usuarios');
+        $users_limite = App::get('database')->selectLimitProducts('usuarios', 0);
 
-        return view('admin/users', compact('users'));
+        return view('admin/users', compact('users', 'users_limite'));
+    }
+
+    public function indexLimit() {
+        session_start();
+        if (!isset($_SESSION['email'])) {
+            return redirect('admin');
+        }
+        $users = App::get('database')->selectAll('usuarios');
+        $users_limite = App::get('database')->selectLimitProducts('usuarios', $_POST['offset']);
+
+        return view('admin/users', compact('users', 'users_limite'));
     }
 
     /**
@@ -26,6 +38,10 @@ class UsersController
 
     public function store()
     {
+        session_start();
+        if (!isset($_SESSION['email'])) {
+            return redirect('admin');
+        }
         App::get('database')->insert('usuarios', [
             'email' => $_POST['email'], 
             'senha' => $_POST['senha']
@@ -47,6 +63,10 @@ class UsersController
     }    
     public function show()
     {
+        session_start();
+        if (!isset($_SESSION['email'])) {
+            return redirect('admin');
+        }
        $usuarioRead = App::get('database')->read('usuarios',
        $_POST['id']
        );
@@ -68,12 +88,20 @@ class UsersController
     
     public function usersCadastro()
     {
+        session_start();
+        if (!isset($_SESSION['email'])) {
+            return redirect('admin');
+        }
         return view("admin/usersform");
 
     }
 
     public function edituser()
     {
+        session_start();
+        if (!isset($_SESSION['email'])) {
+            return redirect('admin');
+        }
         $usuer = App::get('database')->editmodifi('usuarios',
         $_POST['id']
         );
