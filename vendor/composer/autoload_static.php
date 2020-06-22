@@ -12,15 +12,17 @@ class ComposerStaticInit5679945a23d428f03de595eae28238ba
 
     public static $classMap = array (
         'App\\Controllers\\PagesController' => __DIR__ . '/../..' . '/app/controllers/PagesController.php',
-        'App\\Controllers\\ProductsController' => __DIR__ . '/../..' . '/app/controllers/ProductsController.php',
+        'App\\Controllers\\UsersController' => __DIR__ . '/../..' . '/app/controllers/UsersController.php',
         'App\\Core\\App' => __DIR__ . '/../..' . '/core/App.php',
         'App\\Core\\Database\\Connection' => __DIR__ . '/../..' . '/core/database/Connection.php',
         'App\\Core\\Database\\QueryBuilder' => __DIR__ . '/../..' . '/core/database/QueryBuilder.php',
         'App\\Core\\Request' => __DIR__ . '/../..' . '/core/Request.php',
         'App\\Core\\Router' => __DIR__ . '/../..' . '/core/Router.php',
         'ComposerAutoloaderInit5679945a23d428f03de595eae28238ba' => __DIR__ . '/..' . '/composer/autoload_real.php',
-        'Composer\\Autoload\\ClassLoader' => __DIR__ . '/..' . '/composer/ClassLoader.php',
+        'ComposerAutoloaderInitdc847c494bd926f7652783e4f97fa4e0' => __DIR__ . '/../..' . '/crudusuario/vendor/composer/autoload_real.php',
+        'Composer\\Autoload\\ClassLoader' => __DIR__ . '/../..' . '/crudusuario/vendor/composer/ClassLoader.php',
         'Composer\\Autoload\\ComposerStaticInit5679945a23d428f03de595eae28238ba' => __DIR__ . '/..' . '/composer/autoload_static.php',
+        'Composer\\Autoload\\ComposerStaticInitdc847c494bd926f7652783e4f97fa4e0' => __DIR__ . '/../..' . '/crudusuario/vendor/composer/autoload_static.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

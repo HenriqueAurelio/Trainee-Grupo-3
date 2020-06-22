@@ -1,7 +1,6 @@
 <?php
 
 $router->get('sobre', 'PagesController@sobre');
-<?php
 
 $router->get('usuarios', 'UsersController@index');
 $router->post('usuarios', 'UsersController@store');

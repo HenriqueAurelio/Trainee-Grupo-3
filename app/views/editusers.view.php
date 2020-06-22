@@ -85,14 +85,14 @@
                     <div class="col-lg-5 col-md-4 form-group">
                         <label for="exampleFormControlInput2">Senha</label>
                         <input type="hidden" name="id" value="<?= $usuer->id; ?>">
-                        <input type="text" name="senha" value="<?= $usuer->senha; ?>" class="form-control" id="exampleFormControlInput2" placeholder="Senha">
+                        <input type="password" name="senha" value="<?= $usuer->senha; ?>" class="form-control" id="exampleFormControlInput2" placeholder="Senha">
                     </div>
                     </div>
                     <div class="row">
                         <div class="col-lg-11 col-8"></div>
-                        <div class="col-lg-1 col-4">
-                            <button type="submit" class="btn admin-submit-button">Cadastrar</button>
-                        </div>    
+                            <div class="col-lg-1 col-4">
+                                <button type="submit" class="btn admin-submit-button">Cadastrar</button>
+                            </div>    
                 </div>     
             </form>    
         </div>    

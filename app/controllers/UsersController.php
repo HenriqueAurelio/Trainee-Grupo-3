@@ -74,7 +74,7 @@ class UsersController
         $_POST['id']
         );
 
-        return view ("admin/editusers", compact('usuer'));
+        return view ("admin/edituser", compact('usuer'));
     }
 
     public function usersreturn()
