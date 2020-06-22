@@ -11,7 +11,7 @@
      <body>
         <nav class="navbar navbar-site navbar-expand-lg">
           <div class="container">
-                <a class="navbar-brand" href="#"><img src="../../../../public/img/aurelio_transparent.png" width="80" height="80"></a>
+                <a class="navbar-brand" href="/"><img src="../../../../public/img/aurelio_transparent.png" width="80" height="80"></a>
             <nav class="navbar-light">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
@@ -20,7 +20,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                   <ul class="navbar-nav mr-auto">                
                     <li class="nav-item">
-                      <a class="nav-link linkestilo" href="/produtos/visualizar">Produtos</a>
+                      <a class="nav-link linkestilo" href="/produtos">Produtos</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link linkestilo" href="/sobre">Sobre Nós</a>

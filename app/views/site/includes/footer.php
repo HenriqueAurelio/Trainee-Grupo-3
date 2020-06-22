@@ -20,15 +20,15 @@
                 </div>
               <div class="col-md-3 footer-links pl-0">
                 <ul>
-                  <li><i class="ion-ios-arrow-right"><a href="#">Home</a></i></li>   
+                  <li><i class="ion-ios-arrow-right"><a href="/">Home</a></i></li>   
 
-                  <li><i class="ion-ios-arrow-right"><a href="#">Produtos</a></i></li> 
+                  <li><i class="ion-ios-arrow-right"><a href="/produtos">Produtos</a></i></li> 
 
                   <li><i class="ion-ios-arrow-right"><a href="/sobre">Sobre Nós</a></i></li>  
 
                   <li><i class="ion-ios-arrow-right"><a href="/admin">Login</a></i></li>
 
-                  <li><i class="ion-ios-arrow-right"><a href="#">Contato</a></i></li>                    
+                  <li><i class="ion-ios-arrow-right"><a href="/contato">Contato</a></i></li>                    
                 </ul>  
               </div>
               <div class="col-md-3">
