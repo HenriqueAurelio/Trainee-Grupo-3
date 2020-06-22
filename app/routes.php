@@ -21,6 +21,7 @@ $router->post('produtos/deletar', 'ProductsController@delete');
 $router->get('', 'HomeController@homeindex');
 $router->get('sobre', 'PagesController@sobre');
 $router->post('produtos/limite', 'ProductsController@indexLimit');
+$router->post('admin/produtos/pesquisa', 'ProductsController@search');
 
 $router->post('login', 'LoginController@makeLogin');
 $router->post('logout', 'LoginController@logout');

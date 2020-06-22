@@ -46,6 +46,10 @@ class CategoriasController
     }
 
     public function show(){
+        session_start();
+        if (!isset($_SESSION['email'])) {
+            return redirect('admin');
+        }
         $categoriasRead = App::get('database')->read('categorias', $_POST['id']);
 
         return view('admin/showcategorias', compact('categoriasRead'));
@@ -58,13 +62,25 @@ class CategoriasController
 
     public function formview()
     {
+        session_start();
+        if (!isset($_SESSION['email'])) {
+            return redirect('admin');
+        }
         return view("admin/categoriasform");
     }
     public function formedit()
     {
+        session_start();
+        if (!isset($_SESSION['email'])) {
+            return redirect('admin');
+        }
         return view("admin/editcategorias");
     }
     public function editform(){
+        session_start();
+        if (!isset($_SESSION['email'])) {
+            return redirect('admin');
+        }
         $categ=App::get('database')->seledit('categorias',$_POST['id']);
         
         return view("admin/editcategorias", compact('categ'));

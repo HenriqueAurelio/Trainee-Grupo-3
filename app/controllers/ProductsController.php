@@ -92,5 +92,16 @@ class ProductsController
 
         return view('site/produto-info', compact('produto'));
         
-    } 
+    }
+    
+    public function search()
+    {   
+        $produtos = App::get('database')->pesquisa('produtos', $_POST['pesquisa']);
+
+        foreach($produtos as $produto) {
+            $produto->categoria = App::get('database')->selectAttrProducts('categorias', 'nome', $produto->categoria_id);
+        }
+        
+        return view('admin/products/produtos', compact('produtos'));
+    }
 }
