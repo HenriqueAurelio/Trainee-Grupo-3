@@ -2,8 +2,20 @@
     $i = 0;
     $limit = 5;
     $num_pages = ceil(count($produtos) / $limit);
-?>
+    $ids = array();
+    foreach($produtos as $produto) {
+        array_push($ids, $produto->id);
+    } 
+    $actual_page = array_search($produtos_limite[0]->id, $ids);
+    $possible = $actual_page + 5;
+    if ($possible <= count($produtos)) {
+        $exists = 1;
+    }
+    else {
+        $exists = 0;
+    }
 
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -38,6 +50,15 @@
             <div class="row">
                 <div class="col-lg-2 col-md-3"></div>
                 <div class="col-lg-10 col-md-9">
+                    <div class="row">
+                        <div class="col-md-4 offset-md-8">
+                            <?php if (($actual_page + 5) <= count($produtos)) : ?>
+                                <p class="counter-products">Mostrando <?= $actual_page; ?>-<?= $actual_page+5; ?>/<?= count($produtos); ?> livros</p>
+                            <?php else : ?>
+                                <p class="counter-products">Mostrando <?= $actual_page; ?>-<?= count($produtos); ?>/<?= count($produtos); ?> livros</p>
+                            <?php endif; ?>
+                        </div>    
+                    </div>        
                     <div class = "table-responsive">
                         <table class="table table-striped table-bordered">
                             <thead>
@@ -57,7 +78,7 @@
                                     <td class="font-adjustment-crud border-right-0">
                                         <form method="POST" action="/produtos/mostrar">
                                             <input type="hidden" value="<?= $produto->id; ?>" name="id">
-                                            <button type="submit" class="btn btn-view-crud btn-crud-table newbox-crud btn-sm ml-2"><i class="fas fa-eye adjust-eyeicon-crud mr-1"></i></button>
+                                            <button type="submit" class="btn btn-view-crud btn-crud-table newbox-crud btn-sm ml-2"><i class="fas fa-eye adjust-eyeicon-crud ml-1"></i></button>
                                         </form>
                                     </td>
                                     <td class="font-adjustment-crud border-0">    
@@ -99,22 +120,6 @@
                     </div>
                 </div>    
             </div>
-
-            <?php
-                $ids = array();
-                foreach($produtos as $produto) {
-                    array_push($ids, $produto->id);
-                } 
-                $actual_page = array_search($produtos_limite[0]->id, $ids);
-                $possible = $actual_page + 5;
-                if ($possible <= count($produtos)) {
-                    $exists = 1;
-                }
-                else {
-                    $exists = 0;
-                }
-            ?>
-
             <nav aria-label="pagination-crud">
                 <ul class="pagination justify-content-end" id="paginacao-crud-responsive">
                   <li class="page-item">

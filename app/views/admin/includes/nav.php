@@ -46,13 +46,13 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">
+                                <a class="nav-link" href="/categorias">
                                     <i class="fas fa-sitemap admin-navbar-item"></i>
                                     <span class="admin-navbar-item">Categorias</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">
+                                <a class="nav-link" href="/usuarios">
                                     <i class="fas fa-users admin-navbar-item"></i>
                                     Usuários
                                 </a>

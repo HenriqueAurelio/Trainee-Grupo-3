@@ -837,7 +837,7 @@
     border: solid 1px #c20e1a !important;
 }
 
-.pagination-crud-buttons:hover{
+.pagination-crud-buttons{
     background-color: white !important;
     color: #c20e1a !important;
 }
@@ -1012,4 +1012,9 @@
 .button-form-logout {
     background-color: #343a40;
     border: 0px;
+}
+
+.counter-products {
+    font-size: 20px;
+    
 }
