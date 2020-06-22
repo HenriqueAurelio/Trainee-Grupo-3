@@ -22,32 +22,27 @@
                 <div class="row medrow">
                     <div class="col-md-3">
                         <span class="resicon" onclick="openNav()"><i class="fas fa-bars"  ></i></span>
-                        <div class="input-group">
-                            <form  method="POST" action="/produtos/pesquisa" class="form-inline my-0.3 my-lg-0 resquisa">
-                                <input name="pesquisa" id="formuPes" class="form-control mr-sm-2 formuPes" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
-                                <div class="input-group-append">                                                          
-                                    <button class="btn btn-outline-danger my-2 my-sm-0 butaoPes" type="submit"><i class="fas fa-search"></i></button>                            
-                                </div>
-                            </form>
-                        </div>           
-                        <ul id="list-group reslista"class="list-group reslista">
-                            <li class="list-group-item hicon"><span class="ticon"><i class="fas fa-angle-right"></i>  <a href="#" class="removeblue">Administração</a></span></li>
-                            <li class="list-group-item hicon"><span class="ticon"><i class="fas fa-angle-right"></i>  <a href="#" class="removeblue">Auto Ajuda</a></span></li>
-                            <li class="list-group-item hicon"><span class="ticon"><i class="fas fa-angle-right"></i>  <a href="#" class="removeblue">Ciências Exatas</a></span></li>                    
-                            <li class="list-group-item hicon"><span class="ticon"><i class="fas fa-angle-right"></i>  <a href="#" class="removeblue">Comedia</a></span></li>
-                            <li class="list-group-item hicon"><span class="ticon"><i class="fas fa-angle-right"></i>  <a href="#" class="removeblue">Fantasia</a></span></li>
-                            <li class="list-group-item hicon"><span class="ticon"><i class="fas fa-angle-right"></i>  <a href="#" class="removeblue">Ficção científica</a></span></li>
-                            <li class="list-group-item hicon"><span class="ticon"><i class="fas fa-angle-right"></i>  <a href="#" class="removeblue">Filosofia</a></span></li>
-                            <li class="list-group-item hicon"><span class="ticon"><i class="fas fa-angle-right"></i>  <a href="#" class="removeblue">Informática</a></span></li>
-                            <li class="list-group-item hicon"><span class="ticon"><i class="fas fa-angle-right"></i>  <a href="#" class="removeblue">Marketing</a></span></li>                       
-                            <li class="list-group-item hicon"><span class="ticon"><i class="fas fa-angle-right"></i>  <a href="#" class="removeblue">Mistério</a></span></li>                       
-                            <li class="list-group-item hicon"><span class="ticon"><i class="fas fa-angle-right"></i>  <a href="#" class="removeblue">Motivacional</a></span></li>                       
-                            <li class="list-group-item hicon"><span class="ticon"><i class="fas fa-angle-right"></i>  <a href="#" class="removeblue">Romance</a></span></li>                       
-                            <li class="list-group-item hicon"><span class="ticon"><i class="fas fa-angle-right"></i>  <a href="#" class="removeblue">Suspense</a></span></li>                                                               
-                        </ul>
-                    
-                    
-
+                        <div class="row">
+                            <div class="input-group pesgruop">
+                                <form  method="POST" action="/produtos/pesquisa" class="form-inline my-0.3 my-lg-0 resquisa">
+                                    <input name="pesquisa" id="formuPes" class="form-control formuPes ml-3 pr-0" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
+                                    <div class="input-group-append">                                                          
+                                        <button class="btn btn-outline-danger my-2 my-sm-0 butaoPes" type="submit"><i class="fas fa-search"></i></button>                            
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                                                    
+                            <ul id="list-group reslista"class="list-group reslista">
+                                <?php foreach($categorias as $categoria) : ?>
+                                    <form method="POST" action="/produtos/categorias">
+                                   
+                                        <input name="Catid" type="hidden" value="<?= $categoria->id;?>">
+                                        <li class="list-group-item hicon"><span class="ticon"><i class="fas fa-angle-right"></i>  <button type="submit" class="removeblue border-0 bgb"><?= $categoria->nome; ?></button><span></li>
+                                     
+                                    </form>
+                                <?php endforeach;?>  
+                            </ul>                                            
                             </div>
                             <div class="col-md-9 col-sm-6">
                                 <div class="row">
@@ -59,10 +54,10 @@
                                                             <img class="card-img-top tamanhocard" src="../../public/img/<?= $produto->foto; ?>" alt="Imagem de capa do card">
                                                         <div class="card-body rescard">
                                                                 <h5 class="card-title tituloCard"><?= $produto->nome; ?></h5>
-                                                                <p class="varlivro"><?= $produto->preco; ?></p>
-                                                                <form method="POST" action="produtos/visualizar">
+                                                                <p class="varlivro">R$ <?= $produto->preco; ?></p>
+                                                                <form method="POST" action="/informacoes-produto">
                                                                     <input name="id" type="hidden" value="<?= $produto->id; ?>">
-                                                                    <a href="#" class="btn btn-product resbopro">VER PRODUTO</a>
+                                                                    <button type="submit" class="btn btn-product resbopro">VER PRODUTO</button>
                                                                 </form>                                
                                                         </div>
                                                     </div>
