@@ -57,7 +57,7 @@
                                     <td class="font-adjustment-crud border-right-0">
                                         <form method="POST" action="/produtos/mostrar">
                                             <input type="hidden" value="<?= $produto->id; ?>" name="id">
-                                            <button type="submit" class="btn btn-view-crud btn-crud-table newbox-crud btn-sm view-table-crud"><i class="fas fa-eye adjust-eyeicon-crud"></i></button>
+                                            <button type="submit" class="btn btn-view-crud btn-crud-table newbox-crud btn-sm ml-2"><i class="fas fa-eye adjust-eyeicon-crud mr-1"></i></button>
                                         </form>
                                     </td>
                                     <td class="font-adjustment-crud border-0">    

@@ -327,7 +327,7 @@
     font-family: 'Carrois Gothic SC', sans-serif;
     font-size: 20px;
     text-align: center;
-    color: #000;
+    color: #000 !important;
 }
 
 .home-book-img {
@@ -364,18 +364,18 @@
 }
 
 .home-btn-product {
-    background-color: #c20e1a;
+    background-color: #c20e1a !important;
     font-family: 'Roboto', sans-serif;
-    font-size: 16px;
+    font-size: 16px !important;
     width: 100%;
-    padding: 10px;
-    border-radius: 10px;
-    color: #fff;
+    padding: 10px !important; 
+    border-radius: 10px !important;
+    color: #fff !important;
 }
 
 .home-btn-product:hover {
-    background-color: #a3a0a0;
-    color: #000;
+    background-color: #a3a0a0 !important;
+    color: #000 !important;
 }
     
 
