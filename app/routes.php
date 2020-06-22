@@ -18,7 +18,7 @@ $router->post('produtos', 'ProductsController@create');
 $router->post('produtos/editar', 'ProductsController@update');
 $router->post('produtos/mostrar', 'ProductsController@show');
 $router->post('produtos/deletar', 'ProductsController@delete');
-$router->get('home', 'HomeController@homeindex');
+$router->get('', 'HomeController@homeindex');
 $router->get('sobre', 'PagesController@sobre');
 $router->post('produtos/limite', 'ProductsController@indexLimit');
 
