@@ -12,7 +12,6 @@ class HomeController
     public function homeindex()
     {
         $homeprodutos = App::get('database')->selectAll('produtos');
-
         return view('site/home', compact('homeprodutos'));
     }
 }

@@ -6,14 +6,20 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'App\\Controllers\\HomeController' => $baseDir . '/backendHome/app/controllers/HomeController.php',
     'App\\Controllers\\PagesController' => $baseDir . '/app/controllers/PagesController.php',
     'App\\Controllers\\ProductsController' => $baseDir . '/app/controllers/ProductsController.php',
-    'App\\Core\\App' => $baseDir . '/core/App.php',
-    'App\\Core\\Database\\Connection' => $baseDir . '/core/database/Connection.php',
-    'App\\Core\\Database\\QueryBuilder' => $baseDir . '/core/database/QueryBuilder.php',
-    'App\\Core\\Request' => $baseDir . '/core/Request.php',
-    'App\\Core\\Router' => $baseDir . '/core/Router.php',
+    'App\\Controllers\\UsersController' => $baseDir . '/crudusuario/app/controllers/UsersController.php',
+    'App\\Core\\App' => $baseDir . '/backendHome/core/App.php',
+    'App\\Core\\Database\\Connection' => $baseDir . '/backendHome/core/database/Connection.php',
+    'App\\Core\\Database\\QueryBuilder' => $baseDir . '/backendHome/core/database/QueryBuilder.php',
+    'App\\Core\\Request' => $baseDir . '/backendHome/core/Request.php',
+    'App\\Core\\Router' => $baseDir . '/backendHome/core/Router.php',
+    'ComposerAutoloaderInit0ca2a639af51c74641c6a8c922076355' => $baseDir . '/backendHome/vendor/composer/autoload_real.php',
     'ComposerAutoloaderInit5679945a23d428f03de595eae28238ba' => $vendorDir . '/composer/autoload_real.php',
-    'Composer\\Autoload\\ClassLoader' => $vendorDir . '/composer/ClassLoader.php',
+    'ComposerAutoloaderInitdc847c494bd926f7652783e4f97fa4e0' => $baseDir . '/crudusuario/vendor/composer/autoload_real.php',
+    'Composer\\Autoload\\ClassLoader' => $baseDir . '/backendHome/vendor/composer/ClassLoader.php',
+    'Composer\\Autoload\\ComposerStaticInit0ca2a639af51c74641c6a8c922076355' => $baseDir . '/backendHome/vendor/composer/autoload_static.php',
     'Composer\\Autoload\\ComposerStaticInit5679945a23d428f03de595eae28238ba' => $vendorDir . '/composer/autoload_static.php',
+    'Composer\\Autoload\\ComposerStaticInitdc847c494bd926f7652783e4f97fa4e0' => $baseDir . '/crudusuario/vendor/composer/autoload_static.php',
 );
