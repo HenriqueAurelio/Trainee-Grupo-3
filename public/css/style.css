@@ -39,7 +39,9 @@
 .formicobg-contato{
     background-color: #c20e1a !important;
 }
-
+.bgb{
+    background-color: white !important;
+}
 .mapcontact{
     box-shadow: 0px 0px 20px 0px black;
     animation-name: entrymove;
@@ -434,19 +436,21 @@
     text-decoration: none;
 }
 .formuPes{
-    width: 205px !important;
-    padding-right: 0px;
-    margin-right: 0px !important;
-    margin-top: 2px;
-    height: 39.52px;
+    width: 195px !important;
+    padding-right: 0px !important;
+    margin-top: 2px !important;
+    height: 39.52px !important;
+    
 }
-
+.pesgruop{
+    padding: 3px !important;
+}
 .butaoPes{
-    width: 50px !important;
+    width: 25px !important;
     color: #c20e1a !important ;
     padding-left: 0px;
     margin-top: 2px !important;
-    height: 39.52px;
+    height: 39.52px !important;
 }
 
 .butaoPes:hover{

@@ -7,8 +7,9 @@
         <title>Página Produto</title>
         <link rel="stylesheet" href="../../../public/css/products.style.css">
     </head>
+    
     <body class="product-page">
-        <?php require 'includes/navbar.php' ?>
+    <?php require 'includes/navbar.php' ?>
         <div class="container page">
             <div class="img-box">
                 <img class="vizualizacao" src="../../../public/img/<?= $produto->foto; ?>">
@@ -24,4 +25,5 @@
         </div>
         <?php require 'includes/footer.php' ?>
     </body>
+    
 </html>

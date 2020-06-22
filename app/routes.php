@@ -42,3 +42,7 @@ $router->post('usuarios/editado', 'UsersController@update');
 $router->post('usuarios/visualizar', 'UsersController@show');
 $router->get('usuarios/voltar', 'UsersController@usersreturn');
 
+$router->get('produtos/visualizar', 'ProdutosController@inventario');
+$router->post('produtos/pesquisa', 'ProdutosController@teste');
+$router->post('produtos/categorias', 'ProdutosController@categoriasPr');
+
