@@ -36,7 +36,7 @@
                   <div class="pesquisa">
                     <form class="form-inline my-2 my-lg-0">
                       <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Procurar" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                        <input type="text" class="form-control" placeholder="Procurar..." aria-label="Recipient's username" aria-describedby="basic-addon2">
                         <div class="input-group-append">
                           <button class="btn btn-outline-secondary btn-search-navbar-site border-0" type="submit"><i class="fas fa-search"></i></button>
                         </div>
