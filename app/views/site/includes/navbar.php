@@ -7,6 +7,7 @@
             <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
             <title>Aurelio Livraria</title>
             <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+            <script src="https://kit.fontawesome.com/9c2b80ca1e.js" crossorigin="anonymous"></script>
      </head>
      <body>
         <nav class="navbar navbar-site navbar-expand-lg">
@@ -34,8 +35,12 @@
                   </ul>
                   <div class="pesquisa">
                     <form class="form-inline my-2 my-lg-0">
-                      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                      <button class="pesquisa btn btn-primary my-2 my-sm-0" type="submit">Search</button>
+                      <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Procurar" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                        <div class="input-group-append">
+                          <button class="btn btn-outline-secondary btn-search-navbar-site border-0" type="submit"><i class="fas fa-search"></i></button>
+                        </div>
+                      </div>
                     </form>
                   </div>                  
                 </div>

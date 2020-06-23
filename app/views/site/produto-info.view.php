@@ -15,12 +15,10 @@
                 <img class="vizualizacao" src="../../../public/img/<?= $produto->foto; ?>">
             </div>
             <div class="text-box">
-                <h1 class="name"><?= $produto->nome ?><br><span class="alteracao">Svetlana Aleksiévitch</span></h1>
-                <p class="product-description">
-                    <?= $produto->descricao ?>
-                </p>
-                <h2 class="valor">R$ <?= $produto->preco ?></h2>
-                <button class="botao">Comprar</button>
+                <h1 class="name ml-2"><?= $produto->nome ?><br></h1>
+                <p class="product-description ml-2"><?= $produto->descricao ?></p>
+                <h2 class="valor ml-2">R$ <?= $produto->preco ?></h2><br><br>  
+                <button class="botao mt-1">Comprar</button>
             </div>
         </div>
         <?php require 'includes/footer.php' ?>

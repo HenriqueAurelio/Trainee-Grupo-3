@@ -1018,3 +1018,16 @@
     font-size: 20px;
     
 }
+
+.button-home-reset{
+    background-color: white !important;
+}
+
+.button-home-reset:focus{
+    outline:none;
+}
+
+.btn-search-navbar-site{
+    background-color: #928c8c !important;
+    color: white !important;
+}
