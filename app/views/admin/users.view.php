@@ -78,7 +78,8 @@
                     <thead>
                         <tr>
                             <th class="titulo-crud" scope="col">E-mail</th>
-                            <th class="preco-crud" scope="col">Senha</th>
+                            <th class="preco-crud" scope="col">Nome</th>
+                            <th class="acoes-crud" scope="col">Senha</th>
                             <th class="acoes-crud" scope="col">Ações</th>
                         </tr>
                     </thead>
@@ -87,14 +88,15 @@
                             <?php foreach($users_limite as $user) : ?>
                                 <tr>
                                     <td class="font-adjustment-crud"><?= $user->email; ?></td>
+                                    <td class="font-adjustment-crud"><?= $user->nome; ?></td>
                                     <td class="font-adjustment-crud"><?= $user->senha; ?></td>
                                     <td class="font-adjustment-crud border-right-0">
                                     <div class="row">
-                                        <form method="POST" action="usuarios/visualizar" class="ml-4">
+                                        <form method="POST" action="/usuarios/visualizar" class="ml-4">
                                         <input name="id" type="hidden" value="<?= $user->id ?>">
                                         <button type="submit" class="btn btn-view-crud btn-crud-table newbox-crud btn-sm ml-2"><i class="fas fa-eye adjust-eyeicon-crud ml-1"></i></button>
                                         </form>
-                                        <form method="POST" action="usuarios/editar">
+                                        <form method="POST" action="/usuarios/editar">
                                         <input name="id" type="hidden" value="<?= $user->id ?>"> 
                                         <button type="submit" class="btn btn-edit-crud btn-crud-table newbox-crud btn-sm ml-2"><i class="fas fa-edit mr-1"></i></button>
                                         </form> 
@@ -114,7 +116,7 @@
                                             Tem certeza que deseja excluir este usuário?
                                             </div>
                                             <div class="modal-footer">
-                                            <form method="POST" action="usuarios/deletar">
+                                            <form method="POST" action="/usuarios/deletar">
                                                 <input type="hidden" name="id" value="<?= $user->id ?>"> 
                                                 <button type="submit" class="btn btn-primary">Sim</button>
                                             </form>  
@@ -130,6 +132,7 @@
                             <?php foreach($users as $user) : ?>
                                 <tr>
                                     <td class="font-adjustment-crud"><?= $user->email; ?></td>
+                                    <td class="font-adjustment-crud"><?= $user->nome; ?></td>
                                     <td class="font-adjustment-crud"><?= $user->senha; ?></td>
                                     <td class="font-adjustment-crud border-right-0">
                                     <div class="row">

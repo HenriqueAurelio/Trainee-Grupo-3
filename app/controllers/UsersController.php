@@ -44,6 +44,7 @@ class UsersController
         }
         App::get('database')->insert('usuarios', [
             'email' => $_POST['email'], 
+            'nome' => $_POST['nome'],
             'senha' => $_POST['senha']
         ]);
 
@@ -52,7 +53,8 @@ class UsersController
     public function update()
     {
         App::get('database')->insert('usuarios', [
-            'email' => $_POST['email'], 
+            'email' => $_POST['email'],
+            'nome' => $_POST['nome'], 
             'senha' => $_POST['senha']
         ], $_POST['id']);
 

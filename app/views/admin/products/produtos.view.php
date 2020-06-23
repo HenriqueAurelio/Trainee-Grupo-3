@@ -82,7 +82,7 @@
                             <?php if(isset($produtos_limite)) : ?>
                                 <?php foreach ($produtos_limite as $produto) : ?>
                                     <tr class="border-top border-bottom">
-                                        <th class="font-adjustment-crud" scope="row" ><?= utf8_encode($produto->nome); ?></th>
+                                        <td class="font-adjustment-crud"><?= utf8_encode($produto->nome); ?></td>
                                         <td class="font-adjustment-crud"><?= utf8_encode($produto->categoria->nome); ?></td>
                                         <td class="font-adjustment-crud">R$ <?= utf8_encode($produto->preco) ?></td>
                                         <td class="font-adjustment-crud border-right-0">

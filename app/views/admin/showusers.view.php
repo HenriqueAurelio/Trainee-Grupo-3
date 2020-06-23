@@ -36,6 +36,7 @@
                     <thead>
                         <tr>
                             <th class="titulo-crud" scope="col">E-mail</th>
+                            <th class="titulo-crud" scope="col">Nome</th>
                             <th class="preco-crud" scope="col">Senha</th>
                             
                         </tr>
@@ -43,6 +44,7 @@
                     <tbody>
                         <tr>
                             <th> <?= $usuarioRead->email ?></th>
+                            <th> <?= $usuarioRead->nome ?></th>
                             <th> <?= $usuarioRead->senha ?></th>
                         </tr>   
                     </tbody>
