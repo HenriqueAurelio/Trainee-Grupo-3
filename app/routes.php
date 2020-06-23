@@ -48,4 +48,4 @@ $router->post('usuarios/limite', 'UsersController@indexLimit');
 $router->get('produtos', 'ProdutosController@inventario');
 $router->post('produtos/pesquisa', 'ProdutosController@teste');
 $router->post('produtos/categorias', 'ProdutosController@categoriasPr');
-
+$router->post('produtos/limit', 'ProdutosController@indexLimit');

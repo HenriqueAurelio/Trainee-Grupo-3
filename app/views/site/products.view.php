@@ -1,6 +1,24 @@
 <!doctype html>
 <html lang="pt-br">
-<?php $i=0; ?>
+<?php
+    $i = 0;
+    if (isset($produtos_limite)) {
+        $limit = 16;
+        $num_pages = ceil(count($produtos) / $limit);
+        $ids = array();
+        foreach($produtos as $produto) {
+            array_push($ids, $produto->id);
+        } 
+        $actual_page = array_search($produtos_limite[0]->id, $ids);
+        $possible = $actual_page + 16;
+        if ($possible <= count($produtos)) {
+            $exists = 1;
+        }
+        else {
+            $exists = 0;
+        }
+    }    
+?>
   <head>
     <!-- Meta tags Obrigatórias -->
     <meta charset="utf-8">
@@ -45,8 +63,19 @@
                             </ul>                                            
                             </div>
                             <div class="col-md-9 col-sm-6">
+                            <?php if (isset($produtos_limite)) : ?>
+                                <?php if (($actual_page + 16) <= count($produtos)) : ?>
+                                    <p class="counter-products">Mostrando <?= $actual_page; ?>-<?= $actual_page+16; ?>/<?= count($produtos); ?> livros</p>
+                                <?php else : ?>
+                                    <p class="counter-products">Mostrando <?= $actual_page; ?>-<?= count($produtos); ?>/<?= count($produtos); ?> livros</p>
+                                <?php endif; ?>
+                            <?php elseif(isset($cat)) : ?>
+                                <p class="counter-products">Exibindo os resultados da categoria <?= $cat->nome; ?></p>
+                            <?php elseif(isset($pesquisa)) : ?>
+                                <p class="counter-products">Exibindo os resultados da pesquisa <?= $pesquisa[0]; ?></p>     
+                            <?php endif; ?>  
                                 <div class="row">
-
+                                    <?php if(!isset($produtos_limite)) : ?>
                                         <?php foreach($produtos as $produto) : ?>
                             
                                             <div class="col-md-3 col-6">
@@ -63,18 +92,61 @@
                                                     </div>
                                                 </div>                                                   
                                         <?php endforeach;?>
+                                    <?php else : ?>
+                                        <?php foreach($produtos_limite as $produto) : ?>
+                                            
+                                            <div class="col-md-3 col-6">
+                                                <div class="card prcards">
+                                                            <img class="card-img-top tamanhocard" src="../../public/img/<?= $produto->foto; ?>" alt="Imagem de capa do card">
+                                                        <div class="card-body rescard">
+                                                                <h5 class="card-title tituloCard"><?= $produto->nome; ?></h5>
+                                                                <p class="varlivro">R$ <?= $produto->preco; ?></p>
+                                                                <form method="POST" action="/informacoes-produto">
+                                                                    <input name="id" type="hidden" value="<?= $produto->id; ?>">
+                                                                    <button type="submit" class="btn btn-product resbopro">VER PRODUTO</button>
+                                                                </form>                                
+                                                        </div>
+                                                    </div>
+                                                </div>                                                   
+                                        <?php endforeach;?>
+                                    <?php endif; ?>        
                             </div>  
                             </div>
-                                <div class="col-md-4 offset-md-10">
-                                    <nav aria-label="Page navigation example">
-                                        <ul class="pagination produtospagination">
-                                        <li class="page-item"><a class="page-link intenprpag" href="#">Previous</a></li>
-                                        <li id="actpago" class="page-item actpago active" onclick="actpago()"><a id="actpagol" class="page-link intenprpag activepagination" href="#">1</a></li>
-                                        <li id="actpags" class="page-item actpags" onclick="actpags()"><a id="actpagsl" class="page-link intenprpag" href="#">2</a></li>
-                                        <li id="actpagt" class="page-item actpagt" onclick="actpagt()"><a id="actpagtl" class="page-link intenprpag" href="#">3</a></li>
-                                        <li class="page-item"><a class="page-link intenprpag" href="#">Next</a></li>
+                                <div class="col-md-4 offset-md-8">
+                                <?php if(isset($produtos_limite)) : ?>
+                                    <nav aria-label="pagination-crud">
+                                        <ul class="pagination justify-content-end" id="paginacao-crud-responsive">
+                                        <li class="page-item">
+                                            <form method="POST" action="/produtos/limit">
+                                            <?php if ($actual_page == 0) : ?>
+                                                <input type="hidden" name="offset" value="<?= $actual_page; ?>" />
+                                            <?php else : ?>
+                                                <input type="hidden" name="offset" value="<?= ($actual_page - 16); ?>" />
+                                            <?php endif; ?>       
+                                            <button type="submit" class="page-link pagination-crud-buttons newbox-crud"><</button>
+                                            </form>
+                                        </li>
+                                        <?php for ($j = 1; $j <= $num_pages; $j++) : ?>
+                                            <li class="page-item actpago">
+                                                <form method="POST" action="/produtos/limit">
+                                                    <input id="actual_page" type="hidden" name="offset" value="<?= ($j*16)-16; ?>"/>
+                                                    <button type="submit" class="page-link pagination-crud-buttons newbox-crud"><?= $j; ?></a>
+                                                </form>
+                                            </li>
+                                        <?php endfor; ?>
+                                        <li class="page-item">
+                                            <form method="POST" action="/produtos/limit">
+                                            <?php if ($exists == 1) : ?>
+                                                <input type="hidden" name="offset" value="<?= ($actual_page + 16); ?>" />
+                                            <?php else : ?>
+                                                <input type="hidden" name="offset" value="<?= $actual_page; ?>" />
+                                            <?php endif; ?>        
+                                            <button type="submit" class="page-link pagination-crud-buttons newbox-crud">></button>
+                                            </form>
+                                        </li>
                                         </ul>
                                     </nav>
+                                <?php endif; ?> 
                                 </div>
                     </div>
                 </div>

@@ -40,6 +40,14 @@ class QueryBuilder
         return $statement->fetchAll(PDO::FETCH_CLASS);
     }
 
+    public function selectLimitProductsFront($table, $offset) {
+        $statement = $this->pdo->prepare("select * from {$table} LIMIT {$offset}, 16");
+
+        $statement->execute();
+
+        return $statement->fetchAll(PDO::FETCH_CLASS);
+    }
+
     public function insertProducts($table, $params)
     {
       $sql = sprintf(
