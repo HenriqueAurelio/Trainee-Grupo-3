@@ -96,12 +96,22 @@ class ProductsController
     
     public function search()
     {   
+        session_start();
+        if (!isset($_SESSION['email'])) {
+            return redirect('admin');
+        }
+
         $produtos = App::get('database')->pesquisa('produtos', $_POST['pesquisa']);
 
         foreach($produtos as $produto) {
             $produto->categoria = App::get('database')->selectAttrProducts('categorias', 'nome', $produto->categoria_id);
         }
+
+        $pesquisa = $_POST['pesquisa'];
+
+        $pesquisa = array($pesquisa);
         
-        return view('admin/products/produtos', compact('produtos'));
+        
+        return view('admin/products/produtos', compact('produtos', 'pesquisa'));
     }
 }

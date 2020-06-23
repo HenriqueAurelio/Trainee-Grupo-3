@@ -46,7 +46,7 @@
                         <div class="input-group mt-5 mb-5 responsive-search-crud float-right">
                             <span class = "procurar-crud">Pesquisar:</span>
                             <form action="/admin/produtos/pesquisa" method="POST">
-                                <input name="pesquisa" type="text" class="form-control float-right newbox-crud input-crud-responsive cabecalho-crud ml-3" placeholder="Livro, Categoria..." aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                <input name="pesquisa" type="text" class="form-control float-right newbox-crud input-crud-responsive cabecalho-crud ml-3" placeholder="Livro..." aria-label="Recipient's username" aria-describedby="basic-addon2">
                                 <button class="btn btn-outline-danger my-2 my-sm-0 butaoPes" type="submit"><i class="fas fa-search"></i></button>   
                             </form>
                         </div>
@@ -63,6 +63,8 @@
                                 <?php else : ?>
                                     <p class="counter-products">Mostrando <?= $actual_page; ?>-<?= count($produtos); ?>/<?= count($produtos); ?> livros</p>
                                 <?php endif; ?>
+                            <?php elseif (isset($pesquisa)) : ?>
+                                <p class="counter-products">Exibindo os resultados da pesquisa <?= $pesquisa[0]; ?></p>    
                             <?php endif; ?>    
                         </div>    
                     </div>        

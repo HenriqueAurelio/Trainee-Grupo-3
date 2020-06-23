@@ -211,6 +211,15 @@ class QueryBuilder
 
          
     }
+
+    public function pesquisaEmail($table, $pesquisa) {
+        $statement = $this->pdo->prepare("select * from {$table} WHERE email LIKE '%{$pesquisa}%'");
+
+        $statement->execute();
+
+        return $statement->fetchAll(PDO::FETCH_CLASS);  
+    }
+    
     public function categoriaspr($table, $id)
     {
         

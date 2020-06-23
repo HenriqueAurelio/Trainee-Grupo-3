@@ -59,13 +59,15 @@
               <div class="col-lg-2 col-md-3"></div>
               <div class="col-lg-10 col-md-9">
               <div class="row">
-                    <div class="col-md-4 offset-md-8">
+                    <div class="col-md-6 offset-md-6">
                         <?php if (isset($categorias_limite)) : ?>
                             <?php if (($actual_page + 5) <= count($categorias)) : ?>
                                 <p class="counter-products">Mostrando <?= $actual_page; ?>-<?= $actual_page+5; ?>/<?= count($categorias); ?> categorias</p>
                             <?php else : ?>
                                 <p class="counter-products">Mostrando <?= $actual_page; ?>-<?= count($categorias); ?>/<?= count($categorias); ?> categorias</p>
                             <?php endif; ?>
+                        <?php elseif (isset($pesquisa)) : ?>
+                            <p class="counter-products">Exibindo os resultados da pesquisa <?= $pesquisa[0]; ?></p>
                         <?php endif; ?>    
                     </div>    
                 </div>  
@@ -78,53 +80,103 @@
                             </tr>
                         </thead>
                         <tbody>
-                          <?php foreach ($categorias_limite as $categoria) : ?>
-                            <tr>
-                                <td class="font-adjustment-crud"><?= $categoria->nome; ?></td>
-                                <td class="border-right-0">
-                                  <div class="row">
-                                  <form  method="POST" action="categorias/mostrar" class="ml-4">
-                                    <input  class="btn-crud-table" type="hidden" name="id" value="<?= $categoria->id ?>">
-                                    <button type="submit" class="btn btn-view-crud btn-crud-table newbox-crud btn-sm view-table-crud vasco"><i class="fas fa-eye adjust-eyeicon-crud"></i></button>
-                                  </form>
-                                
-                                  <form method="POST" action="categorias/editar" >
-                                    <input class="btn-crud-table" type="hidden" name="id" value="<?= $categoria->id ?>">
-                                    <button type="submit" class="btn btn-edit-crud btn-crud-table newbox-crud btn-sm ml-2 vasco"><i class="fas fa-edit mr-1"></i></button>
-                                  </form>
-                                  <form class="crudform">
-                                    <button type="button" class="btn btn-delete-crud btn-crud-table newbox-crud btn-sm ml-2 vasco" data-toggle="modal" data-target="#exampleModalCenter<?= $i; ?>" ><i class="far fa-trash-alt"></i></button>
-                                  </form>
-                                  </div>
-                                  <div class="modal fade" id="exampleModalCenter<?= $i; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                                  <div class="modal-dialog modal-dialog-centered" role="document">
-                                    <div class="modal-content">
-                                      <div class="modal-header">
-                                        <h5 class="modal-title font-modaltitle-crud" id="exampleModalLongTitle">Excluir Categoria</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                          <span aria-hidden="true">&times;</span>
-                                        </button>
-                                      </div>
-                                      <div class="modal-body font-modalbody-crud">
-                                        Tem certeza que deseja excluir esta categoria?
-                                      </div>
-                                      
-                                      <div class="modal-footer">
-                                        <form method="POST" action="/categorias/delete">
-                                          <input type="hidden" name="id" value="<?= $categoria->id ?>">
-                                          <button type="submit" class="btn btn-primary">Sim</button>
+                            <?php if(isset($categorias_limite)) : ?>
+                                <?php foreach ($categorias_limite as $categoria) : ?>
+                                    <tr>
+                                        <td class="font-adjustment-crud"><?= $categoria->nome; ?></td>
+                                        <td class="border-right-0">
+                                        <div class="row">
+                                        <form  method="POST" action="categorias/mostrar" class="ml-4">
+                                            <input  class="btn-crud-table" type="hidden" name="id" value="<?= $categoria->id ?>">
+                                            <button type="submit" class="btn btn-view-crud btn-crud-table newbox-crud btn-sm view-table-crud vasco"><i class="fas fa-eye adjust-eyeicon-crud"></i></button>
                                         </form>
-                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Não</button>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                </td>
-                                
-                                
-                            </tr>
-                            <?php $i++; ?>
-                          <?php endforeach; ?>
+                                        
+                                        <form method="POST" action="categorias/editar" >
+                                            <input class="btn-crud-table" type="hidden" name="id" value="<?= $categoria->id ?>">
+                                            <button type="submit" class="btn btn-edit-crud btn-crud-table newbox-crud btn-sm ml-2 vasco"><i class="fas fa-edit mr-1"></i></button>
+                                        </form>
+                                        <form class="crudform">
+                                            <button type="button" class="btn btn-delete-crud btn-crud-table newbox-crud btn-sm ml-2 vasco" data-toggle="modal" data-target="#exampleModalCenter<?= $i; ?>" ><i class="far fa-trash-alt"></i></button>
+                                        </form>
+                                        </div>
+                                        <div class="modal fade" id="exampleModalCenter<?= $i; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered" role="document">
+                                            <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title font-modaltitle-crud" id="exampleModalLongTitle">Excluir Categoria</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body font-modalbody-crud">
+                                                Tem certeza que deseja excluir esta categoria?
+                                            </div>
+                                            
+                                            <div class="modal-footer">
+                                                <form method="POST" action="/categorias/delete">
+                                                <input type="hidden" name="id" value="<?= $categoria->id ?>">
+                                                <button type="submit" class="btn btn-primary">Sim</button>
+                                                </form>
+                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Não</button>
+                                            </div>
+                                            </div>
+                                        </div>
+                                        </div>
+                                        </td>
+                                        
+                                        
+                                    </tr>
+                                    <?php $i++; ?>
+                                <?php endforeach; ?>
+                            <?php else : ?>
+                                <?php foreach ($categorias as $categoria) : ?>
+                                    <tr>
+                                        <td class="font-adjustment-crud"><?= $categoria->nome; ?></td>
+                                        <td class="border-right-0">
+                                        <div class="row">
+                                        <form  method="POST" action="categorias/mostrar" class="ml-4">
+                                            <input  class="btn-crud-table" type="hidden" name="id" value="<?= $categoria->id ?>">
+                                            <button type="submit" class="btn btn-view-crud btn-crud-table newbox-crud btn-sm view-table-crud vasco"><i class="fas fa-eye adjust-eyeicon-crud"></i></button>
+                                        </form>
+                                        
+                                        <form method="POST" action="categorias/editar" >
+                                            <input class="btn-crud-table" type="hidden" name="id" value="<?= $categoria->id ?>">
+                                            <button type="submit" class="btn btn-edit-crud btn-crud-table newbox-crud btn-sm ml-2 vasco"><i class="fas fa-edit mr-1"></i></button>
+                                        </form>
+                                        <form class="crudform">
+                                            <button type="button" class="btn btn-delete-crud btn-crud-table newbox-crud btn-sm ml-2 vasco" data-toggle="modal" data-target="#exampleModalCenter<?= $i; ?>" ><i class="far fa-trash-alt"></i></button>
+                                        </form>
+                                        </div>
+                                        <div class="modal fade" id="exampleModalCenter<?= $i; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered" role="document">
+                                            <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title font-modaltitle-crud" id="exampleModalLongTitle">Excluir Categoria</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body font-modalbody-crud">
+                                                Tem certeza que deseja excluir esta categoria?
+                                            </div>
+                                            
+                                            <div class="modal-footer">
+                                                <form method="POST" action="/categorias/delete">
+                                                <input type="hidden" name="id" value="<?= $categoria->id ?>">
+                                                <button type="submit" class="btn btn-primary">Sim</button>
+                                                </form>
+                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Não</button>
+                                            </div>
+                                            </div>
+                                        </div>
+                                        </div>
+                                        </td>
+                                        
+                                        
+                                    </tr>
+                                    <?php $i++; ?>
+                                <?php endforeach; ?>
+                            <?php endif; ?>   
                         </tbody>
                     </table>
                   </div>

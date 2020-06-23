@@ -50,9 +50,9 @@
                     <div class="col-lg-5 col-md-5" id="search-bar-crud">    
                         <div class="input-group mt-5 mb-5 responsive-search-crud float-right">
                             <span class = "procurar-crud">Pesquisar:</span>
-                            <form method="POST">
-                                <input name="pesquisa" type="text" class="form-control float-right newbox-crud input-crud-responsive cabecalho-crud ml-3" placeholder="Usuário..." aria-label="Recipient's username" aria-describedby="basic-addon2">
-                                <button class="btn btn-outline-danger my-2 my-sm-0 butaoPes" type="button"><i class="fas fa-search"></i></button>   
+                            <form method="POST" action="/usuarios/pesquisa">
+                                <input name="pesquisa" type="text" class="form-control float-right newbox-crud input-crud-responsive cabecalho-crud ml-3" placeholder="Email..." aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                <button class="btn btn-outline-danger my-2 my-sm-0 butaoPes" type="submit"><i class="fas fa-search"></i></button>   
                             </form>
                         </div>
                     </div>
@@ -68,6 +68,8 @@
                                 <?php else : ?>
                                     <p class="counter-products">Mostrando <?= $actual_page; ?>-<?= count($users); ?>/<?= count($users); ?> usuários</p>
                                 <?php endif; ?>
+                            <?php elseif (isset($pesquisa)) : ?>
+                                <p class="counter-products">Exibindo os resultados da pesquisa <?= $pesquisa[0]; ?></p>
                             <?php endif; ?>    
                         </div>    
                     </div>  
@@ -81,48 +83,93 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach($users_limite as $user) : ?>
-                            <tr>
-                                <td class="font-adjustment-crud"><?= $user->email; ?></td>
-                                <td class="font-adjustment-crud"><?= $user->senha; ?></td>
-                                <td class="font-adjustment-crud border-right-0">
-                                  <div class="row">
-                                    <form method="POST" action="usuarios/visualizar" class="ml-4">
-                                      <input name="id" type="hidden" value="<?= $user->id ?>">
-                                      <button type="submit" class="btn btn-view-crud btn-crud-table newbox-crud btn-sm ml-2"><i class="fas fa-eye adjust-eyeicon-crud ml-1"></i></button>
-                                    </form>
-                                    <form method="POST" action="usuarios/editar">
-                                      <input name="id" type="hidden" value="<?= $user->id ?>"> 
-                                      <button type="submit" class="btn btn-edit-crud btn-crud-table newbox-crud btn-sm ml-2"><i class="fas fa-edit mr-1"></i></button>
-                                    </form> 
-                                    <button type="button" class="btn btn-delete-crud btn-crud-table newbox-crud btn-sm ml-2" data-toggle="modal" data-target="#exampleModalCenter <?= $i; ?>"><i class="far fa-trash-alt"></i></button>
-                                  </div>
-                                </td>
-                                <div class="modal fade" id="exampleModalCenter <?= $i; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered" role="document">
-                                      <div class="modal-content">
-                                        <div class="modal-header">
-                                          <h5 class="modal-title font-modaltitle-crud" id="exampleModalLongTitle">Excluir Usuário</h5>
-                                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                          </button>
-                                        </div>
-                                        <div class="modal-body font-modalbody-crud">
-                                          Tem certeza que deseja excluir este usuário?
-                                        </div>
-                                        <div class="modal-footer">
-                                        <form method="POST" action="usuarios/deletar">
-                                            <input type="hidden" name="id" value="<?= $user->id ?>"> 
-                                            <button type="submit" class="btn btn-primary">Sim</button>
-                                        </form>  
-                                          <button type="button" class="btn btn-danger" data-dismiss="modal">Não</button>
-                                        </div>
-                                      </div>
+                        <?php if(isset($users_limite)) : ?>
+                            <?php foreach($users_limite as $user) : ?>
+                                <tr>
+                                    <td class="font-adjustment-crud"><?= $user->email; ?></td>
+                                    <td class="font-adjustment-crud"><?= $user->senha; ?></td>
+                                    <td class="font-adjustment-crud border-right-0">
+                                    <div class="row">
+                                        <form method="POST" action="usuarios/visualizar" class="ml-4">
+                                        <input name="id" type="hidden" value="<?= $user->id ?>">
+                                        <button type="submit" class="btn btn-view-crud btn-crud-table newbox-crud btn-sm ml-2"><i class="fas fa-eye adjust-eyeicon-crud ml-1"></i></button>
+                                        </form>
+                                        <form method="POST" action="usuarios/editar">
+                                        <input name="id" type="hidden" value="<?= $user->id ?>"> 
+                                        <button type="submit" class="btn btn-edit-crud btn-crud-table newbox-crud btn-sm ml-2"><i class="fas fa-edit mr-1"></i></button>
+                                        </form> 
+                                        <button type="button" class="btn btn-delete-crud btn-crud-table newbox-crud btn-sm ml-2" data-toggle="modal" data-target="#exampleModalCenter <?= $i; ?>"><i class="far fa-trash-alt"></i></button>
                                     </div>
-                                </div>
-                            </tr>
-                            <?php $i++; ?>
-                        <?php endforeach;?>                        
+                                    </td>
+                                    <div class="modal fade" id="exampleModalCenter <?= $i; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                            <h5 class="modal-title font-modaltitle-crud" id="exampleModalLongTitle">Excluir Usuário</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                            </div>
+                                            <div class="modal-body font-modalbody-crud">
+                                            Tem certeza que deseja excluir este usuário?
+                                            </div>
+                                            <div class="modal-footer">
+                                            <form method="POST" action="usuarios/deletar">
+                                                <input type="hidden" name="id" value="<?= $user->id ?>"> 
+                                                <button type="submit" class="btn btn-primary">Sim</button>
+                                            </form>  
+                                            <button type="button" class="btn btn-danger" data-dismiss="modal">Não</button>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </tr>
+                                <?php $i++; ?>
+                            <?php endforeach;?> 
+                        <?php else : ?>
+                            <?php foreach($users as $user) : ?>
+                                <tr>
+                                    <td class="font-adjustment-crud"><?= $user->email; ?></td>
+                                    <td class="font-adjustment-crud"><?= $user->senha; ?></td>
+                                    <td class="font-adjustment-crud border-right-0">
+                                    <div class="row">
+                                        <form method="POST" action="usuarios/visualizar" class="ml-4">
+                                        <input name="id" type="hidden" value="<?= $user->id ?>">
+                                        <button type="submit" class="btn btn-view-crud btn-crud-table newbox-crud btn-sm ml-2"><i class="fas fa-eye adjust-eyeicon-crud ml-1"></i></button>
+                                        </form>
+                                        <form method="POST" action="usuarios/editar">
+                                        <input name="id" type="hidden" value="<?= $user->id ?>"> 
+                                        <button type="submit" class="btn btn-edit-crud btn-crud-table newbox-crud btn-sm ml-2"><i class="fas fa-edit mr-1"></i></button>
+                                        </form> 
+                                        <button type="button" class="btn btn-delete-crud btn-crud-table newbox-crud btn-sm ml-2" data-toggle="modal" data-target="#exampleModalCenter <?= $i; ?>"><i class="far fa-trash-alt"></i></button>
+                                    </div>
+                                    </td>
+                                    <div class="modal fade" id="exampleModalCenter <?= $i; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                            <h5 class="modal-title font-modaltitle-crud" id="exampleModalLongTitle">Excluir Usuário</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                            </div>
+                                            <div class="modal-body font-modalbody-crud">
+                                            Tem certeza que deseja excluir este usuário?
+                                            </div>
+                                            <div class="modal-footer">
+                                            <form method="POST" action="usuarios/deletar">
+                                                <input type="hidden" name="id" value="<?= $user->id ?>"> 
+                                                <button type="submit" class="btn btn-primary">Sim</button>
+                                            </form>  
+                                            <button type="button" class="btn btn-danger" data-dismiss="modal">Não</button>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </tr>
+                                <?php $i++; ?>
+                            <?php endforeach;?> 
+                        <?php endif; ?>                           
                     </tbody>
                 </table>
             </div>
