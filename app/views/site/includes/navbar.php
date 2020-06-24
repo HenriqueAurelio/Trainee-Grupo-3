@@ -26,9 +26,15 @@
                     <li class="nav-item">
                         <a class="nav-link linkestilo" href="/sobre">Sobre Nós</a>
                      </li>
-                     <li class="nav-item">
-                        <a class="nav-link linkestilo" href="/admin">Login</a>
-                     </li>
+                     <?php if(!isset($_SESSION['email'])) : ?>
+                        <li class="nav-item">
+                            <a class="nav-link linkestilo" href="/admin">Login</a>
+                        </li>
+                     <?php else : ?>
+                        <li class="nav-item">
+                            <a class="nav-link linkestilo" href="/admin/home">Área Administrativa</a>
+                        </li>
+                     <?php endif; ?>   
                      <li class="nav-item">
                       <a class="nav-link linkestilo" href="/contato">Contato</a>
                     </li>

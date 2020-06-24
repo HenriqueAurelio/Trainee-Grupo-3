@@ -7,6 +7,11 @@ use App\Core\App;
 class PagesController
 {
     public function login() {
+        session_start();
+        if (isset($_SESSION['email'])) {
+            return view('admin/admin-inicio');
+        }
+
         return view('admin/login');
     }
 
