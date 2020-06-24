@@ -47,7 +47,7 @@
                 </div>   
                 <div class="col-lg-5 col-md-5" id="search-bar-crud">    
                         <div class="input-group mt-5 mb-5 responsive-search-crud float-right procurar-crud">
-                            <form action="/admin/produtos/pesquisa" method="POST">
+                            <form action="/categorias/pesquisa" method="POST">
                                 <div class="input-group mb-3">
                                 <input name="pesquisa" type="text" class="form-control" placeholder="Categoria..." aria-label="Recipient's username" aria-describedby="basic-addon2">
                                     <div class="input-group-append">
