@@ -30,7 +30,7 @@
                         <ul class="nav flex-column">
                             <li class="nav-item">
                                 <a class="nav-link" href="#">
-                                    Bem-vindo!
+                                    Bem-vindo, <?= $_SESSION['nome']; ?>!
                                 </a>
                             </li>
                             <li class="nav-item">

@@ -43,14 +43,11 @@
                         <a href="/admin/novoproduto"><button type="button" class="btn newbox-add-crud btn-crud btn-lg mb-5 mt-5 cabecalho-crud"><i class="fas fa-plus mr-3"></i>Adicionar</button></a>
                     </div>
                     <div class="col-lg-5 col-md-5" id="search-bar-crud">    
-                        <div class="input-group mt-5 mb-5 responsive-search-crud float-right procurar-crud">
+                        <div class="input-group mt-5 mb-5 responsive-search-crud float-right">
+                            <span class = "procurar-crud">Pesquisar:</span>
                             <form action="/admin/produtos/pesquisa" method="POST">
-                                <div class="input-group mb-3">
-                                <input name="pesquisa" type="text" class="form-control" placeholder="Livro..." aria-label="Recipient's username" aria-describedby="basic-addon2">
-                                    <div class="input-group-append">
-                                        <button class="btn btn-outline-secondary btn-search-crud" type="submit"><i class="fas fa-search"></i><i</button>
-                                    </div>
-                                </div>  
+                                <input name="pesquisa" type="text" class="form-control float-right newbox-crud input-crud-responsive cabecalho-crud ml-3" placeholder="Livro..." aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                <button class="btn btn-outline-danger my-2 my-sm-0 butaoPes" type="submit"><i class="fas fa-search"></i></button>   
                             </form>
                         </div>
                     </div>
@@ -66,6 +63,8 @@
                                 <?php else : ?>
                                     <p class="counter-products">Mostrando <?= $actual_page; ?>-<?= count($produtos); ?>/<?= count($produtos); ?> livros</p>
                                 <?php endif; ?>
+                            <?php elseif (isset($pesquisa)) : ?>
+                                <p class="counter-products">Exibindo os resultados da pesquisa <?= $pesquisa[0]; ?></p>    
                             <?php endif; ?>    
                         </div>    
                     </div>        
@@ -83,7 +82,7 @@
                             <?php if(isset($produtos_limite)) : ?>
                                 <?php foreach ($produtos_limite as $produto) : ?>
                                     <tr class="border-top border-bottom">
-                                        <th class="font-adjustment-crud" scope="row" ><?= utf8_encode($produto->nome); ?></th>
+                                        <td class="font-adjustment-crud"><?= utf8_encode($produto->nome); ?></td>
                                         <td class="font-adjustment-crud"><?= utf8_encode($produto->categoria->nome); ?></td>
                                         <td class="font-adjustment-crud">R$ <?= utf8_encode($produto->preco) ?></td>
                                         <td class="font-adjustment-crud border-right-0">

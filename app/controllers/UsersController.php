@@ -44,17 +44,17 @@ class UsersController
         }
         App::get('database')->insert('usuarios', [
             'email' => $_POST['email'], 
+            'nome' => $_POST['nome'],
             'senha' => $_POST['senha']
         ]);
 
-        $users = App::get('database')->selectAll('usuarios');
-
-        return view('admin/users', compact('users'));
+        return redirect('usuarios');
     }
     public function update()
     {
-        App::get('database')->edit('usuarios', [
-            'email' => $_POST['email'], 
+        App::get('database')->insert('usuarios', [
+            'email' => $_POST['email'],
+            'nome' => $_POST['nome'], 
             'senha' => $_POST['senha']
         ], $_POST['id']);
 
@@ -112,5 +112,20 @@ class UsersController
     public function usersreturn()
     {
         return redirect('usuarios');
+    }
+
+    public function search() {
+        session_start();
+        if (!isset($_SESSION['email'])) {
+            return redirect('admin');
+        }
+
+        $users = App::get('database')->pesquisaEmail('usuarios', $_POST['pesquisa']);
+
+        $pesquisa = $_POST['pesquisa'];
+
+        $pesquisa = array($pesquisa);
+
+        return view('admin/users', compact('users', 'pesquisa'));
     }
 }

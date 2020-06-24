@@ -12,59 +12,7 @@
         <title>Aurelio Livraria - Admin</title>    
     </head>
     <body>
-        <nav class="navbar navbar-dark crud-navbar sticky-top">
-            <a class="admin-logo-text navbar-brand" href="#">
-               <img id="admin-navbar-logo" src="../public/img/aurelio_transparent.png" width="80" height="80">
-            </a>
-            <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-        </nav>
-
-        <div class="container-fluid">
-            <div class="row">
-                <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-dark admin-sidebar collapse">
-                    <div class="pt-3 mt-5">
-                        <ul class="nav flex-column">
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">
-                                    Bem-vindo, Gabriel!
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link active" href="#">
-                                    <i class="fas fa-home admin-navbar-item"></i>
-                                    Home
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">
-                                    <i class="fas fa-book-open admin-navbar-item"></i>
-                                    Livros
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">
-                                    <i class="fas fa-sitemap admin-navbar-item"></i>
-                                    Categorias
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">
-                                    <i class="fas fa-users admin-navbar-item"></i>
-                                    Usuários
-                                </a>
-                            </li>
-                            <li class="nav-item mt-3">
-                                <a class="nav-link" href="#">
-                                    <i class="fas fa-sign-out-alt admin-navbar-item"></i>
-                                    Sair
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
+    <?php require($_SERVER['DOCUMENT_ROOT'].'/app/views/admin/includes/nav.php'); ?>
             <div class="row">
                 <div class="col-lg-2 col-md-3"></div>
                 <div class="col-lg-10 col-md-9">
@@ -76,14 +24,22 @@
                     <div class="col-lg-2 col-md-3"></div>
                     <div class="col-lg-10 col-md-9 form-group">
                         <label for="exampleFormControlInput1">E-mail</label>
-                        <input type="text" name="email" class="form-control" id="exampleFormControlInput1" placeholder="E-mail">
+                        <input required type="text" name="email" class="form-control" id="exampleFormControlInput1" placeholder="E-mail">
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-lg-2 col-md-3"></div>
                     <div class="col-lg-5 col-md-4 form-group">
+                        <label for="exampleFormControlInput2">Nome</label>
+                        <input required type="text" name="nome" class="form-control" id="exampleFormControlInput2" placeholder="Senha">
+                    </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-2 col-md-3"></div>
+                    <div class="col-lg-5 col-md-4 ml-2 form-group">
                         <label for="exampleFormControlInput2">Senha</label>
-                        <input type="text" name="senha" class="form-control" id="exampleFormControlInput2" placeholder="Senha">
+                        <input required type="text" name="senha" class="form-control" id="exampleFormControlInput2" placeholder="Senha">
                     </div>
                     </div>
                 </div>

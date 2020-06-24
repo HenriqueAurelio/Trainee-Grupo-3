@@ -135,6 +135,14 @@ class QueryBuilder
         return $statement->fetchAll(PDO::FETCH_CLASS);
     }
 
+    public function getUser($table, $email) {
+        $statement = $this->pdo->prepare("select nome from {$table} where email = '{$email}'");
+
+        $statement->execute();
+
+        return $statement->fetch(PDO::FETCH_OBJ);
+    }
+
     public function insert($table, $parameters)
     {
         $sql = sprintf(
@@ -211,6 +219,15 @@ class QueryBuilder
 
          
     }
+
+    public function pesquisaEmail($table, $pesquisa) {
+        $statement = $this->pdo->prepare("select * from {$table} WHERE email LIKE '%{$pesquisa}%'");
+
+        $statement->execute();
+
+        return $statement->fetchAll(PDO::FETCH_CLASS);  
+    }
+
     public function categoriaspr($table, $id)
     {
         

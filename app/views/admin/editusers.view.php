@@ -7,65 +7,10 @@
             href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" 
             integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" 
             crossorigin="anonymous">
-        <link rel="stylesheet" href="..\public\css\style.css">
-        <link rel="stylesheet" href="..\public\css\admin-styles.css">
-        <link rel="stylesheet" href="..\public\css\all.css">
         <title>Aurelio Livraria - Admin</title>    
     </head>
     <body>
-        <nav class="navbar-dark crud-navbar sticky-top">
-            <a class="admin-logo-text navbar-brand" href="#">
-               <img id="admin-navbar-logo" src="..\public\img\aurelio_transparent.png" width="80" height="80">
-            </a>
-            <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-        </nav>
-
-        <div class="container-fluid">
-            <div class="row">
-                <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-dark admin-sidebar collapse">
-                    <div class="pt-3 mt-5">
-                        <ul class="nav flex-column">
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">
-                                    Bem-vindo, Gabriel!
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link active" href="#">
-                                    <i class="fas fa-home admin-navbar-item"></i>
-                                    Home
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">
-                                    <i class="fas fa-book-open admin-navbar-item"></i>
-                                    Livros
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">
-                                    <i class="fas fa-sitemap admin-navbar-item"></i>
-                                    Categorias
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">
-                                    <i class="fas fa-users admin-navbar-item"></i>
-                                    Usuários
-                                </a>
-                            </li>
-                            <li class="nav-item mt-3">
-                                <a class="nav-link" href="#">
-                                    <i class="fas fa-sign-out-alt admin-navbar-item"></i>
-                                    Sair
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
+    <?php require($_SERVER['DOCUMENT_ROOT'].'/app/views/admin/includes/nav.php'); ?>
             <div class="row">
                 <div class="col-lg-2 col-md-3"></div>
                 <div class="col-lg-10 col-md-9">
@@ -79,6 +24,14 @@
                         <label for="exampleFormControlInput1">E-mail</label>
                         <input type="hidden" name="id" value="<?= $usuer->id; ?>">
                         <input type="text" name="email" value="<?= $usuer->email; ?>" class="form-control" id="exampleFormControlInput1" placeholder="E-mail">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-2 col-md-3"></div>
+                    <div class="col-lg-10 col-md-9 form-group">
+                        <label for="exampleFormControlInput1">Nome</label>
+                        <input type="hidden" name="id" value="<?= $usuer->id; ?>">
+                        <input type="text" name="nome" value="<?= $usuer->nome; ?>" class="form-control" id="exampleFormControlInput1" placeholder="E-mail">
                     </div>
                 </div>
                 <div class="row">

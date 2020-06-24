@@ -101,5 +101,19 @@ class CategoriasController
     public function retuindex(){
         return redirect('categorias');
     }
-     
+
+    public function search()
+    {   
+        session_start();
+        if (!isset($_SESSION['email'])) {
+            return redirect('admin');
+        }
+        $categorias = App::get('database')->pesquisa('categorias', $_POST['pesquisa']);
+        $pesquisa = $_POST['pesquisa'];
+
+        $pesquisa = array($pesquisa);
+        
+        return view('admin/categorias', compact('categorias', 'pesquisa'));
+    }
+
 }

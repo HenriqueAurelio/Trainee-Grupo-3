@@ -22,6 +22,8 @@ class LoginController
         else {
             session_start();
             $_SESSION['email'] = $_POST['email'];
+            $nome = App::get('database')->getUser('usuarios', $_SESSION['email']);
+            $_SESSION['nome'] = $nome->nome;
             return view('admin/admin-inicio');
         }
     }
