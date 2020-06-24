@@ -412,7 +412,7 @@
 }
 
 .tamanhocard {
-    
+    height: 250px;
     transition: transform .2s; /* Animation */
     margin: 0 auto;
 }
