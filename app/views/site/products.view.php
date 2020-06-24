@@ -65,9 +65,9 @@
                             <div class="col-md-9 col-sm-6">
                             <?php if (isset($produtos_limite)) : ?>
                                 <?php if (($actual_page + 16) <= count($produtos)) : ?>
-                                    <p class="counter-products">Mostrando <?= $actual_page; ?>-<?= $actual_page+16; ?>/<?= count($produtos); ?> livros</p>
+                                    <p class="counter-products">Mostrando <?= $actual_page+1; ?>-<?= $actual_page+16; ?>/<?= count($produtos); ?> livros</p>
                                 <?php else : ?>
-                                    <p class="counter-products">Mostrando <?= $actual_page; ?>-<?= count($produtos); ?>/<?= count($produtos); ?> livros</p>
+                                    <p class="counter-products">Mostrando <?= $actual_page+1; ?>-<?= count($produtos); ?>/<?= count($produtos); ?> livros</p>
                                 <?php endif; ?>
                             <?php elseif(isset($cat)) : ?>
                                 <p class="counter-products">Exibindo os resultados da categoria <?= $cat->nome; ?></p>

@@ -57,7 +57,7 @@
                         <p class="card-text home-book-price">R$ <?= $homeproduto->preco; ?></p>
                         <form method="POST" action="/informacoes-produto">
                             <input type="hidden" name="id" value="<?= $homeproduto->id ?>">
-                            <button type="submit" class="btn home-btn-product">VER PRODUTO</button>
+                            <button type="submit" class="btn home-btn-product ml-2">VER PRODUTO</button>
                             <?php $cl ++; ?>
                         </form>
                       </div>

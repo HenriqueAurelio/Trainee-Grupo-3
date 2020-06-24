@@ -67,9 +67,9 @@
                         <div class="col-md-4 offset-md-8">
                             <?php if (isset($users_limite)) : ?>
                                 <?php if (($actual_page + 5) <= count($users)) : ?>
-                                    <p class="counter-products">Mostrando <?= $actual_page; ?>-<?= $actual_page+5; ?>/<?= count($users); ?> usuários</p>
+                                    <p class="counter-products">Mostrando <?= $actual_page+1; ?>-<?= $actual_page+5; ?>/<?= count($users); ?> usuários</p>
                                 <?php else : ?>
-                                    <p class="counter-products">Mostrando <?= $actual_page; ?>-<?= count($users); ?>/<?= count($users); ?> usuários</p>
+                                    <p class="counter-products">Mostrando <?= $actual_page+1; ?>-<?= count($users); ?>/<?= count($users); ?> usuários</p>
                                 <?php endif; ?>
                             <?php elseif (isset($pesquisa)) : ?>
                                 <p class="counter-products">Exibindo os resultados da pesquisa <?= $pesquisa[0]; ?></p>
