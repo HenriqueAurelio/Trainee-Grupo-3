@@ -48,11 +48,14 @@
                         <a href="/usuarios/cadastrar"><button type="button" class="btn newbox-add-crud btn-crud btn-lg mb-5 mt-5 cabecalho-crud"><i class="fas fa-plus mr-3"></i>Adicionar</button></a>
                     </div>
                     <div class="col-lg-5 col-md-5" id="search-bar-crud">    
-                        <div class="input-group mt-5 mb-5 responsive-search-crud float-right">
-                            <span class = "procurar-crud">Pesquisar:</span>
-                            <form method="POST">
-                                <input name="pesquisa" type="text" class="form-control float-right newbox-crud input-crud-responsive cabecalho-crud ml-3" placeholder="Usuário..." aria-label="Recipient's username" aria-describedby="basic-addon2">
-                                <button class="btn btn-outline-danger my-2 my-sm-0 butaoPes" type="button"><i class="fas fa-search"></i></button>   
+                        <div class="input-group mt-5 mb-5 responsive-search-crud float-right procurar-crud">
+                            <form action="/admin/produtos/pesquisa" method="POST">
+                                <div class="input-group mb-3">
+                                <input name="pesquisa" type="text" class="form-control" placeholder="Usuário..." aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-outline-secondary btn-search-crud" type="submit"><i class="fas fa-search"></i><i</button>
+                                    </div>
+                                </div>  
                             </form>
                         </div>
                     </div>

@@ -53,7 +53,7 @@ class UsersController
     }
     public function update()
     {
-        App::get('database')->insert('usuarios', [
+        App::get('database')->edit('usuarios', [
             'email' => $_POST['email'], 
             'senha' => $_POST['senha']
         ], $_POST['id']);
