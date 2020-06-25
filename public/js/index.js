@@ -24,7 +24,7 @@ $(document).ready(function() {
         $(".book-title").css('font-size', '18px');
     }
     if (w > 576 && w <= 768) {
-        $(".book-title").css('font-size', '19px');
+        $(".book-title").css('font-size', '16px');
         $(".book-past-price").css('font-size', '20px');
         $(".book-price").css('font-size', '28px');
         $(".btn-product").css('font-size', '18px');

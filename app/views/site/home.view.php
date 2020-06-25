@@ -46,7 +46,7 @@
                   <div class="card mt-2 border-0 book-card">
                     <form method="POST" action="/informacoes-produto">
                       <input type="hidden" name="id" value="<?= $homeproduto->id ?>">
-                        <button type="submit" class="button-home-reset border-0"><img src="public\img\<?= $homeproduto->foto; ?>" class="home-img-zoom card-img-top home-book-img ml-3" alt="Imagem livro"></button>
+                        <button type="submit" class="button-home-reset border-0"><img src="public\img\<?= $homeproduto->foto; ?>" class="home-img-zoom card-img-top home-book-img ml-1" alt="Imagem livro"></button>
                     </form>
                     <div class="card-body">
                       <div class="home-book-title-group">

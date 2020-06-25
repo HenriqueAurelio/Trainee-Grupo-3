@@ -32,7 +32,7 @@
                             <select required class="custom-select" id="categoria" name="categoria_id">
                                 <option selected disabled>Selecione a categoria</option>
                                 <?php foreach ($categorias as $categoria) : ?>
-                                    <option value="<?= $categoria->id ?>"><?= utf8_encode($categoria->nome) ?></option>
+                                    <option value="<?= $categoria->id ?>"><?= $categoria->nome ?></option>
                                 <?php endforeach; ?>    
                             </select>
                         </div>
