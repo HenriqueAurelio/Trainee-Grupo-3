@@ -72,7 +72,7 @@
                                         <p class="counter-products">Mostrando <?= $actual_page+1; ?>-<?= count($produtos); ?>/<?= count($produtos); ?> livros</p>
                                     <?php endif; ?>
                                 <?php elseif(isset($cat)) : ?>
-                                    <p class="counter-products">Exibindo os resultados da categoria <b><?= $cat->nome; ?></b></p>
+                                    <p class="counter-products">Exibindo os resultados da categoria <b><?= utf8_encode($cat->nome); ?></b></p>
                                 <?php elseif(isset($pesquisa)) : ?>
                                     <p class="counter-products">Exibindo os resultados da pesquisa <b><?= $pesquisa[0]; ?></b></p>     
                                 <?php endif; ?>
@@ -118,7 +118,7 @@
                                                 </div>                                                   
                                         <?php endforeach;?>
                                     <?php else : ?>
-                                        <?php if(empty($pesquisa)) : ?>
+                                        <?php if(empty($pesquisa) && empty($cat)) : ?>
                                             <p class="counter-products">Não há nenhum livro cadastrado.</p>
                                         <?php endif; ?>        
                                     <?php endif; ?>         
