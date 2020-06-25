@@ -105,7 +105,7 @@ class UsersController
         if (!isset($_SESSION['email'])) {
             return redirect('admin');
         }
-        return view("admin/usersform");
+        return view("admin/usuarios/usersform");
 
     }
 
