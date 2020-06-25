@@ -41,12 +41,6 @@ if($status == PHP_SESSION_NONE){
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active" href="/admin/home">
-                                    <i class="fas fa-home admin-navbar-item"></i>
-                                   <span class="admin-navbar-item">Home</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
                                 <a class="nav-link" href="/admin/produtos">
                                     <i class="fas fa-book-open admin-navbar-item"></i>
                                     <span class="admin-navbar-item">Livros</span>
@@ -62,6 +56,12 @@ if($status == PHP_SESSION_NONE){
                                 <a class="nav-link" href="/usuarios">
                                     <i class="fas fa-users admin-navbar-item"></i>
                                     Usuários
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="/">
+                                    <i class="fas fa-arrow-left white admin-navbar-item"></i>
+                                   <span class="admin-navbar-item">Voltar para o site</span>
                                 </a>
                             </li>
                             <li class="nav-item mt-3">
