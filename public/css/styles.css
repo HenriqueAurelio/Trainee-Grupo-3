@@ -496,10 +496,10 @@
         display: block;
     }
     .reslista{
-        display: none;
+        display: none !important;
     }
     .resquisa{
-        display: none;
+        display: none !important;
         width: 15rem !important;
     }
     
@@ -507,10 +507,10 @@
         font-size: 2rem;
     }
     .menujs {
-        display: inline;
+        display: inline !important; 
     }
     .menujspes {
-        display: inline-block;
+        display: inline !important;
     }
     .formuPes{
         width: 12rem !important;

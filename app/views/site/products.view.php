@@ -27,10 +27,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-   <link rel="stylesheet" href="../../public/css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Carrois+Gothic&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/307d809775.js" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="../assets/js/scripts.js"></script>
+    <link rel="stylesheet" href="../../public/css/styles.css">
+   
 
     <title>Produtos</title>
   </head>
@@ -43,7 +43,7 @@
                         <span class="resicon" onclick="openNav()"><i class="fas fa-bars"  ></i></span>
                         <div class="row">
                             <div class="input-group pesgruop">
-                                <form  method="POST" action="/produtos/pesquisa" class="form-inline my-0.3 my-lg-0 resquisa">
+                                <form  method="POST" action="/produtos/pesquisa" id="resquisa" class="form-inline my-0.3 my-lg-0 resquisa">
                                     <input name="pesquisa" id="formuPes" class="form-control formuPes ml-3 pr-0" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
                                     <div class="input-group-append">                                                          
                                         <button class="btn btn-outline-danger my-2 my-sm-0 butaoPes" type="submit"><i class="fas fa-search"></i></button>                            
@@ -167,6 +167,7 @@
 
             <!-- JavaScript (Opcional) -->
             <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
+            <script src="../../../../../../public/js/scripts.js"></script>
         <!--Fim Pagina Produtos-->
   </body>
 </html>
