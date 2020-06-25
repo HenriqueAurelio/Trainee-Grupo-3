@@ -27,7 +27,7 @@ use App\Core\App;
                         <div class="col-lg-2 col-md-3"></div>
                         <div class="col-lg-10 col-md-9 form-group">
                             <label for="exampleFormControlInput1">Nome</label>
-                            <input required type="text" value="<?= $produto->nome; ?>" name="nome" class="form-control" id="exampleFormControlInput1" placeholder="Nome do livro">
+                            <input required type="text" value="<?= utf8_encode($produto->nome); ?>" name="nome" class="form-control" id="exampleFormControlInput1" placeholder="Nome do livro">
                             <input type="hidden" value="<?= $produto->id; ?>" name="id">
                         </div>
                     </div>
@@ -38,9 +38,9 @@ use App\Core\App;
                             <select required class="custom-select" id="categoria" name="categoria_id">
                                 <?php foreach ($categorias as $categoria) : ?>
                                     <?php if ($categoria->id == $produto->categoria_id) : ?>
-                                        <option selected value="<?= $categoria->id ?>"><?= $categoria->nome ?></option>
+                                        <option selected value="<?= $categoria->id ?>"><?= utf8_encode($categoria->nome) ?></option>
                                     <?php else : ?>
-                                        <option value="<?= $categoria->id ?>"><?= $categoria->nome ?></option>
+                                        <option value="<?= $categoria->id ?>"><?= utf8_encode($categoria->nome) ?></option>
                                     <?php endif; ?>
                                 <?php endforeach; ?>
                             </select>
@@ -54,7 +54,7 @@ use App\Core\App;
                         <div class="col-lg-2 col-md-3"></div>
                         <div class="col-lg-10 col-md-9 form-group">
                             <label for="exampleFormControlTextarea1">Descrição</label>
-                            <textarea required class="form-control" name="descricao" id="exampleFormControlTextarea1"><?php echo trim($produto->descricao); ?></textarea>
+                            <textarea required class="form-control" name="descricao" id="exampleFormControlTextarea1"><?php echo trim(utf8_encode($produto->descricao)); ?></textarea>
                         </div>
                     </div>
                     <div class="row">

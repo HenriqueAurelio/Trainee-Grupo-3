@@ -41,7 +41,7 @@ class CategoriasController
     public function store()
     {
         App::get('database')->insert('categorias', [
-            'nome' => $_POST['nome']
+            'nome' => utf8_decode($_POST['nome'])
         ]);
         /*$categorias = App::get('database')->selectAll('categorias');
         return view('admin/categorias', compact('categorias'));*/
@@ -51,7 +51,7 @@ class CategoriasController
     public function update()
     {
         App::get('database')->edit('categorias', [
-            'nome' => $_POST['nome']
+            'nome' => utf8_decode($_POST['nome'])
             
         ], $_POST['id']);
         

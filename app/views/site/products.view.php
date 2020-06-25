@@ -57,7 +57,7 @@
                                     <form method="POST" action="/produtos/categorias">
                                    
                                         <input name="Catid" type="hidden" value="<?= $categoria->id;?>">
-                                        <li class="list-group-item hicon"><span class="ticon"><i class="fas fa-angle-right"></i>  <button type="submit" class="removeblue border-0 bgb"><?= $categoria->nome; ?></button><span></li>
+                                        <li class="list-group-item hicon"><span class="ticon"><i class="fas fa-angle-right"></i>  <button type="submit" class="removeblue border-0 bgb"><?= utf8_encode($categoria->nome); ?></button><span></li>
                                      
                                     </form>
                                 <?php endforeach;?>  
@@ -88,7 +88,7 @@
                                                                 <button type="submit" class="border-0 btn-img-produto"><img class="card-img-top tamanhocard" src="../../public/img/<?= $produto->foto; ?>" alt="Imagem de capa do card"></button>
                                                             </form>
                                                         <div class="card-body rescard">
-                                                                <h5 class="card-title tituloCard"><?= $produto->nome; ?></h5>
+                                                                <h5 class="card-title tituloCard"><?= utf8_encode($produto->nome); ?></h5>
                                                                 <p class="varlivro">R$ <?= $produto->preco; ?></p>
                                                                 <form method="POST" action="/informacoes-produto">
                                                                     <input name="id" type="hidden" value="<?= $produto->id; ?>">
@@ -107,7 +107,7 @@
                                                         <input name="id" type="hidden" value="<?= $produto->id; ?>">
                                                             <button type="submit" class="border-0 btn-img-produto"><img class="card-img-top tamanhocard" src="../../public/img/<?= $produto->foto; ?>" alt="Imagem de capa do card"></button>
                                                         <div class="card-body rescard">
-                                                                <h5 class="card-title tituloCard"><?= $produto->nome; ?></h5>
+                                                                <h5 class="card-title tituloCard"><?= utf8_encode($produto->nome); ?></h5>
                                                                 <p class="varlivro">R$ <?= $produto->preco; ?></p>
                                                                 <form method="POST" action="/informacoes-produto">
                                                                     <input name="id" type="hidden" value="<?= $produto->id; ?>">

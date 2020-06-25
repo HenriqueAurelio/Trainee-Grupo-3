@@ -26,7 +26,7 @@
                     <div class="col-lg-5 col-md-4 form-group">
                         <label for="exampleFormControlInput2">Categoria</label>
                         <input type="hidden" name="id" value="<?= $categ->id; ?>">
-                        <input type="text" name="nome" value="<?= $categ->nome; ?>" class="form-control" id="exampleFormControlInput2" placeholder="Categoria do livro">
+                        <input type="text" name="nome" value="<?= utf8_encode($categ->nome); ?>" class="form-control" id="exampleFormControlInput2" placeholder="Categoria do livro">
                     </div>
                 <div class="row">
                     <div class="col-lg-11 col-8"></div>

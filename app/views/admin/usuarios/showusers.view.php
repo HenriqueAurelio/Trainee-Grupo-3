@@ -37,15 +37,13 @@
                         <tr>
                             <th class="titulo-crud" scope="col">E-mail</th>
                             <th class="titulo-crud" scope="col">Nome</th>
-                            <th class="preco-crud" scope="col">Senha</th>
                             
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <th> <?= $usuarioRead->email ?></th>
-                            <th> <?= $usuarioRead->nome ?></th>
-                            <th> <?= $usuarioRead->senha ?></th>
+                            <th> <?= utf8_encode($usuarioRead->email); ?></th>
+                            <th> <?= utf8_encode($usuarioRead->nome); ?></th>>
                         </tr>   
                     </tbody>
                 </table>
