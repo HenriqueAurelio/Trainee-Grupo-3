@@ -64,7 +64,7 @@
                             </ul>                                            
                             </div>
                             <div class="col-md-9 col-sm-6">
-                            <?php if(!empty($produtos)) : ?>
+                            <?php if(isset($produtos) && !empty($produtos) || isset($pesquisa) || isset($cat)) : ?>
                                 <?php if (isset($produtos_limite)) : ?>
                                     <?php if (($actual_page + 16) <= count($produtos)) : ?>
                                         <p class="counter-products">Mostrando <?= $actual_page+1; ?>-<?= $actual_page+16; ?>/<?= count($produtos); ?> livros</p>
@@ -118,7 +118,9 @@
                                                 </div>                                                   
                                         <?php endforeach;?>
                                     <?php else : ?>
-                                        <p class="counter-products">Não há nenhum livro cadastrado.</p>    
+                                        <?php if(empty($pesquisa)) : ?>
+                                            <p class="counter-products">Não há nenhum livro cadastrado.</p>
+                                        <?php endif; ?>        
                                     <?php endif; ?>         
                             </div>  
                             </div>

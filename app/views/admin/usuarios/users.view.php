@@ -67,8 +67,8 @@
                 <div class="col-lg-10 col-md-9">
                     <div class="row">
                         <div class="col-md-4 offset-md-8">
-                        <?php if(!empty($users)) : ?>
-                            <?php if (!empty($users_limite)) : ?>
+                        <?php if(isset($users) && !empty($users) || isset($pesquisa)) : ?>
+                            <?php if (isset($users_limite)) : ?>
                                 <?php if (($actual_page + 5) <= count($users)) : ?>
                                     <p class="counter-products">Mostrando <?= $actual_page+1; ?>-<?= $actual_page+5; ?>/<?= count($users); ?> usuários</p>
                                 <?php else : ?>
@@ -177,7 +177,9 @@
                                 <?php $i++; ?>
                             <?php endforeach;?>
                         <?php else : ?>
-                            <p class="counter-products">Não há nenhum usuário cadastrado.</p>    
+                            <?php if(empty($pesquisa)) : ?>
+                                <p class="counter-products">Não há nenhum usuário cadastrado.</p>
+                            <?php endif; ?>        
                         <?php endif; ?>                           
                     </tbody>
                 </table>

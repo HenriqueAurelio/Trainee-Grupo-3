@@ -65,8 +65,8 @@
               <div class="col-lg-10 col-md-9">
               <div class="row">
                     <div class="col-md-6 offset-md-6">
-                        <?php if (!empty($categorias)) : ?>
-                            <?php if (!empty($categorias_limite)) : ?>
+                        <?php if(isset($categorias) && !empty($categorias) || isset($pesquisa)) : ?>
+                            <?php if (isset($categorias_limite)) : ?>
                                 <?php if (($actual_page + 5) <= count($categorias)) : ?>
                                     <p class="counter-products">Mostrando <?= $actual_page+1; ?>-<?= $actual_page+5; ?>/<?= count($categorias); ?> categorias</p>
                                 <?php else : ?>
@@ -184,7 +184,9 @@
                                     <?php $i++; ?>
                                 <?php endforeach; ?>
                             <?php else : ?>
-                                <p class="counter-products">Não há nenhuma categoria cadastrada.</p>    
+                                <?php if(empty($pesquisa)) : ?>
+                                    <p class="counter-products">Não há nenhuma categoria cadastrada.</p>
+                                <?php endif; ?>      
                             <?php endif; ?>   
                         </tbody>
                     </table>
