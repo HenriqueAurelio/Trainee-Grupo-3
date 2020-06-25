@@ -86,7 +86,6 @@
                         <tr>
                             <th class="preco-crud" scope="col">E-mail</th>
                             <th class="preco-crud" scope="col">Nome</th>
-                            <th class="acoes-crud" scope="col">Senha</th>
                             <th class="acoes-crud" scope="col">Ações</th>
                         </tr>
                     </thead>
@@ -95,8 +94,7 @@
                             <?php foreach($users_limite as $user) : ?>
                                 <tr>
                                     <td class="font-adjustment-crud"><?= $user->email; ?></td>
-                                    <td class="font-adjustment-crud"><?= $user->nome; ?></td>
-                                    <td class="font-adjustment-crud"><?= $user->senha; ?></td>
+                                    <td class="font-adjustment-crud"><?= $user->nome; ?></td>>
                                     <td class="font-adjustment-crud border-right-0">
                                     <div class="row">
                                         <form method="POST" action="/usuarios/visualizar" class="ml-4">
@@ -140,7 +138,6 @@
                                 <tr>
                                     <td class="font-adjustment-crud"><?= $user->email; ?></td>
                                     <td class="font-adjustment-crud"><?= $user->nome; ?></td>
-                                    <td class="font-adjustment-crud"><?= $user->senha; ?></td>
                                     <td class="font-adjustment-crud border-right-0">
                                     <div class="row">
                                         <form method="POST" action="usuarios/visualizar" class="ml-4">
@@ -207,7 +204,7 @@
                   </div>
                 </div>
               </div>
-              <?php if(isset($users_limite)) : ?>
+              <?php if(!empty($users_limite)) : ?>
                 <nav aria-label="pagination-crud">
                     <ul class="pagination justify-content-end" id="paginacao-crud-responsive">
                     <li class="page-item">
@@ -216,8 +213,8 @@
                             <input type="hidden" name="offset" value="<?= $actual_page; ?>" />
                         <?php else : ?>
                             <input type="hidden" name="offset" value="<?= ($actual_page - 5); ?>" />
+                            <button type="submit" class="page-link pagination-crud-buttons newbox-crud"><</button>
                         <?php endif; ?>       
-                        <button type="submit" class="page-link pagination-crud-buttons newbox-crud"><</button>
                         </form>
                     </li>
                     <?php for ($j = 1; $j <= $num_pages; $j++) : ?>
@@ -232,10 +229,10 @@
                         <form method="POST" action="/usuarios/limite">
                         <?php if ($exists == 1) : ?>
                             <input type="hidden" name="offset" value="<?= ($actual_page + 5); ?>" />
+                            <button type="submit" class="page-link pagination-crud-buttons newbox-crud">></button>
                         <?php else : ?>
                             <input type="hidden" name="offset" value="<?= $actual_page; ?>" />
                         <?php endif; ?>        
-                        <button type="submit" class="page-link pagination-crud-buttons newbox-crud">></button>
                         </form>
                     </li>
                     </ul>
