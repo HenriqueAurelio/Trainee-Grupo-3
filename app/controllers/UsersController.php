@@ -58,9 +58,9 @@ class UsersController
                                 
         }  
         App::get('database')->insert('usuarios', [
-            'email' => utf8_decode($_POST['email']), 
-            'nome' => utf8_decode($_POST['nome']),
-            'senha' => utf8_decode($_POST['senha'])
+            'email' => $_POST['email'], 
+            'nome' => $_POST['nome'],
+            'senha' => $_POST['senha']
             ]);
          return redirect('usuarios');                    
     }
@@ -90,9 +90,9 @@ class UsersController
                                 
         }  
         App::get('database')->edit('usuarios', [
-            'email' => utf8_decode($_POST['email']),
-            'nome' => utf8_decode($_POST['nome']), 
-            'senha' => utf8_decode($_POST['senha'])
+            'email' => $_POST['email'],
+            'nome' => $_POST['nome'], 
+            'senha' => $_POST['senha']
         ], $_POST['id']);
 
 

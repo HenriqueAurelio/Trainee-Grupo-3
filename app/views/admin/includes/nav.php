@@ -38,7 +38,7 @@ if($status == PHP_SESSION_NONE){
                         <ul class="nav flex-column">
                             <li class="nav-item">
                                 <a class="nav-link" href="#">
-                                    Bem-vindo, <?= utf8_encode($_SESSION['nome']); ?>!
+                                    Bem-vindo, <?= $_SESSION['nome']; ?>!
                                 </a>
                             </li>
                             <li class="nav-item">

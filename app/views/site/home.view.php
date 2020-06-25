@@ -50,7 +50,7 @@
                     </form>
                     <div class="card-body">
                       <div class="home-book-title-group">
-                        <h5 class="card-title home-book-title"><?= utf8_encode($homeproduto->nome); ?></h5>
+                        <h5 class="card-title home-book-title"><?= $homeproduto->nome; ?></h5>
                       </div>  
                         <p class="card-text home-book-price">R$ <?= $homeproduto->preco; ?></p>
                         <form method="POST" action="/informacoes-produto">

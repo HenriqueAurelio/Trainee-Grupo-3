@@ -42,8 +42,8 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <th> <?= utf8_encode($usuarioRead->email); ?></th>
-                            <th> <?= utf8_encode($usuarioRead->nome); ?></th>>
+                            <th> <?= $usuarioRead->email; ?></th>
+                            <th> <?= $usuarioRead->nome; ?></th>>
                         </tr>   
                     </tbody>
                 </table>

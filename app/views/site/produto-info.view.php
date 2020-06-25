@@ -16,9 +16,9 @@
                 <img class="vizualizacao" src="../../../public/img/<?= $produto->foto; ?>">
             </div>
             <div class="text-box">
-                <h1 class="name ml-2"><?= utf8_encode($produto->nome) ?><br></h1>
-                <p class="product-description ml-2"><?= utf8_encode($produto->descricao) ?></p>
-                <h2 class="valor ml-2">R$ <?= utf8_encode($produto->preco) ?></h2><br><br>  
+                <h1 class="name ml-2"><?= $produto->nome ?><br></h1>
+                <p class="product-description ml-2"><?= $produto->descricao ?></p>
+                <h2 class="valor ml-2">R$ <?= $produto->preco ?></h2><br><br>  
                 <button class="botao mt-1">Comprar</button>
             </div>
         </div>
