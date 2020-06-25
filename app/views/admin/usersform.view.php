@@ -31,7 +31,7 @@
                     <div class="col-lg-2 col-md-3"></div>
                     <div class="col-lg-5 col-md-4 form-group">
                         <label for="exampleFormControlInput2">Nome</label>
-                        <input required type="text" name="nome" class="form-control" id="exampleFormControlInput2" placeholder="Senha">
+                        <input required type="text" name="nome" class="form-control" id="exampleFormControlInput2" placeholder="Nome">
                     </div>
                     </div>
                 </div>
@@ -39,7 +39,7 @@
                     <div class="col-lg-2 col-md-3"></div>
                     <div class="col-lg-5 col-md-4 ml-2 form-group">
                         <label for="exampleFormControlInput2">Senha</label>
-                        <input required type="text" name="senha" class="form-control" id="exampleFormControlInput2" placeholder="Senha">
+                        <input required type="password" name="senha" class="form-control" id="exampleFormControlInput2" placeholder="Senha">
                     </div>
                     </div>
                 </div>
