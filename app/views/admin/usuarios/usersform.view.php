@@ -23,6 +23,13 @@
                 <div class="row">
                     <div class="col-lg-2 col-md-3"></div>
                     <div class="col-lg-10 col-md-9 form-group">
+                    <?php 
+                        if(!empty($message)) {
+                            ?><div class="alert alert-danger" role="alert">
+                            <?= $message[0]; ?>
+                        </div> <?php
+                        } 
+                    ?>
                         <label for="exampleFormControlInput1">E-mail</label>
                         <input required type="text" name="email" class="form-control" id="exampleFormControlInput1" placeholder="E-mail">
                     </div>

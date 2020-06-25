@@ -51,7 +51,8 @@ class UsersController
             
             {
                 //die(var_dump($verify->email));
-                return redirect('usuarios/cadastrar');
+                $message = array('Este e-mail já está cadastrado!');
+                return view('admin/usuarios/usersform', compact('message'));
                 
             } 
                                 
@@ -65,6 +66,29 @@ class UsersController
     }
     public function update()
     {
+        session_start();
+        if (!isset($_SESSION['email'])) {
+            return redirect('admin');
+        }
+        $verifys = App::get('database')->emailverify();
+
+        $usuer = App::get('database')->selectAttr('usuarios', $_POST['id']);
+        
+        foreach ($verifys as $verify)
+        
+        {   
+            if  ($verify->email == $_POST['email'])
+            
+            {
+                if ($_POST['email'] != $usuer->email) {
+                    //die(var_dump($verify->email));
+                    $message = array('Este e-mail já está cadastrado!');
+                    return view('admin/usuarios/editusers', compact('message', 'usuer'));
+                }
+                
+            } 
+                                
+        }  
         App::get('database')->edit('usuarios', [
             'email' => $_POST['email'],
             'nome' => $_POST['nome'], 
