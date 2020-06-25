@@ -48,10 +48,10 @@ class ProductsController
 
     public function create() {
         App::get('database')->insertProducts('produtos', [
-            'nome' => utf8_decode($_POST['nome']),
+            'nome' => $_POST['nome'],
             'preco' => $_POST['preco'],
             'foto' => $_POST['foto'],
-            'descricao' => utf8_decode($_POST['descricao']),
+            'descricao' => $_POST['descricao'],
             'categoria_id' => $_POST['categoria_id']
         ]);
 
@@ -60,10 +60,10 @@ class ProductsController
 
     public function update() {
         App::get('database')->editProducts('produtos', [
-            'nome' => utf8_decode($_POST['nome']),
+            'nome' => $_POST['nome'],
             'preco' => $_POST['preco'],
             'foto' => $_POST['foto'],
-            'descricao' => utf8_decode($_POST['descricao']),
+            'descricao' => $_POST['descricao'],
             'categoria_id' => $_POST['categoria_id']
         ], $_POST['id']);
 

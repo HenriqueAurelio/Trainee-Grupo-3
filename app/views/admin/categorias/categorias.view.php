@@ -90,7 +90,7 @@
                             <?php if(!empty($categorias_limite)) : ?>
                                 <?php foreach ($categorias_limite as $categoria) : ?>
                                     <tr>
-                                        <td class="font-adjustment-crud"><?= utf8_encode($categoria->nome); ?></td>
+                                        <td class="font-adjustment-crud"><?= $categoria->nome; ?></td>
                                         <td class="border-right-0">
                                         <div class="row">
                                         <form  method="POST" action="categorias/mostrar" class="ml-4">
@@ -138,7 +138,7 @@
                             <?php elseif(!empty($categorias)) : ?>
                                 <?php foreach ($categorias as $categoria) : ?>
                                     <tr>
-                                        <td class="font-adjustment-crud"><?= utf8_encode($categoria->nome); ?></td>
+                                        <td class="font-adjustment-crud"><?= $categoria->nome; ?></td>
                                         <td class="border-right-0">
                                         <div class="row">
                                         <form  method="POST" action="categorias/mostrar" class="ml-4">

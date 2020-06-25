@@ -93,8 +93,8 @@
                         <?php if(!empty($users_limite)) : ?>
                             <?php foreach($users_limite as $user) : ?>
                                 <tr>
-                                    <td class="font-adjustment-crud"><?= utf8_encode($user->email); ?></td>
-                                    <td class="font-adjustment-crud"><?= utf8_encode($user->nome); ?></td>>
+                                    <td class="font-adjustment-crud"><?= $user->email; ?></td>
+                                    <td class="font-adjustment-crud"><?= $user->nome; ?></td>>
                                     <td class="font-adjustment-crud border-right-0">
                                     <div class="row">
                                         <form method="POST" action="/usuarios/visualizar" class="ml-4">
@@ -136,8 +136,8 @@
                         <?php elseif(!empty($users)) : ?>
                             <?php foreach($users as $user) : ?>
                                 <tr>
-                                    <td class="font-adjustment-crud"><?= utf8_encode($user->email); ?></td>
-                                    <td class="font-adjustment-crud"><?= utf8_encode($user->nome); ?></td>
+                                    <td class="font-adjustment-crud"><?= $user->email; ?></td>
+                                    <td class="font-adjustment-crud"><?= $user->nome; ?></td>
                                     <td class="font-adjustment-crud border-right-0">
                                     <div class="row">
                                         <form method="POST" action="usuarios/visualizar" class="ml-4">

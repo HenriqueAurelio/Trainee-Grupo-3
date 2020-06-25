@@ -28,10 +28,10 @@
                     <img width="300" height="400" src="../../../public/img/<?= $produto->foto; ?>">
                 </div>
                 <div class="book-info col-lg-6 col-md-5">
-                    <p><b>Nome: </b><?= utf8_encode($produto->nome); ?></p>
+                    <p><b>Nome: </b><?= $produto->nome; ?></p>
                     <p><b>Preço: </b>R$ <?= $produto->preco; ?></p>
-                    <p><b>Categoria: </b><?= utf8_encode($produto->categoria->nome); ?></p>
-                    <p><b>Descrição: </b><?= utf8_encode($produto->descricao); ?></p>
+                    <p><b>Categoria: </b><?= $produto->categoria->nome; ?></p>
+                    <p><b>Descrição: </b><?= $produto->descricao; ?></p>
                 </div>
             </div>
             <br>

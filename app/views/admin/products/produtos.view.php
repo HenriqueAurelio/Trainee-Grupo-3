@@ -89,8 +89,8 @@
                             <?php if(!empty($produtos_limite)) : ?>
                                 <?php foreach ($produtos_limite as $produto) : ?>
                                     <tr class="border-top border-bottom">
-                                        <td class="font-adjustment-crud"><?= utf8_encode($produto->nome); ?></td>
-                                        <td class="font-adjustment-crud"><?= utf8_encode($produto->categoria->nome); ?></td>
+                                        <td class="font-adjustment-crud"><?= $produto->nome; ?></td>
+                                        <td class="font-adjustment-crud"><?= $produto->categoria->nome; ?></td>
                                         <td class="font-adjustment-crud">R$ <?= $produto->preco ?></td>
                                         <td class="font-adjustment-crud border-right-0">
                                             <form method="POST" action="/produtos/mostrar">
@@ -135,8 +135,8 @@
                             <?php elseif(!empty($produtos)) : ?>
                                 <?php foreach ($produtos as $produto) : ?>
                                     <tr class="border-top border-bottom">
-                                        <th class="font-adjustment-crud"><?= utf8_encode($produto->nome); ?></th>
-                                        <td class="font-adjustment-crud"><?= utf8_encode($produto->categoria->nome); ?></td>
+                                        <th class="font-adjustment-crud"><?= $produto->nome; ?></th>
+                                        <td class="font-adjustment-crud"><?= $produto->categoria->nome; ?></td>
                                         <td class="font-adjustment-crud">R$ <?= $produto->preco; ?></td>
                                         <td class="font-adjustment-crud border-right-0">
                                             <form method="POST" action="/produtos/mostrar">

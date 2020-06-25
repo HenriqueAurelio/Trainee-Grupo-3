@@ -30,7 +30,7 @@
                     ?>
                         <label for="exampleFormControlInput1">E-mail</label>
                         <input type="hidden" name="id" value="<?= $usuer->id; ?>">
-                        <input type="text" name="email" value="<?= utf8_encode($usuer->email); ?>" class="form-control" id="exampleFormControlInput1" placeholder="E-mail">
+                        <input type="text" name="email" value="<?= $usuer->email; ?>" class="form-control" id="exampleFormControlInput1" placeholder="E-mail">
                     </div>
                 </div>
                 <div class="row">
@@ -38,7 +38,7 @@
                     <div class="col-lg-10 col-md-9 form-group">
                         <label for="exampleFormControlInput1">Nome</label>
                         <input type="hidden" name="id" value="<?= $usuer->id; ?>">
-                        <input type="text" name="nome" value="<?= utf8_encode($usuer->nome); ?>" class="form-control" id="exampleFormControlInput1" placeholder="Nome">
+                        <input type="text" name="nome" value="<?= $usuer->nome; ?>" class="form-control" id="exampleFormControlInput1" placeholder="Nome">
                     </div>
                 </div>
                 <div class="row">
@@ -46,7 +46,7 @@
                     <div class="col-lg-5 col-md-4 form-group">
                         <label for="exampleFormControlInput2">Senha</label>
                         <input type="hidden" name="id" value="<?= $usuer->id; ?>">
-                        <input type="password" name="senha" value="<?= utf8_encode($usuer->senha); ?>" class="form-control" id="exampleFormControlInput2" placeholder="Senha">
+                        <input type="password" name="senha" value="<?= $usuer->senha; ?>" class="form-control" id="exampleFormControlInput2" placeholder="Senha">
                     </div>
                     </div>
                     <div class="row">

@@ -44,7 +44,7 @@
                             </thead>
                             <tbody>
                             <tr>
-                                <th><?= utf8_encode($categoriasRead->nome) ?></th>
+                                <th><?= $categoriasRead->nome ?></th>
                             </tr>
                             </tbody>
                         </table>
