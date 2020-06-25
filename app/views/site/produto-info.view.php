@@ -10,6 +10,7 @@
     
     <body class="product-page">
     <?php require 'includes/navbar.php' ?>
+    <a href="/produtos"><button class="btn btn-danger mt-4 ml-5"><i class="fas fa-arrow-left white"></i> Voltar</button></a>
         <div class="container page">
             <div class="img-box">
                 <img class="vizualizacao" src="../../../public/img/<?= $produto->foto; ?>">
