@@ -80,7 +80,10 @@
                             
                                             <div class="col-md-3 col-6">
                                                 <div class="card prcards">
-                                                            <img class="card-img-top tamanhocard" src="../../public/img/<?= $produto->foto; ?>" alt="Imagem de capa do card">
+                                                            <form method="POST" action="/informacoes-produto">
+                                                                <input name="id" type="hidden" value="<?= $produto->id; ?>">
+                                                                <button type="submit" class="btn btn-primary"><img class="card-img-top tamanhocard" src="../../public/img/<?= $produto->foto; ?>" alt="Imagem de capa do card"></button>
+                                                            </form>
                                                         <div class="card-body rescard">
                                                                 <h5 class="card-title tituloCard"><?= $produto->nome; ?></h5>
                                                                 <p class="varlivro">R$ <?= $produto->preco; ?></p>
@@ -97,7 +100,9 @@
                                             
                                             <div class="col-md-3 col-6">
                                                 <div class="card prcards">
-                                                            <img class="card-img-top tamanhocard" src="../../public/img/<?= $produto->foto; ?>" alt="Imagem de capa do card">
+                                                    <form method="POST" action="/informacoes-produto">
+                                                        <input name="id" type="hidden" value="<?= $produto->id; ?>">
+                                                            <button type="submit" class="border-0 btn-img-produto"><img class="card-img-top tamanhocard" src="../../public/img/<?= $produto->foto; ?>" alt="Imagem de capa do card"></button>
                                                         <div class="card-body rescard">
                                                                 <h5 class="card-title tituloCard"><?= $produto->nome; ?></h5>
                                                                 <p class="varlivro">R$ <?= $produto->preco; ?></p>

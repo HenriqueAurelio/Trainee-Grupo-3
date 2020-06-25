@@ -1032,3 +1032,14 @@
     background-color: #928c8c !important;
     color: white !important;
 }
+
+.btn-img-produto{
+    background-color: white !important;
+    width:195px;
+    margin-left: -6px;
+    margin-top: -2px;
+}
+
+.btn-img-produto:focus{
+    outline: none !important;
+}
