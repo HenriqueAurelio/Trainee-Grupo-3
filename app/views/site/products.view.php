@@ -85,7 +85,7 @@
                                                 <div class="card prcards">
                                                             <form method="POST" action="/informacoes-produto">
                                                                 <input name="id" type="hidden" value="<?= $produto->id; ?>">
-                                                                <button type="submit" class="btn btn-primary"><img class="card-img-top tamanhocard" src="../../public/img/<?= $produto->foto; ?>" alt="Imagem de capa do card"></button>
+                                                                <button type="submit" class="border-0 btn-img-produto"><img class="card-img-top tamanhocard" src="../../public/img/<?= $produto->foto; ?>" alt="Imagem de capa do card"></button>
                                                             </form>
                                                         <div class="card-body rescard">
                                                                 <h5 class="card-title tituloCard"><?= $produto->nome; ?></h5>
