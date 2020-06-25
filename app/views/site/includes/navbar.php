@@ -53,9 +53,9 @@ if($status == PHP_SESSION_ACTIVE){
                     </li>
                   </ul>
                   <div class="pesquisa">
-                    <form class="form-inline my-2 my-lg-0">
+                    <form class="form-inline my-2 my-lg-0" method="POST" action="/produtos/pesquisa">
                       <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Procurar..." aria-label="Recipient's username" aria-describedby="basic-addon2">
+                        <input name="pesquisa" type="text" class="form-control" placeholder="Procurar..." aria-label="Recipient's username" aria-describedby="basic-addon2">
                         <div class="input-group-append">
                           <button class="btn btn-outline-secondary btn-search-navbar-site border-0" type="submit"><i class="fas fa-search"></i></button>
                         </div>

@@ -14,7 +14,8 @@
     <?php require($_SERVER['DOCUMENT_ROOT'].'/app/views/admin/includes/nav.php'); ?>
     <div class="container">   
       <div class="row">
-        <div>
+      <div class="col-lg-2 col-md-3"></div>
+        <div class="col-lg-10 col-md-9">
             <h1 class="display-4">Erro ao deletar</h1>
             <p class="lead">Não foi possivel deletar esta categorias pois há livros com essa categoria</p>
             <hr class="my-4">
