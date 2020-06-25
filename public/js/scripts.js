@@ -16,10 +16,10 @@ function openNav(){
         y.className = "form-inline my-0.3 my-lg-0 resquisa";
     
     }
-    if (z.className === "form-control mr-sm-2 formuPes"){
+    if (z.className === "form-control formuPes ml-3 pr-0"){
         z.className += " menujspes";
     }else{
-        z.className = "form-control mr-sm-2 formuPes";
+        z.className = "form-control formuPes ml-3 pr-0";
     
     }
 }
