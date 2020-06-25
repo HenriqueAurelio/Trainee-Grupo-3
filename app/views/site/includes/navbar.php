@@ -17,6 +17,7 @@ if($status == PHP_SESSION_ACTIVE){
             <meta charset="utf-8">
             <link rel="stylesheet" href="../../../../public/css/style.css">
             <link rel="stylesheet" href="../../../../public/css/styles.css">
+            <link rel="icon" type="image/png" href="../../../../public/img/aurelio_transparent.png"/>
             <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
             <title>Aurelio Livraria</title>
             <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
