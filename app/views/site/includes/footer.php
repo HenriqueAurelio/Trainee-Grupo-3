@@ -40,7 +40,7 @@
                 </ul>                                     
              </div>             
               <div class="col-md-3">
-                <h4 class="mt-lg-0 mt-sm-4 fale-conosco-footer"> Fale Conosco</h4>
+                <h4 class="mt-lg-0 mt-sm-4 text-center fale-conosco-footer"> Fale Conosco</h4>
                 <ul class="footer-conosco pl-0">
                   <li>
                     <i class="fa fa-map-marker"></i> Universidade Federal de Juiz de Fora(UFJF)
