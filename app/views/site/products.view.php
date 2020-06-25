@@ -37,7 +37,7 @@
   <body>
         <?php include 'includes/navbar.php'; ?>
     <!--Inicio Pagina Produtos-->
-            <div class="container">
+            <div class="container view-product">
                 <div class="row medrow">
                     <div class="col-md-3">
                         <span class="resicon" onclick="openNav()"><i class="fas fa-bars"  ></i></span>

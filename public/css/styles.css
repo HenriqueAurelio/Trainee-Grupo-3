@@ -1043,3 +1043,8 @@
 .btn-img-produto:focus{
     outline: none !important;
 }
+
+.view-product {
+    position: relative;
+    min-height: 60vh;
+}

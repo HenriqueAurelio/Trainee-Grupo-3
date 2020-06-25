@@ -39,7 +39,7 @@
       <!-- Final do carousel -->
 
       <!-- Página home (livros e preços) -->
-      <div class="container">
+      <div class="container view-product">
         <div class="row book-list">
           <?php foreach($homeprodutos as $homeproduto)  : ?>  
               <div class="col-md-3 col-6">
