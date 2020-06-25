@@ -2,22 +2,24 @@
 <html lang="pt-br">
 <?php
     $i = 0;
-    if (isset($produtos_limite)) {
-        $limit = 16;
-        $num_pages = ceil(count($produtos) / $limit);
-        $ids = array();
-        foreach($produtos as $produto) {
-            array_push($ids, $produto->id);
-        } 
-        $actual_page = array_search($produtos_limite[0]->id, $ids);
-        $possible = $actual_page + 16;
-        if ($possible <= count($produtos)) {
-            $exists = 1;
+    if(!empty($produtos)) {
+        if (isset($produtos_limite)) {
+            $limit = 16;
+            $num_pages = ceil(count($produtos) / $limit);
+            $ids = array();
+            foreach($produtos as $produto) {
+                array_push($ids, $produto->id);
+            } 
+            $actual_page = array_search($produtos_limite[0]->id, $ids);
+            $possible = $actual_page + 16;
+            if ($possible <= count($produtos)) {
+                $exists = 1;
+            }
+            else {
+                $exists = 0;
+            }
         }
-        else {
-            $exists = 0;
-        }
-    }    
+    }        
 ?>
   <head>
     <!-- Meta tags Obrigatórias -->
@@ -62,20 +64,22 @@
                             </ul>                                            
                             </div>
                             <div class="col-md-9 col-sm-6">
-                            <?php if (isset($produtos_limite)) : ?>
-                                <?php if (($actual_page + 16) <= count($produtos)) : ?>
-                                    <p class="counter-products">Mostrando <?= $actual_page+1; ?>-<?= $actual_page+16; ?>/<?= count($produtos); ?> livros</p>
-                                <?php else : ?>
-                                    <p class="counter-products">Mostrando <?= $actual_page+1; ?>-<?= count($produtos); ?>/<?= count($produtos); ?> livros</p>
+                            <?php if(!empty($produtos)) : ?>
+                                <?php if (isset($produtos_limite)) : ?>
+                                    <?php if (($actual_page + 16) <= count($produtos)) : ?>
+                                        <p class="counter-products">Mostrando <?= $actual_page+1; ?>-<?= $actual_page+16; ?>/<?= count($produtos); ?> livros</p>
+                                    <?php else : ?>
+                                        <p class="counter-products">Mostrando <?= $actual_page+1; ?>-<?= count($produtos); ?>/<?= count($produtos); ?> livros</p>
+                                    <?php endif; ?>
+                                <?php elseif(isset($cat)) : ?>
+                                    <p class="counter-products">Exibindo os resultados da categoria <b><?= $cat->nome; ?></b></p>
+                                <?php elseif(isset($pesquisa)) : ?>
+                                    <p class="counter-products">Exibindo os resultados da pesquisa <b><?= $pesquisa[0]; ?></b></p>     
                                 <?php endif; ?>
-                            <?php elseif(isset($cat)) : ?>
-                                <p class="counter-products">Exibindo os resultados da categoria <?= $cat->nome; ?></p>
-                            <?php elseif(isset($pesquisa)) : ?>
-                                <p class="counter-products">Exibindo os resultados da pesquisa <?= $pesquisa[0]; ?></p>     
-                            <?php endif; ?>  
+                            <?php endif; ?>      
                                 <div class="row">
-                                    <?php if(!isset($produtos_limite)) : ?>
-                                        <?php foreach($produtos as $produto) : ?>
+                                    <?php if(!empty($produtos_limite)) : ?>
+                                        <?php foreach($produtos_limite as $produto) : ?>
                             
                                             <div class="col-md-3 col-6">
                                                 <div class="card prcards">
@@ -94,8 +98,8 @@
                                                     </div>
                                                 </div>                                                   
                                         <?php endforeach;?>
-                                    <?php else : ?>
-                                        <?php foreach($produtos_limite as $produto) : ?>
+                                    <?php elseif(!empty($produtos)) : ?>
+                                        <?php foreach($produtos as $produto) : ?>
                                             
                                             <div class="col-md-3 col-6">
                                                 <div class="card prcards">
@@ -113,11 +117,13 @@
                                                     </div>
                                                 </div>                                                   
                                         <?php endforeach;?>
-                                    <?php endif; ?>        
+                                    <?php else : ?>
+                                        <p class="counter-products">Não há nenhum livro cadastrado.</p>    
+                                    <?php endif; ?>         
                             </div>  
                             </div>
                                 <div class="col-md-4 offset-md-8">
-                                <?php if(isset($produtos_limite)) : ?>
+                                <?php if(!empty($produtos_limite)) : ?>
                                     <nav aria-label="pagination-crud">
                                         <ul class="pagination justify-content-end" id="paginacao-crud-responsive">
                                         <li class="page-item">
@@ -126,8 +132,8 @@
                                                 <input type="hidden" name="offset" value="<?= $actual_page; ?>" />
                                             <?php else : ?>
                                                 <input type="hidden" name="offset" value="<?= ($actual_page - 16); ?>" />
+                                                <button type="submit" class="page-link pagination-crud-buttons newbox-crud"><</button>
                                             <?php endif; ?>       
-                                            <button type="submit" class="page-link pagination-crud-buttons newbox-crud"><</button>
                                             </form>
                                         </li>
                                         <?php for ($j = 1; $j <= $num_pages; $j++) : ?>
@@ -142,10 +148,10 @@
                                             <form method="POST" action="/produtos/limit">
                                             <?php if ($exists == 1) : ?>
                                                 <input type="hidden" name="offset" value="<?= ($actual_page + 16); ?>" />
+                                                <button type="submit" class="page-link pagination-crud-buttons newbox-crud">></button>
                                             <?php else : ?>
                                                 <input type="hidden" name="offset" value="<?= $actual_page; ?>" />
                                             <?php endif; ?>        
-                                            <button type="submit" class="page-link pagination-crud-buttons newbox-crud">></button>
                                             </form>
                                         </li>
                                         </ul>

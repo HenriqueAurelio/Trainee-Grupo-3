@@ -2,22 +2,24 @@
 <html lang="pt-br">
 <?php
     $i = 0;
-    if (isset($categorias_limite)) {
-        $limit = 5;
-        $num_pages = ceil(count($categorias) / $limit);
-        $ids = array();
-        foreach($categorias as $categoria) {
-            array_push($ids, $categoria->id);
-        } 
-        $actual_page = array_search($categorias_limite[0]->id, $ids);
-        $possible = $actual_page + 5;
-        if ($possible <= count($categorias)) {
-            $exists = 1;
+    if(!empty($categorias)) {
+        if (!empty($categorias_limite)) {
+            $limit = 5;
+            $num_pages = ceil(count($categorias) / $limit);
+            $ids = array();
+            foreach($categorias as $categoria) {
+                array_push($ids, $categoria->id);
+            } 
+            $actual_page = array_search($categorias_limite[0]->id, $ids);
+            $possible = $actual_page + 5;
+            if ($possible <= count($categorias)) {
+                $exists = 1;
+            }
+            else {
+                $exists = 0;
+            }
         }
-        else {
-            $exists = 0;
-        }
-    }    
+    }        
 ?>
 	<head> 
 
@@ -63,15 +65,17 @@
               <div class="col-lg-10 col-md-9">
               <div class="row">
                     <div class="col-md-6 offset-md-6">
-                        <?php if (isset($categorias_limite)) : ?>
-                            <?php if (($actual_page + 5) <= count($categorias)) : ?>
-                                <p class="counter-products">Mostrando <?= $actual_page+1; ?>-<?= $actual_page+5; ?>/<?= count($categorias); ?> categorias</p>
-                            <?php else : ?>
-                                <p class="counter-products">Mostrando <?= $actual_page+1; ?>-<?= count($categorias); ?>/<?= count($categorias); ?> categorias</p>
+                        <?php if (!empty($categorias)) : ?>
+                            <?php if (!empty($categorias_limite)) : ?>
+                                <?php if (($actual_page + 5) <= count($categorias)) : ?>
+                                    <p class="counter-products">Mostrando <?= $actual_page+1; ?>-<?= $actual_page+5; ?>/<?= count($categorias); ?> categorias</p>
+                                <?php else : ?>
+                                    <p class="counter-products">Mostrando <?= $actual_page+1; ?>-<?= count($categorias); ?>/<?= count($categorias); ?> categorias</p>
+                                <?php endif; ?>
+                            <?php elseif (isset($pesquisa)) : ?>
+                                <p class="counter-products">Exibindo os resultados da pesquisa <b><?= $pesquisa[0]; ?></b></p>
                             <?php endif; ?>
-                        <?php elseif (isset($pesquisa)) : ?>
-                            <p class="counter-products">Exibindo os resultados da pesquisa <?= $pesquisa[0]; ?></p>
-                        <?php endif; ?>    
+                        <?php endif; ?>        
                     </div>    
                 </div>  
                 <div class = "table-sm-responsive">
@@ -83,7 +87,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <?php if(isset($categorias_limite)) : ?>
+                            <?php if(!empty($categorias_limite)) : ?>
                                 <?php foreach ($categorias_limite as $categoria) : ?>
                                     <tr>
                                         <td class="font-adjustment-crud"><?= $categoria->nome; ?></td>
@@ -131,7 +135,7 @@
                                     </tr>
                                     <?php $i++; ?>
                                 <?php endforeach; ?>
-                            <?php else : ?>
+                            <?php elseif(!empty($categorias)) : ?>
                                 <?php foreach ($categorias as $categoria) : ?>
                                     <tr>
                                         <td class="font-adjustment-crud"><?= $categoria->nome; ?></td>
@@ -179,6 +183,8 @@
                                     </tr>
                                     <?php $i++; ?>
                                 <?php endforeach; ?>
+                            <?php else : ?>
+                                <p class="counter-products">Não há nenhuma categoria cadastrada.</p>    
                             <?php endif; ?>   
                         </tbody>
                     </table>
@@ -186,7 +192,7 @@
                 </div>              
               </div>
             
-              <?php if(isset($categorias_limite)) : ?>
+              <?php if(!empty($categorias_limite)) : ?>
                 <nav aria-label="pagination-crud">
                     <ul class="pagination justify-content-end" id="paginacao-crud-responsive">
                     <li class="page-item">
@@ -195,8 +201,8 @@
                             <input type="hidden" name="offset" value="<?= $actual_page; ?>" />
                         <?php else : ?>
                             <input type="hidden" name="offset" value="<?= ($actual_page - 5); ?>" />
+                            <button type="submit" class="page-link pagination-crud-buttons newbox-crud"><</button>
                         <?php endif; ?>       
-                        <button type="submit" class="page-link pagination-crud-buttons newbox-crud"><</button>
                         </form>
                     </li>
                     <?php for ($j = 1; $j <= $num_pages; $j++) : ?>
@@ -211,10 +217,10 @@
                         <form method="POST" action="/categorias/limite">
                         <?php if ($exists == 1) : ?>
                             <input type="hidden" name="offset" value="<?= ($actual_page + 5); ?>" />
+                            <button type="submit" class="page-link pagination-crud-buttons newbox-crud">></button>
                         <?php else : ?>
                             <input type="hidden" name="offset" value="<?= $actual_page; ?>" />
                         <?php endif; ?>        
-                        <button type="submit" class="page-link pagination-crud-buttons newbox-crud">></button>
                         </form>
                     </li>
                     </ul>

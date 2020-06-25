@@ -1,21 +1,23 @@
 <?php
     $i = 0;
-    if (isset($produtos_limite)) {
-        $limit = 5;
-        $num_pages = ceil(count($produtos) / $limit);
-        $ids = array();
-        foreach($produtos as $produto) {
-            array_push($ids, $produto->id);
-        } 
-        $actual_page = array_search($produtos_limite[0]->id, $ids);
-        $possible = $actual_page + 5;
-        if ($possible <= count($produtos)) {
-            $exists = 1;
+    if(!empty($produtos)) {
+        if (!empty($produtos_limite)) {
+            $limit = 5;
+            $num_pages = ceil(count($produtos) / $limit);
+            $ids = array();
+            foreach($produtos as $produto) {
+                array_push($ids, $produto->id);
+            } 
+            $actual_page = array_search($produtos_limite[0]->id, $ids);
+            $possible = $actual_page + 5;
+            if ($possible <= count($produtos)) {
+                $exists = 1;
+            }
+            else {
+                $exists = 0;
+            }
         }
-        else {
-            $exists = 0;
-        }
-    }    
+    }        
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -60,15 +62,17 @@
                 <div class="col-lg-10 col-md-9">
                     <div class="row">
                         <div class="col-md-4 offset-md-8">
-                            <?php if (isset($produtos_limite)) : ?>
-                                <?php if (($actual_page + 5) <= count($produtos)) : ?>
-                                    <p class="counter-products">Mostrando <?= $actual_page+1; ?>-<?= $actual_page+5; ?>/<?= count($produtos); ?> livros</p>
-                                <?php else : ?>
-                                    <p class="counter-products">Mostrando <?= $actual_page+1; ?>-<?= count($produtos); ?>/<?= count($produtos); ?> livros</p>
+                            <?php if (!empty($produtos)) : ?>
+                                <?php if (!empty($produtos_limite)) : ?>
+                                    <?php if (($actual_page + 5) <= count($produtos)) : ?>
+                                        <p class="counter-products">Mostrando <?= $actual_page+1; ?>-<?= $actual_page+5; ?>/<?= count($produtos); ?> livros</p>
+                                    <?php else : ?>
+                                        <p class="counter-products">Mostrando <?= $actual_page+1; ?>-<?= count($produtos); ?>/<?= count($produtos); ?> livros</p>
+                                    <?php endif; ?>
+                                <?php elseif (isset($pesquisa)) : ?>
+                                    <p class="counter-products">Exibindo os resultados da pesquisa <b><?= $pesquisa[0]; ?></b></p>    
                                 <?php endif; ?>
-                            <?php elseif (isset($pesquisa)) : ?>
-                                <p class="counter-products">Exibindo os resultados da pesquisa <?= $pesquisa[0]; ?></p>    
-                            <?php endif; ?>    
+                            <?php endif; ?>        
                         </div>    
                     </div>        
                     <div class = "table-responsive">
@@ -82,7 +86,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                            <?php if(isset($produtos_limite)) : ?>
+                            <?php if(!empty($produtos_limite)) : ?>
                                 <?php foreach ($produtos_limite as $produto) : ?>
                                     <tr class="border-top border-bottom">
                                         <td class="font-adjustment-crud"><?= $produto->nome; ?></td>
@@ -128,7 +132,7 @@
                                     </tr>
                                     <?php $i++; ?>     
                                 <?php endforeach; ?>
-                            <?php else : ?>
+                            <?php elseif(!empty($produtos)) : ?>
                                 <?php foreach ($produtos as $produto) : ?>
                                     <tr class="border-top border-bottom">
                                         <th class="font-adjustment-crud" scope="row" ><?= $produto->nome; ?></th>
@@ -174,13 +178,15 @@
                                     </tr>
                                     <?php $i++; ?>     
                                 <?php endforeach; ?>
+                            <?php else : ?>
+                                <p class="counter-products">Não há nenhum livro cadastrado.</p>    
                             <?php endif; ?>  
                             </tbody>
                         </table>
                     </div>
                 </div>    
             </div>
-            <?php if(isset($produtos_limite)) : ?>
+            <?php if(!empty($produtos_limite)) : ?>
                 <nav aria-label="pagination-crud">
                     <ul class="pagination justify-content-end" id="paginacao-crud-responsive">
                     <li class="page-item">
@@ -189,8 +195,8 @@
                             <input type="hidden" name="offset" value="<?= $actual_page; ?>" />
                         <?php else : ?>
                             <input type="hidden" name="offset" value="<?= ($actual_page - 5); ?>" />
+                            <button type="submit" class="page-link pagination-crud-buttons newbox-crud"><</button>
                         <?php endif; ?>       
-                        <button type="submit" class="page-link pagination-crud-buttons newbox-crud"><</button>
                         </form>
                     </li>
                     <?php for ($j = 1; $j <= $num_pages; $j++) : ?>
@@ -205,10 +211,10 @@
                         <form method="POST" action="/produtos/limite">
                         <?php if ($exists == 1) : ?>
                             <input type="hidden" name="offset" value="<?= ($actual_page + 5); ?>" />
+                            <button type="submit" class="page-link pagination-crud-buttons newbox-crud">></button>
                         <?php else : ?>
                             <input type="hidden" name="offset" value="<?= $actual_page; ?>" />
                         <?php endif; ?>        
-                        <button type="submit" class="page-link pagination-crud-buttons newbox-crud">></button>
                         </form>
                     </li>
                     </ul>

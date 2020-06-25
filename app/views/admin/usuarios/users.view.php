@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <?php
     $i = 0;
-    if (isset($users_limite)) {
-        $limit = 5;
-        $num_pages = ceil(count($users) / $limit);
-        $ids = array();
-        foreach($users as $user) {
-            array_push($ids, $user->id);
-        } 
-        $actual_page = array_search($users_limite[0]->id, $ids);
-        $possible = $actual_page + 5;
-        if ($possible <= count($users)) {
-            $exists = 1;
+    if(!empty($users)) {
+        if (!empty($users_limite)) {
+            $limit = 5;
+            $num_pages = ceil(count($users) / $limit);
+            $ids = array();
+            foreach($users as $user) {
+                array_push($ids, $user->id);
+            } 
+            $actual_page = array_search($users_limite[0]->id, $ids);
+            $possible = $actual_page + 5;
+            if ($possible <= count($users)) {
+                $exists = 1;
+            }
+            else {
+                $exists = 0;
+            }
         }
-        else {
-            $exists = 0;
-        }
-    }    
+    }        
 ?>
 
 <html lang="pt-br">
@@ -65,15 +67,17 @@
                 <div class="col-lg-10 col-md-9">
                     <div class="row">
                         <div class="col-md-4 offset-md-8">
-                            <?php if (isset($users_limite)) : ?>
+                        <?php if(!empty($users)) : ?>
+                            <?php if (!empty($users_limite)) : ?>
                                 <?php if (($actual_page + 5) <= count($users)) : ?>
                                     <p class="counter-products">Mostrando <?= $actual_page+1; ?>-<?= $actual_page+5; ?>/<?= count($users); ?> usuários</p>
                                 <?php else : ?>
                                     <p class="counter-products">Mostrando <?= $actual_page+1; ?>-<?= count($users); ?>/<?= count($users); ?> usuários</p>
                                 <?php endif; ?>
                             <?php elseif (isset($pesquisa)) : ?>
-                                <p class="counter-products">Exibindo os resultados da pesquisa <?= $pesquisa[0]; ?></p>
-                            <?php endif; ?>    
+                                <p class="counter-products">Exibindo os resultados da pesquisa <b><?= $pesquisa[0]; ?></b></p>
+                            <?php endif; ?>
+                        <?php endif; ?>        
                         </div>    
                     </div>  
             <div class = "table-sm-responsive">
@@ -87,7 +91,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php if(isset($users_limite)) : ?>
+                        <?php if(!empty($users_limite)) : ?>
                             <?php foreach($users_limite as $user) : ?>
                                 <tr>
                                     <td class="font-adjustment-crud"><?= $user->email; ?></td>
@@ -131,7 +135,7 @@
                                 </tr>
                                 <?php $i++; ?>
                             <?php endforeach;?> 
-                        <?php else : ?>
+                        <?php elseif(!empty($users)) : ?>
                             <?php foreach($users as $user) : ?>
                                 <tr>
                                     <td class="font-adjustment-crud"><?= $user->email; ?></td>
@@ -174,7 +178,9 @@
                                     </div>
                                 </tr>
                                 <?php $i++; ?>
-                            <?php endforeach;?> 
+                            <?php endforeach;?>
+                        <?php else : ?>
+                            <p class="counter-products">Não há nenhum usuário cadastrado.</p>    
                         <?php endif; ?>                           
                     </tbody>
                 </table>
