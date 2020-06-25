@@ -62,9 +62,9 @@
                         <div class="col-md-4 offset-md-8">
                             <?php if (isset($produtos_limite)) : ?>
                                 <?php if (($actual_page + 5) <= count($produtos)) : ?>
-                                    <p class="counter-products">Mostrando <?= $actual_page; ?>-<?= $actual_page+5; ?>/<?= count($produtos); ?> livros</p>
+                                    <p class="counter-products">Mostrando <?= $actual_page+1; ?>-<?= $actual_page+5; ?>/<?= count($produtos); ?> livros</p>
                                 <?php else : ?>
-                                    <p class="counter-products">Mostrando <?= $actual_page; ?>-<?= count($produtos); ?>/<?= count($produtos); ?> livros</p>
+                                    <p class="counter-products">Mostrando <?= $actual_page+1; ?>-<?= count($produtos); ?>/<?= count($produtos); ?> livros</p>
                                 <?php endif; ?>
                             <?php elseif (isset($pesquisa)) : ?>
                                 <p class="counter-products">Exibindo os resultados da pesquisa <?= $pesquisa[0]; ?></p>    
@@ -85,9 +85,9 @@
                             <?php if(isset($produtos_limite)) : ?>
                                 <?php foreach ($produtos_limite as $produto) : ?>
                                     <tr class="border-top border-bottom">
-                                        <td class="font-adjustment-crud"><?= utf8_encode($produto->nome); ?></td>
-                                        <td class="font-adjustment-crud"><?= utf8_encode($produto->categoria->nome); ?></td>
-                                        <td class="font-adjustment-crud">R$ <?= utf8_encode($produto->preco) ?></td>
+                                        <td class="font-adjustment-crud"><?= $produto->nome; ?></td>
+                                        <td class="font-adjustment-crud"><?= $produto->categoria->nome; ?></td>
+                                        <td class="font-adjustment-crud">R$ <?= $produto->preco ?></td>
                                         <td class="font-adjustment-crud border-right-0">
                                             <form method="POST" action="/produtos/mostrar">
                                                 <input type="hidden" value="<?= $produto->id; ?>" name="id">
@@ -131,9 +131,9 @@
                             <?php else : ?>
                                 <?php foreach ($produtos as $produto) : ?>
                                     <tr class="border-top border-bottom">
-                                        <th class="font-adjustment-crud" scope="row" ><?= utf8_encode($produto->nome); ?></th>
-                                        <td class="font-adjustment-crud"><?= utf8_encode($produto->categoria->nome); ?></td>
-                                        <td class="font-adjustment-crud">R$ <?= utf8_encode($produto->preco) ?></td>
+                                        <th class="font-adjustment-crud" scope="row" ><?= $produto->nome; ?></th>
+                                        <td class="font-adjustment-crud"><?= $produto->categoria->nome; ?></td>
+                                        <td class="font-adjustment-crud">R$ <?= $produto->preco; ?></td>
                                         <td class="font-adjustment-crud border-right-0">
                                             <form method="POST" action="/produtos/mostrar">
                                                 <input type="hidden" value="<?= $produto->id; ?>" name="id">

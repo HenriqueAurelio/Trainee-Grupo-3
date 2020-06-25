@@ -1,3 +1,16 @@
+<?php $status = session_status();
+if($status == PHP_SESSION_NONE){
+    //There is no active session
+    session_start();
+}else
+if($status == PHP_SESSION_DISABLED){
+    //Sessions are not available
+}else
+if($status == PHP_SESSION_ACTIVE){
+    //Destroy current and start new one
+    session_destroy();
+    session_start();
+} ?>
 <!DOCTYPE html>
 <html lang="pt-br">
       <head>
@@ -26,17 +39,23 @@
                     <li class="nav-item">
                         <a class="nav-link linkestilo" href="/sobre">Sobre Nós</a>
                      </li>
-                     <li class="nav-item">
-                        <a class="nav-link linkestilo" href="/admin">Login</a>
-                     </li>
+                     <?php if(!isset($_SESSION['email'])) : ?>
+                        <li class="nav-item">
+                            <a class="nav-link linkestilo" href="/admin">Login</a>
+                        </li>
+                     <?php else : ?>
+                        <li class="nav-item">
+                            <a class="nav-link linkestilo" href="/admin/home">Área Administrativa</a>
+                        </li>
+                     <?php endif; ?>   
                      <li class="nav-item">
                       <a class="nav-link linkestilo" href="/contato">Contato</a>
                     </li>
                   </ul>
                   <div class="pesquisa">
-                    <form class="form-inline my-2 my-lg-0">
+                    <form class="form-inline my-2 my-lg-0" method="POST" action="/produtos/pesquisa">
                       <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Procurar..." aria-label="Recipient's username" aria-describedby="basic-addon2">
+                        <input name="pesquisa" type="text" class="form-control" placeholder="Procurar..." aria-label="Recipient's username" aria-describedby="basic-addon2">
                         <div class="input-group-append">
                           <button class="btn btn-outline-secondary btn-search-navbar-site border-0" type="submit"><i class="fas fa-search"></i></button>
                         </div>

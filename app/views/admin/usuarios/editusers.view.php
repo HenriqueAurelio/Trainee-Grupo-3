@@ -31,7 +31,7 @@
                     <div class="col-lg-10 col-md-9 form-group">
                         <label for="exampleFormControlInput1">Nome</label>
                         <input type="hidden" name="id" value="<?= $usuer->id; ?>">
-                        <input type="text" name="nome" value="<?= $usuer->nome; ?>" class="form-control" id="exampleFormControlInput1" placeholder="E-mail">
+                        <input type="text" name="nome" value="<?= $usuer->nome; ?>" class="form-control" id="exampleFormControlInput1" placeholder="Nome">
                     </div>
                 </div>
                 <div class="row">

@@ -47,7 +47,7 @@
                 </div>   
                 <div class="col-lg-5 col-md-5" id="search-bar-crud">    
                         <div class="input-group mt-5 mb-5 responsive-search-crud float-right procurar-crud">
-                            <form action="/admin/produtos/pesquisa" method="POST">
+                            <form action="/categorias/pesquisa" method="POST">
                                 <div class="input-group mb-3">
                                 <input name="pesquisa" type="text" class="form-control" placeholder="Categoria..." aria-label="Recipient's username" aria-describedby="basic-addon2">
                                     <div class="input-group-append">
@@ -65,9 +65,9 @@
                     <div class="col-md-6 offset-md-6">
                         <?php if (isset($categorias_limite)) : ?>
                             <?php if (($actual_page + 5) <= count($categorias)) : ?>
-                                <p class="counter-products">Mostrando <?= $actual_page; ?>-<?= $actual_page+5; ?>/<?= count($categorias); ?> categorias</p>
+                                <p class="counter-products">Mostrando <?= $actual_page+1; ?>-<?= $actual_page+5; ?>/<?= count($categorias); ?> categorias</p>
                             <?php else : ?>
-                                <p class="counter-products">Mostrando <?= $actual_page; ?>-<?= count($categorias); ?>/<?= count($categorias); ?> categorias</p>
+                                <p class="counter-products">Mostrando <?= $actual_page+1; ?>-<?= count($categorias); ?>/<?= count($categorias); ?> categorias</p>
                             <?php endif; ?>
                         <?php elseif (isset($pesquisa)) : ?>
                             <p class="counter-products">Exibindo os resultados da pesquisa <?= $pesquisa[0]; ?></p>

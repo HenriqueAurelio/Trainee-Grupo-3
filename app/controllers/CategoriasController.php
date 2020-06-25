@@ -19,7 +19,7 @@ class CategoriasController
 
         $categorias_limite = App::get('database')->selectLimitProducts('categorias', 0);
 
-        return view('admin/categorias', compact('categorias', 'categorias_limite'));
+        return view('admin/categorias/categorias', compact('categorias', 'categorias_limite'));
        
     }
 
@@ -31,7 +31,7 @@ class CategoriasController
         $categorias = App::get('database')->selectAll('categorias');
         $categorias_limite = App::get('database')->selectLimitProducts('categorias', $_POST['offset']);
 
-        return view('admin/categorias', compact('categorias', 'categorias_limite'));
+        return view('admin/categorias/categorias', compact('categorias', 'categorias_limite'));
     }
     
     /**
@@ -65,12 +65,16 @@ class CategoriasController
         }
         $categoriasRead = App::get('database')->read('categorias', $_POST['id']);
 
-        return view('admin/showcategorias', compact('categoriasRead'));
+        return view('admin/categorias/showcategorias', compact('categoriasRead'));
     }
     public function delete(){
-        App::get('database')->delete('categorias',$_POST['id']);
-        
-        return redirect('categorias');
+        $categorias=App::get('database')->catdel('produtos',$_POST['id']);
+        if(! $categorias){
+            App::get('database')->delete('categorias',$_POST['id']);
+            return redirect('categorias');
+        } else {
+            return view('admin\categorias\deletelivors');
+        }
     }
 
     public function formview()
@@ -79,7 +83,7 @@ class CategoriasController
         if (!isset($_SESSION['email'])) {
             return redirect('admin');
         }
-        return view("admin/categoriasform");
+        return view("admin/categorias/categoriasform");
     }
     public function formedit()
     {
@@ -87,7 +91,7 @@ class CategoriasController
         if (!isset($_SESSION['email'])) {
             return redirect('admin');
         }
-        return view("admin/editcategorias");
+        return view("admin/categorias/editcategorias");
     }
     public function editform(){
         session_start();
@@ -96,7 +100,7 @@ class CategoriasController
         }
         $categ=App::get('database')->seledit('categorias',$_POST['id']);
         
-        return view("admin/editcategorias", compact('categ'));
+        return view("admin/categorias/editcategorias", compact('categ'));
     }
     public function retuindex(){
         return redirect('categorias');
@@ -113,7 +117,7 @@ class CategoriasController
 
         $pesquisa = array($pesquisa);
         
-        return view('admin/categorias', compact('categorias', 'pesquisa'));
+        return view('admin/categorias/categorias', compact('categorias', 'pesquisa'));
     }
 
 }

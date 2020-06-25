@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="pt-br">
+<?php $catenome; ?>
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -16,40 +17,25 @@
             <div class="row">
                 <div class="col-lg-2 col-md-3"></div>
                 <div class="col-lg-10 col-md-9">
-                    <h2>Cadastrar novo Usuário</h2>
+                    <h2>Editar Categoria</h2>
                 </div>
             </div>
-            <form method="POST" action="/index">
-                <div class="row">
-                    <div class="col-lg-2 col-md-3"></div>
-                    <div class="col-lg-10 col-md-9 form-group">
-                        <label for="exampleFormControlInput1">E-mail</label>
-                        <input required type="text" name="email" class="form-control" id="exampleFormControlInput1" placeholder="E-mail">
-                    </div>
-                </div>
+            <form method="POST" action="editado">
                 <div class="row">
                     <div class="col-lg-2 col-md-3"></div>
                     <div class="col-lg-5 col-md-4 form-group">
-                        <label for="exampleFormControlInput2">Nome</label>
-                        <input required type="text" name="nome" class="form-control" id="exampleFormControlInput2" placeholder="Nome">
+                        <label for="exampleFormControlInput2">Categoria</label>
+                        <input type="hidden" name="id" value="<?= $categ->id; ?>">
+                        <input type="text" name="nome" value="<?= $categ->nome; ?>" class="form-control" id="exampleFormControlInput2" placeholder="Categoria do livro">
                     </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-2 col-md-3"></div>
-                    <div class="col-lg-5 col-md-4 ml-2 form-group">
-                        <label for="exampleFormControlInput2">Senha</label>
-                        <input required type="password" name="senha" class="form-control" id="exampleFormControlInput2" placeholder="Senha">
-                    </div>
-                    </div>
-                </div>
                 <div class="row">
                     <div class="col-lg-11 col-8"></div>
                     <div class="col-lg-1 col-4">
-                        <button type="submit" class="btn admin-submit-button">Cadastrar</button>
+                        <button type="submit" class="btn admin-submit-button">Editar</button>
                     </div>    
-                </div>    
+                </div>
             </form>    
+    
         </div>    
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
