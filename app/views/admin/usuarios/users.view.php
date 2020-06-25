@@ -45,7 +45,7 @@
             <div class="row">
                     <div class="col-lg-2 col-md-3"></div>
                     <div class="col-lg-5 col-md-4" id="add-crud-responsive">
-                        <a href="/usuarios/cadastrar"><button type="button" class="btn newbox-add-crud btn-crud btn-lg mb-5 mt-5 cabecalho-crud"><i class="fas fa-plus mr-3"></i>Adicionar</button></a>
+                        <a href="usuarios/cadastrar"><button type="button" class="btn newbox-add-crud btn-crud btn-lg mb-5 mt-5 cabecalho-crud"><i class="fas fa-plus mr-3"></i>Adicionar</button></a>
                     </div>
                     <div class="col-lg-5 col-md-5" id="search-bar-crud">    
                         <div class="input-group mt-5 mb-5 responsive-search-crud float-right procurar-crud">
@@ -80,7 +80,7 @@
                 <table class="table table-striped table-bordered">
                     <thead>
                         <tr>
-                            <th class="titulo-crud" scope="col">E-mail</th>
+                            <th class="preco-crud" scope="col">E-mail</th>
                             <th class="preco-crud" scope="col">Nome</th>
                             <th class="acoes-crud" scope="col">Senha</th>
                             <th class="acoes-crud" scope="col">Ações</th>

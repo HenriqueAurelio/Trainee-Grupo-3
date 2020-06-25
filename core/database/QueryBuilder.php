@@ -255,6 +255,16 @@ class QueryBuilder
         return $statement->fetchAll(PDO::FETCH_CLASS);
     }
 
+    public function emailverify()
+    {
+        $statement = $this->pdo->prepare('SELECT `email` FROM `usuarios`');
+        
+        $statement->execute();
+
+        return $statement->fetchAll(PDO::FETCH_CLASS);
+
+    }
+
 }
 
 

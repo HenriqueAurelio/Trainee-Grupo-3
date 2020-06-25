@@ -42,13 +42,26 @@ class UsersController
         if (!isset($_SESSION['email'])) {
             return redirect('admin');
         }
+        $verifys = App::get('database')->emailverify();
+        
+        foreach ($verifys as $verify)
+        
+        {   
+            if  ($verify->email == $_POST['email'])
+            
+            {
+                //die(var_dump($verify->email));
+                return redirect('usuarios/cadastrar');
+                
+            } 
+                                
+        }  
         App::get('database')->insert('usuarios', [
             'email' => $_POST['email'], 
             'nome' => $_POST['nome'],
             'senha' => $_POST['senha']
-        ]);
-
-        return redirect('usuarios');
+            ]);
+         return redirect('usuarios');                    
     }
     public function update()
     {
@@ -92,7 +105,7 @@ class UsersController
         if (!isset($_SESSION['email'])) {
             return redirect('admin');
         }
-        return view("admin/usersform");
+        return view("admin/usuarios/usersform");
 
     }
 

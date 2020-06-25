@@ -39,7 +39,7 @@
                     <div class="col-lg-5 col-md-4 form-group">
                         <label for="exampleFormControlInput2">Senha</label>
                         <input type="hidden" name="id" value="<?= $usuer->id; ?>">
-                        <input type="text" name="senha" value="<?= $usuer->senha; ?>" class="form-control" id="exampleFormControlInput2" placeholder="Senha">
+                        <input type="password" name="senha" value="<?= $usuer->senha; ?>" class="form-control" id="exampleFormControlInput2" placeholder="Senha">
                     </div>
                     </div>
                     <div class="row">
