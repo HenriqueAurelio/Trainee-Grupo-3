@@ -12,7 +12,7 @@
             } 
             $actual_page = array_search($categorias_limite[0]->id, $ids);
             $possible = $actual_page + 5;
-            if ($possible <= count($categorias)) {
+            if ($possible < count($categorias)) {
                 $exists = 1;
             }
             else {

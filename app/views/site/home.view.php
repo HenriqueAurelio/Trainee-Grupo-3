@@ -50,12 +50,12 @@
                     </form>
                     <div class="card-body">
                       <div class="home-book-title-group">
-                        <h5 class="card-title home-book-title"><?= utf8_encode($homeproduto->nome); ?></h5>
+                        <h5 class="card-title home-book-title"><?= $homeproduto->nome; ?></h5>
                       </div>  
                         <p class="card-text home-book-price">R$ <?= $homeproduto->preco; ?></p>
                         <form method="POST" action="/informacoes-produto">
                             <input type="hidden" name="id" value="<?= $homeproduto->id ?>">
-                            <button type="submit" class="btn home-btn-product ml-2">VER PRODUTO</button>
+                            <button type="submit" class="btn home-btn-product">VER PRODUTO</button>
                             <?php $cl ++; ?>
                         </form>
                       </div>

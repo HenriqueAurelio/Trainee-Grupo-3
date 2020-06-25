@@ -51,7 +51,7 @@ class CategoriasController
     public function update()
     {
         App::get('database')->edit('categorias', [
-            'nome' => utf8_decode($_POST['nome'])
+            'nome' => $_POST['nome']
             
         ], $_POST['id']);
         
