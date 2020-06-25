@@ -18,7 +18,7 @@ class UsersController
         $users = App::get('database')->selectAll('usuarios');
         $users_limite = App::get('database')->selectLimitProducts('usuarios', 0);
 
-        return view('admin/users', compact('users', 'users_limite'));
+        return view('admin/usuarios/users', compact('users', 'users_limite'));
     }
 
     public function indexLimit() {
@@ -29,7 +29,7 @@ class UsersController
         $users = App::get('database')->selectAll('usuarios');
         $users_limite = App::get('database')->selectLimitProducts('usuarios', $_POST['offset']);
 
-        return view('admin/users', compact('users', 'users_limite'));
+        return view('admin/usuarios/users', compact('users', 'users_limite'));
     }
 
     /**
@@ -71,7 +71,7 @@ class UsersController
        $_POST['id']
        );
 
-        return view('admin/showusers', compact('usuarioRead'));
+        return view('admin/usuarios/showusers', compact('usuarioRead'));
 
     }
 
@@ -106,7 +106,7 @@ class UsersController
         $_POST['id']
         );
 
-        return view ("admin/editusers", compact('usuer'));
+        return view ("admin/usuarios/editusers", compact('usuer'));
     }
 
     public function usersreturn()
@@ -126,6 +126,6 @@ class UsersController
 
         $pesquisa = array($pesquisa);
 
-        return view('admin/users', compact('users', 'pesquisa'));
+        return view('admin/usuarios/users', compact('users', 'pesquisa'));
     }
 }

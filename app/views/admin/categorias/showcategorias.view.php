@@ -1,33 +1,33 @@
 <!DOCTYPE html>
-<?php $i = 0; ?>
 
 <html lang="pt-br">
-
+<?php $i=0; ?>
 	<head> 
 
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
         <title>Painel Administrativo</title>
-        <link rel="stylesheet" href="../public/css/style.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css2?family=Carrois+Gothic+SC&display=swap" rel="stylesheet">
-        <script type="text/javascript" src="../assets/js/scripts.js"></script>
+        <script type="text/javascript" src="../../../../assets/js/scripts.js"></script>
         <script src="https://kit.fontawesome.com/9c2b80ca1e.js" crossorigin="anonymous"></script>
 
 	</head>
 	
 	<body>
+    <?php require($_SERVER['DOCUMENT_ROOT'].'/app/views/admin/includes/nav.php'); ?>
+
         <div class = "container font-crud">
-            <h1 class="mt-5 pt-3 start-crud">Usuário</h1>
+            <h1 class="mt-5 pt-3 start-crud">Categoria</h1>
             <div class="row">
                     <div class="col-md-6" id="add-crud-responsive">
-                    <form method="get" action="voltar">                        
-                       <button type="submit" class="btn newbox-add-crud btn-crud btn-lg mb-5 mt-5 cabecalho-crud">Voltar</button>
-                    </form>
+                        <form method="get" action="voltar">
+                            <button type="submit" class="btn newbox-add-crud btn-crud btn-lg mb-5 mt-5 cabecalho-crud">Voltar</button>
+                        </form>
                     </div>
                     <div class="col-md-6" id="search-bar-crud">    
                         <div class="input-group mt-5 mb-5 responsive-search-crud float-right">
-                            <span class = "procurar-crud">Pesquisar:</span><input type="text" class="form-control float-right newbox-crud input-crud-responsive cabecalho-crud ml-3" placeholder="Livro, Categoria..." aria-label="Recipient's username" aria-describedby="basic-addon2">
+                            <span class = "procurar-crud">Pesquisar:</span><input type="text" class="form-control float-right newbox-crud input-crud-responsive cabecalho-crud ml-3" placeholder="Categorias" aria-label="Recipient's username" aria-describedby="basic-addon2">
                         </div>
                     </div>
             </div>
@@ -35,21 +35,18 @@
                 <table class="table table-striped table-bordered">
                     <thead>
                         <tr>
-                            <th class="titulo-crud" scope="col">E-mail</th>
-                            <th class="titulo-crud" scope="col">Nome</th>
-                            <th class="preco-crud" scope="col">Senha</th>
+                            <th class="categoria-crud" scope="col">Categoria</th>
                             
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <th> <?= $usuarioRead->email ?></th>
-                            <th> <?= $usuarioRead->nome ?></th>
-                            <th> <?= $usuarioRead->senha ?></th>
-                        </tr>   
+                      <tr>
+                        <th><?= $categoriasRead->nome ?></th>
+                    </tr>
                     </tbody>
                 </table>
-            </div>            
+            </div>
+            
         </div>
     
 
