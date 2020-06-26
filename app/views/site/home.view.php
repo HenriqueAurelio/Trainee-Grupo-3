@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
    <title>Aurelio Livraria</title>
+   <link rel="shortcut icon" href="public\img\aurelio_transparent_30-30.png" />
   </head>
   <body>
     <!-- Navbar vai ficar aqui -->
@@ -52,7 +53,7 @@
                       <div class="home-book-title-group">
                         <h5 class="card-title home-book-title"><?= $homeproduto->nome; ?></h5>
                       </div>  
-                        <p class="card-text home-book-price">R$ <?= $homeproduto->preco; ?></p>
+                        <p class="card-text home-book-price mt-3">R$ <?= $homeproduto->preco; ?></p>
                         <form method="POST" action="/informacoes-produto">
                             <input type="hidden" name="id" value="<?= $homeproduto->id ?>">
                             <button type="submit" class="btn home-btn-product">VER PRODUTO</button>

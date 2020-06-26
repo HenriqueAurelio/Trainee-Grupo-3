@@ -13,6 +13,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Carrois+Gothic+SC&display=swap" rel="stylesheet">
         <script type="text/javascript" src="../../../public/js/scripts.js"></script>
         <script src="https://kit.fontawesome.com/9c2b80ca1e.js" crossorigin="anonymous"></script>
+        <link rel="icon" type="image/png" href="../../../../public/img/aurelio_transparent.png"/>
 	</head>
 	
 	<body>

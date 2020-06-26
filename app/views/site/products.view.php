@@ -30,6 +30,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Carrois+Gothic&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/307d809775.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../../public/css/styles.css">
+    <link rel="shortcut icon" href="public\img\aurelio_transparent_30-30.png" />
    
 
     <title>Produtos</title>
@@ -90,7 +91,7 @@
                                                         <div class="card-body rescard">
                                                                 <h5 class="card-title tituloCard"><?= $produto->nome; ?></h5>
                                                                 <p class="varlivro">R$ <?= $produto->preco; ?></p>
-                                                                <form method="POST" action="/informacoes-produto">
+                                                                <form class="botres" method="POST" action="/informacoes-produto">
                                                                     <input name="id" type="hidden" value="<?= $produto->id; ?>">
                                                                     <button type="submit" class="btn btn-product resbopro">VER PRODUTO</button>
                                                                 </form>                                

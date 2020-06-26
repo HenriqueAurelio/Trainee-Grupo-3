@@ -8,6 +8,7 @@
 		<link rel="stylesheet" href="../../../public/css/styles.css">
 		<script src="https://kit.fontawesome.com/9c2b80ca1e.js" crossorigin="anonymous"></script>
 		<link href="https://fonts.googleapis.com/css2?family=Carrois+Gothic+SC&display=swap" rel="stylesheet">
+		<link rel="shortcut icon" href="public\img\aurelio_transparent_30-30.png" />
 	</head> 
 	
 	<body> 

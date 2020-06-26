@@ -8,6 +8,7 @@
     <!-- Bootstrap CSS -->
   
     <title>Painel Administrativo</title>
+    <link rel="icon" type="image/png" href="../../../../public/img/aurelio_transparent.png"/>
   </head>
   <body>
     <?php require($_SERVER['DOCUMENT_ROOT'].'/app/views/admin/includes/nav.php'); ?>

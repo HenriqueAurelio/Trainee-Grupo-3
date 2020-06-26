@@ -18,7 +18,9 @@ if($status == PHP_SESSION_NONE){
         <link rel="stylesheet" href="../../../public/css/all.css">
         <link rel="stylesheet" href="../../../public/css/admin-styles.css">
         <link rel="stylesheet" href="../../../public/css/styles.css">
-        <title>Aurelio Livraria - Admin</title>    
+        <link rel="shortcut icon" href="../../../public/img/aurelio_transparent_30-30.png" />
+        <title>Aurelio Livraria - Admin</title>
+            
     </head>
     <body>
         <nav class="navbar navbar-dark crud-navbar sticky-top" id="crud-sidebar">
