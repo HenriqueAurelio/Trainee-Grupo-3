@@ -52,7 +52,7 @@
                       <div class="home-book-title-group">
                         <h5 class="card-title home-book-title"><?= $homeproduto->nome; ?></h5>
                       </div>  
-                        <p class="card-text home-book-price">R$ <?= $homeproduto->preco; ?></p>
+                        <p class="card-text home-book-price mt-3">R$ <?= $homeproduto->preco; ?></p>
                         <form method="POST" action="/informacoes-produto">
                             <input type="hidden" name="id" value="<?= $homeproduto->id ?>">
                             <button type="submit" class="btn home-btn-product ml-2">VER PRODUTO</button>

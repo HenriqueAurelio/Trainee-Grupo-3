@@ -1048,3 +1048,33 @@
     position: relative;
     min-height: 60vh;
 }
+
+@media (max-width:1025px){
+    .btn-img-produto{
+        width: 161px;
+    }
+}
+
+@media (max-width:769px){
+    .btn-img-produto{
+        width: 116px;
+    }
+}
+
+@media (max-width:415px){
+    .btn-img-produto{
+        width: 169px;
+    }
+}
+
+@media (max-width:360px){
+    .btn-img-produto{
+        width: 162px;
+    }
+}
+
+@media (max-width:321px){
+    .btn-img-produto{
+        width: 142px;
+    }
+}
