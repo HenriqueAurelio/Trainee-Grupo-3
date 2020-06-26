@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="../../../public/css/styles.css">
     <link rel="stylesheet" href="../../../public/css/all.css">
+    <link rel="shortcut icon" href="public\img\aurelio_transparent_30-30.png" />
     <title>Aurelio Livraria</title>
   </head>
   <body>

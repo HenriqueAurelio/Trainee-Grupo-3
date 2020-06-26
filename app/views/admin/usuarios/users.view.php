@@ -31,6 +31,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css2?family=Carrois+Gothic+SC&display=swap" rel="stylesheet">
         <script type="text/javascript" src="../assets/js/scripts.js"></script>
+        <link rel="shortcut icon" href="public\img\aurelio_transparent_30-30.png" />
         <script src="https://kit.fontawesome.com/9c2b80ca1e.js" crossorigin="anonymous"></script>
 
 	</head>

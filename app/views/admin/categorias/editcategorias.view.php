@@ -10,6 +10,7 @@
             crossorigin="anonymous">
         <link rel="stylesheet" href="../public/css/admin-styles.css">
         <link rel="stylesheet" href="../public/css/all.css">
+        <link rel="icon" type="image/png" href="../../../../public/img/aurelio_transparent.png"/>
         <title>Aurelio Livraria - Admin</title>    
     </head>
     <body>

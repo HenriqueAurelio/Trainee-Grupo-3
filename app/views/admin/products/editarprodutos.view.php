@@ -11,6 +11,7 @@ use App\Core\App;
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" href="../../../public/css/all.css">
         <link rel="stylesheet" href="../../../public/css/admin-styles.css">
+        <link rel="icon" type="image/png" href="../../../../public/img/aurelio_transparent.png"/>
         <title>Aurelio Livraria - Admin</title>    
     </head>
     <body>

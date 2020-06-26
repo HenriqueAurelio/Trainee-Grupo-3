@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
    <title>Aurelio Livraria</title>
+   <link rel="shortcut icon" href="public\img\aurelio_transparent_30-30.png" />
   </head>
   <body>
     <!-- Navbar vai ficar aqui -->

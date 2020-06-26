@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="../../../public/css/styles.css">
         <link href="https://fonts.googleapis.com/css2?family=Carrois+Gothic+SC&display=swap" rel="stylesheet">
         <script src="https://kit.fontawesome.com/9c2b80ca1e.js" crossorigin="anonymous"></script>
+        <link rel="icon" type="image/png" href="../../../../public/img/aurelio_transparent.png"/>
 
 	</head>
 	

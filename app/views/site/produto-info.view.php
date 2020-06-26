@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Página Produto</title>
         <link rel="stylesheet" href="../../../public/css/products.style.css">
+        <link rel="shortcut icon" href="public\img\aurelio_transparent_30-30.png" />
     </head>
     
     <body class="product-page">

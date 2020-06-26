@@ -29,6 +29,7 @@
         <title>Painel Administrativo</title>
         <link href="https://fonts.googleapis.com/css2?family=Carrois+Gothic+SC&display=swap" rel="stylesheet">
         <script src="https://kit.fontawesome.com/9c2b80ca1e.js" crossorigin="anonymous"></script>
+        <link rel="icon" type="image/png" href="../../../../public/img/aurelio_transparent.png"/>
 	</head>
 	<body>
         <?php require($_SERVER['DOCUMENT_ROOT'].'/app/views/admin/includes/nav.php'); ?>
