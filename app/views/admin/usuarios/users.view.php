@@ -37,50 +37,52 @@
 	</head>
 	
 	<body>
-  <?php require($_SERVER['DOCUMENT_ROOT'].'/app/views/admin/includes/nav.php'); ?>
+        <?php require($_SERVER['DOCUMENT_ROOT'].'/app/views/admin/includes/nav.php'); ?>
         <div class = "container font-crud">
         <div class="row">
                 <div class="col-lg-2 col-md-3"></div>
                 <div class="col-lg-10 col-md-9">
                     <h1 class="mt-5 pt-3 start-crud">Usuários</h1>
                 </div>    
-            </div>    
-            <div class="row">
-                    <div class="col-lg-2 col-md-3"></div>
-                    <div class="col-lg-5 col-md-4" id="add-crud-responsive">
-                        <a href="usuarios/cadastrar"><button type="button" class="btn newbox-add-crud btn-crud btn-lg mb-5 mt-5 cabecalho-crud"><i class="fas fa-plus mr-3"></i>Adicionar</button></a>
+        </div>    
+        <div class="row">
+                <div class="col-lg-2 col-md-3"></div>
+                <div class="col-lg-5 col-md-4" id="add-crud-responsive">
+                    <a href="usuarios/cadastrar"><button type="button" class="btn newbox-add-crud btn-crud btn-lg mb-5 mt-5 cabecalho-crud"><i class="fas fa-plus mr-3"></i>Adicionar</button></a>
+                </div>
+                <div class="col-lg-5 col-md-5" id="search-bar-crud">    
+                    <div class="input-group mt-5 mb-5 responsive-search-crud float-right procurar-crud">
+                        <form action="/usuarios/pesquisa" method="POST">
+                            <div class="input-group mb-3">
+                            <input name="pesquisa" type="text" class="form-control" placeholder="Email..." aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary btn-search-crud" type="submit"><i class="fas fa-search"></i><i</button>
+                                </div>
+                            </div>  
+                        </form>
                     </div>
-                    <div class="col-lg-5 col-md-5" id="search-bar-crud">    
-                        <div class="input-group mt-5 mb-5 responsive-search-crud float-right procurar-crud">
-                            <form action="/usuarios/pesquisa" method="POST">
-                                <div class="input-group mb-3">
-                                <input name="pesquisa" type="text" class="form-control" placeholder="Email..." aria-label="Recipient's username" aria-describedby="basic-addon2">
-                                    <div class="input-group-append">
-                                        <button class="btn btn-outline-secondary btn-search-crud" type="submit"><i class="fas fa-search"></i><i</button>
-                                    </div>
-                                </div>  
-                            </form>
-                        </div>
-                    </div>
+                </div>
             </div>
             <div class="row">
                 <div class="col-lg-2 col-md-3"></div>
                 <div class="col-lg-10 col-md-9">
                     <div class="row">
                         <div class="col-md-4 offset-md-8">
-                        <?php if(isset($users) && !empty($users) || isset($pesquisa)) : ?>
-                            <?php if (isset($users_limite)) : ?>
-                                <?php if (($actual_page + 5) <= count($users)) : ?>
-                                    <p class="counter-products">Mostrando <?= $actual_page+1; ?>-<?= $actual_page+5; ?>/<?= count($users); ?> usuários</p>
-                                <?php else : ?>
-                                    <p class="counter-products">Mostrando <?= $actual_page+1; ?>-<?= count($users); ?>/<?= count($users); ?> usuários</p>
+                            <?php if(isset($users) && !empty($users) || isset($pesquisa)) : ?>
+                                <?php if (isset($users_limite)) : ?>
+                                    <?php if (($actual_page + 5) <= count($users)) : ?>
+                                        <p class="counter-products">Mostrando <?= $actual_page+1; ?>-<?= $actual_page+5; ?>/<?= count($users); ?> usuários</p>
+                                    <?php else : ?>
+                                        <p class="counter-products">Mostrando <?= $actual_page+1; ?>-<?= count($users); ?>/<?= count($users); ?> usuários</p>
+                                    <?php endif; ?>
+                                <?php elseif (isset($pesquisa)) : ?>
+                                    <p class="counter-products">Exibindo os resultados da pesquisa <b><?= $pesquisa[0]; ?></b></p>
                                 <?php endif; ?>
-                            <?php elseif (isset($pesquisa)) : ?>
-                                <p class="counter-products">Exibindo os resultados da pesquisa <b><?= $pesquisa[0]; ?></b></p>
-                            <?php endif; ?>
-                        <?php endif; ?>        
+                            <?php endif; ?>        
                         </div>    
-                    </div>  
+                    </div>
+                
+                  
             <div class = "table-sm-responsive">
                 <table class="table table-striped table-bordered">
                     <thead>

@@ -11,7 +11,7 @@
         <title>Aurelio Livraria - Admin</title>    
     </head>
     <body>
-    <?php require($_SERVER['DOCUMENT_ROOT'].'/app/views/admin/includes/nav.php'); ?>
+        <?php require($_SERVER['DOCUMENT_ROOT'].'/app/views/admin/includes/nav.php'); ?>
             <div class="row">
                 <div class="col-lg-2 col-md-3"></div>
                 <div class="col-lg-10 col-md-9">
@@ -22,13 +22,13 @@
                 <div class="row">
                     <div class="col-lg-2 col-md-3"></div>
                     <div class="col-lg-10 col-md-9 form-group">
-                    <?php 
-                        if(!empty($message)) {
-                            ?><div class="alert alert-danger" role="alert">
-                            <?= $message[0]; ?>
-                        </div> <?php
-                        } 
-                    ?>
+                        <?php 
+                            if(!empty($message)) {
+                                ?><div class="alert alert-danger" role="alert">
+                                <?= $message[0]; ?>
+                            </div> <?php
+                            } 
+                        ?>
                         <label for="exampleFormControlInput1">E-mail</label>
                         <input type="hidden" name="id" value="<?= $usuer->id; ?>">
                         <input type="text" name="email" value="<?= $usuer->email; ?>" class="form-control" id="exampleFormControlInput1" placeholder="E-mail">
@@ -49,12 +49,12 @@
                         <input type="hidden" name="id" value="<?= $usuer->id; ?>">
                         <input type="password" name="senha" value="<?= $usuer->senha; ?>" class="form-control" id="exampleFormControlInput2" placeholder="Senha">
                     </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-11 col-8"></div>
-                        <div class="col-lg-1 col-4">
-                            <button type="submit" class="btn admin-submit-button">Editar</button>
-                        </div>    
+                </div>
+                <div class="row">
+                    <div class="col-lg-11 col-8"></div>
+                    <div class="col-lg-1 col-4">
+                        <button type="submit" class="btn admin-submit-button">Editar</button>
+                    </div>    
                 </div>     
             </form>    
         </div>    

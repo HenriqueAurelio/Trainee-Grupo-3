@@ -37,7 +37,7 @@
 	<body>
         <?php require($_SERVER['DOCUMENT_ROOT'].'/app/views/admin/includes/nav.php'); ?>
         <div class = "container font-crud">
-        <div class="row">
+            <div class="row">
                 <div class="col-lg-2 col-md-3"></div>
                 <div class="col-lg-10 col-md-9">
                     <h1 class="mt-5 pt-3 start-crud">Categorias</h1>
@@ -64,20 +64,20 @@
             <div class="row">
               <div class="col-lg-2 col-md-3"></div>
               <div class="col-lg-10 col-md-9">
-              <div class="row">
-                    <div class="col-md-6 offset-md-6">
-                        <?php if(isset($categorias) && !empty($categorias) || isset($pesquisa)) : ?>
-                            <?php if (isset($categorias_limite)) : ?>
-                                <?php if (($actual_page + 5) <= count($categorias)) : ?>
-                                    <p class="counter-products">Mostrando <?= $actual_page+1; ?>-<?= $actual_page+5; ?>/<?= count($categorias); ?> categorias</p>
-                                <?php else : ?>
-                                    <p class="counter-products">Mostrando <?= $actual_page+1; ?>-<?= count($categorias); ?>/<?= count($categorias); ?> categorias</p>
+                <div class="row">
+                        <div class="col-md-6 offset-md-6">
+                            <?php if(isset($categorias) && !empty($categorias) || isset($pesquisa)) : ?>
+                                <?php if (isset($categorias_limite)) : ?>
+                                    <?php if (($actual_page + 5) <= count($categorias)) : ?>
+                                        <p class="counter-products">Mostrando <?= $actual_page+1; ?>-<?= $actual_page+5; ?>/<?= count($categorias); ?> categorias</p>
+                                    <?php else : ?>
+                                        <p class="counter-products">Mostrando <?= $actual_page+1; ?>-<?= count($categorias); ?>/<?= count($categorias); ?> categorias</p>
+                                    <?php endif; ?>
+                                <?php elseif (isset($pesquisa)) : ?>
+                                    <p class="counter-products">Exibindo os resultados da pesquisa <b><?= $pesquisa[0]; ?></b></p>
                                 <?php endif; ?>
-                            <?php elseif (isset($pesquisa)) : ?>
-                                <p class="counter-products">Exibindo os resultados da pesquisa <b><?= $pesquisa[0]; ?></b></p>
-                            <?php endif; ?>
-                        <?php endif; ?>        
-                    </div>    
+                            <?php endif; ?>        
+                        </div>    
                 </div>  
                 <div class = "table-sm-responsive">
                     <table class="table table-striped table-bordered">
