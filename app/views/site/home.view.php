@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="pt-br">
-  <?php $cl=0; ?>
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -41,23 +40,23 @@
 
       <!-- Página home (livros e preços) -->
       <div class="container view-product">
+        <h1 class="home-category-title mt-4 text-center">Lançamentos</h1>
         <div class="row book-list">
-          <?php foreach($homeprodutos as $homeproduto)  : ?>  
+          <?php foreach($homelancas as $homelanca)  : ?>  
               <div class="col-md-3 col-6">
                   <div class="card mt-2 border-0 book-card">
                     <form method="POST" action="/informacoes-produto">
-                      <input type="hidden" name="id" value="<?= $homeproduto->id ?>">
-                        <button type="submit" class="button-home-reset border-0"><img src="public\img\<?= $homeproduto->foto; ?>" class="home-img-zoom card-img-top home-book-img ml-1" alt="Imagem livro"></button>
+                      <input type="hidden" name="id" value="<?= $homelanca->id ?>">
+                        <button type="submit" class="button-home-reset border-0"><img src="public\img\<?= $homelanca->foto; ?>" class="home-img-zoom card-img-top home-book-img ml-1" alt="Imagem livro"></button>
                     </form>
                     <div class="card-body">
                       <div class="home-book-title-group">
-                        <h5 class="card-title home-book-title"><?= $homeproduto->nome; ?></h5>
+                        <h5 class="card-title home-book-title"><?= $homelanca->nome; ?></h5>
                       </div>  
-                        <p class="card-text home-book-price mt-3">R$ <?= $homeproduto->preco; ?></p>
+                        <p class="card-text home-book-price mt-3">R$ <?= $homelanca->preco; ?></p>
                         <form method="POST" action="/informacoes-produto">
-                            <input type="hidden" name="id" value="<?= $homeproduto->id ?>">
+                            <input type="hidden" name="id" value="<?= $homelanca->id ?>">
                             <button type="submit" class="btn home-btn-product ml-2">VER PRODUTO</button>
-                            <?php $cl ++; ?>
                         </form>
                       </div>
                   </div>
@@ -65,6 +64,32 @@
           <?php endforeach; ?>
         </div>
       </div>
+      <div class="container view-product">
+        <h1 class="home-category-title mt-4 text-center">Destaques</h1>
+        <div class="row book-list">
+          <?php foreach($homedes as $homede)  : ?>  
+              <div class="col-md-3 col-6">
+                  <div class="card mt-2 border-0 book-card">
+                    <form method="POST" action="/informacoes-produto">
+                      <input type="hidden" name="id" value="<?= $homede->id ?>">
+                        <button type="submit" class="button-home-reset border-0"><img src="public\img\<?= $homede->foto; ?>" class="home-img-zoom card-img-top home-book-img ml-1" alt="Imagem livro"></button>
+                    </form>
+                    <div class="card-body">
+                      <div class="home-book-title-group">
+                        <h5 class="card-title home-book-title"><?= $homede->nome; ?></h5>
+                      </div>  
+                        <p class="card-text home-book-price mt-3">R$ <?= $homede->preco; ?></p>
+                        <form method="POST" action="/informacoes-produto">
+                            <input type="hidden" name="id" value="<?= $homede->id ?>">
+                            <button type="submit" class="btn home-btn-product ml-2">VER PRODUTO</button>
+                        </form>
+                      </div>
+                  </div>
+              </div>
+          <?php endforeach; ?>
+        </div>
+      </div>
+
         
         <!-- Final da página home -->
         <?php require('includes/footer.php'); ?>

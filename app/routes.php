@@ -20,7 +20,7 @@ $router->post('produtos', 'ProductsController@create');
 $router->post('produtos/editar', 'ProductsController@update');
 $router->post('produtos/mostrar', 'ProductsController@show');
 $router->post('produtos/deletar', 'ProductsController@delete');
-$router->get('', 'HomeController@homeindex');
+$router->get('', 'HomeController@homelancamentos');
 $router->get('sobre', 'PagesController@sobre');
 $router->post('produtos/limite', 'ProductsController@indexLimit');
 $router->post('admin/produtos/pesquisa', 'ProductsController@search');
