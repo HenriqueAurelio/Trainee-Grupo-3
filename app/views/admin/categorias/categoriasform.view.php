@@ -25,6 +25,13 @@
                 <div class="row">
                     <div class="col-lg-2 col-md-3"></div>
                     <div class="col-lg-5 col-md-4 form-group">
+                    <?php 
+                        if(!empty($message)) {
+                            ?><div class="alert alert-danger" role="alert">
+                            <?= $message[0]; ?>
+                        </div> <?php
+                        } 
+                    ?>
                         <label for="exampleFormControlInput2">Categoria</label>
                         <input type="text" name="nome" class="form-control" id="exampleFormControlInput2" placeholder="Categoria do livro">
                     </div>

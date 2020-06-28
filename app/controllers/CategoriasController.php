@@ -40,6 +40,20 @@ class CategoriasController
 
     public function store()
     {
+        session_start();
+        if (!isset($_SESSION['email'])) {
+            return redirect('admin');
+        }
+
+        $verifys = App::get('database')->categoriaverify();
+        
+        foreach($verifys as $verify) {
+            if ($verify->nome == $_POST['nome']) {
+                $message = array('Esta categoria já está cadastrada!');
+                return view('admin/categorias/categoriasform', compact('message'));
+            }
+        }
+
         App::get('database')->insert('categorias', [
             'nome' => $_POST['nome']
         ]);
@@ -50,6 +64,22 @@ class CategoriasController
 
     public function update()
     {
+        session_start();
+        if (!isset($_SESSION['email'])) {
+            return redirect('admin');
+        }
+
+        $verifys = App::get('database')->categoriaverify();
+        $categ = App::get('database')->selectAttrCat('categorias', $_POST['nome']);
+        foreach($verifys as $verify) {
+            if ($verify->nome == $_POST['nome']) {
+                if ($_POST['nome'] != $categ) {
+                    $message = array('Esta categoria já está cadastrada!');
+                    return view('admin/categorias/editcategorias', compact('message', 'categ'));
+                }    
+            }
+        }
+
         App::get('database')->edit('categorias', [
             'nome' => $_POST['nome']
             

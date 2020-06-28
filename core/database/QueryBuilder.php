@@ -40,6 +40,15 @@ class QueryBuilder
         return $statement->fetch(PDO::FETCH_OBJ);
     }
 
+    public function selectAttrCat($table, $nome) {
+        var_dump($nome);
+        $statement = $this->pdo->prepare("select * from {$table} WHERE nome = '{$nome}'");
+
+        $statement->execute();
+
+        return $statement->fetch(PDO::FETCH_OBJ);
+    }
+
     public function selectLimitProducts($table, $offset) {
         $statement = $this->pdo->prepare("select * from {$table} LIMIT {$offset}, 5");
 
@@ -271,6 +280,14 @@ class QueryBuilder
 
         return $statement->fetchAll(PDO::FETCH_CLASS);
 
+    }
+
+    public function categoriaverify() {
+        $statement = $this->pdo->prepare("SELECT `nome` FROM `categorias`");
+
+        $statement->execute();
+
+        return $statement->fetchAll(PDO::FETCH_CLASS);
     }
     public function lancamentos($table)
     {
