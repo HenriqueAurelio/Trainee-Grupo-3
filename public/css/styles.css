@@ -1088,3 +1088,9 @@
         width: 142px;
     }
 }
+
+@media (max-width: 768px) {
+    .home-book-title {
+        font-size: 18px;
+    }
+}
