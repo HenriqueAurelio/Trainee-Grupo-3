@@ -499,28 +499,33 @@
         display: none !important;
     }
     .resquisa{
-        display: none !important;
-        width: 15rem !important;
+        width: 16rem !important;
+        display: none !important;        
     }
-    
+    .pesgruop{
+        width: 280px !important;
+    }
+    .butaoPess{
+        width: 4rem !important;
+        height: 47.52px !important;
+        margin-right: 0px !important;
+        margin-top: -5px !important;
+    }
     .fa-bars{
-        font-size: 2rem;
+        font-size: 2rem !important;
     }
     .menujs {
         display: inline !important; 
     }
     .menujspes {
-        display: inline !important;
+        display: inline-block !important;
+        width: 20rem !important;
     }
     .formuPes{
-        width: 12rem !important;
-        height: 47.52px;
+        width: 10rem !important;
+        height: 47.52px !important;
+        margin-right: 0px !important;
        
-    }
-    .butaoPes{
-        width: 3rem !important;
-        height: 47.52px;
-        margin-top: 2px !important;
     }
     .prcards{
         width: 158px !important;
@@ -552,15 +557,14 @@
     .butaoPes{
         width: 40px !important;
     }
-    .tituloCard{
-        font-size: 14px;
-    }
     .varlivro{
-        font-size: 14px;
+        font-size: 14px !important;
+        margin-bottom: 1px !important;
     }
     .resbopro{
         font-size: 8px !important;
-        width: 4rem !important;
+        width: 75px !important;
+        height: 18px !important;
         text-align: center;
         padding-left: 8px;
     }
@@ -568,17 +572,22 @@
         display: inline;
     }
     .tituloCard{
-        font-size: 11px !important;
+        font-size: 10px !important;
         width: 66px !important;
-        height: 60px !important;
+        height: 58px !important;
+        margin-bottom: 3px !important;
     }
 
     .prcards{
         width: 105px !important;
-        height: 309px !important;
+        height: 288px !important;
     }
     .reslista{
-        font-size: 12px;
+        font-size: 12px !important;
+    }
+    .tamanhocard{
+        width: 100px !important;
+        height: 150px !important;
     }
     
 }
@@ -590,7 +599,9 @@
         width: 45px !important;
     }
     .resbopro{
-        font-size: 12px;
+        font-size: 12px !important;
+        width: 120px !important;
+        height: 25px !important;
     }
     .menujs{
         display: inline;
@@ -654,6 +665,9 @@
     .rescard{
         width: 141px !important;
         height: 200px !important;
+    }
+    .resquisa{
+        width: 250px !important;
     }
     
 }
