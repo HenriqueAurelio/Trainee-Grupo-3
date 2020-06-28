@@ -15,7 +15,7 @@ class ProductsController
         $produtos = App::get('database')->selectAll('produtos');
 
         foreach($produtos as $produto){
-            $produto->categoria=App::get('database')->selectCategory('nome', 'categoria', $produto->categoria_id);
+            $produto->categoria=App::get('database')->selectCategory('nome', 'categorias', $produto->categoria_id);
         }
 
         //die(var_dump($produto));
@@ -50,7 +50,7 @@ class ProductsController
     {
         $produto=App::get('database')->selectOne('produtos', $_POST['id']);
         
-        $produto->categoria=App::get('database')->selectCategory('nome', 'categoria', $produto->categoria_id);
+        $produto->categoria=App::get('database')->selectCategory('nome', 'categorias', $produto->categoria_id);
 
         //die(var_dump($produto));
 

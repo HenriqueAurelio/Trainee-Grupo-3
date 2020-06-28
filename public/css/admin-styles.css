@@ -43,4 +43,15 @@
 
 .img-view-crud{
     float:left;
+    margin-right: 30px;
+    width: 300px;
+}
+
+.titles-view-crud{
+    line-height: 60px;
+    margin-top: 10px;
+}
+
+.crud-products-read-sub{
+    font-weight: normal;
 }
