@@ -1073,6 +1073,11 @@
     min-height: 60vh;
 }
 
+.btn-search-prod{
+    margin-top: 2px;
+    height:40px;
+}
+
 @media (max-width:1025px){
     .btn-img-produto{
         width: 161px;
@@ -1088,6 +1093,10 @@
 @media (max-width:415px){
     .btn-img-produto{
         width: 169px;
+    }
+
+    .btn-search-prod{
+        height:48px;
     }
 }
 

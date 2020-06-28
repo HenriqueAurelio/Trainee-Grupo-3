@@ -12,7 +12,7 @@
             } 
             $actual_page = array_search($produtos_limite[0]->id, $ids);
             $possible = $actual_page + 16;
-            if ($possible < count($produtos)) {
+            if ($possible <= count($produtos)) {
                 $exists = 1;
             }
             else {
@@ -42,15 +42,17 @@
                 <div class="row medrow">
                     <div class="col-md-3">
                         <span class="resicon" onclick="openNav()"><i class="fas fa-bars"  ></i></span>
-                        <div class="row psgruop">
-                            <form  method="POST" action="/produtos/pesquisa" id="resquisa" class="form-inline my-0.3 my-lg-0 resquisa">
-                                <div class="input-group pesgruop">                               
+                        <div class="row">
+                            <div class="input-group pesgruop">
+                                <form  method="POST" action="/produtos/pesquisa" id="resquisa" class="form-inline my-0.3 my-lg-0 resquisa">
+                                    <div class="input-group mb-3 mt-3">
                                     <input name="pesquisa" id="formuPes" class="form-control formuPes ml-3 pr-0" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
-                                        <div class="input-group-append butaoPess">                                                          
-                                            <button class="btn btn-outline-danger my-2 my-sm-0 butaoPes" type="submit"><i class="fas fa-search"></i></button>                            
+                                        <div class="input-group-append">
+                                            <button class="btn btn-danger btn-search-prod" type="submit"><i class="fas fa-search"></i><i</button>
                                         </div>
-                                </div>
-                            </form>
+                                    </div>  
+                                </form>
+                            </div>
                         </div>
                                                     
                             <ul id="list-group reslista"class="list-group reslista">
