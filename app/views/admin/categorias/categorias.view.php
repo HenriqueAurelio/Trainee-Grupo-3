@@ -12,7 +12,7 @@
             } 
             $actual_page = array_search($categorias_limite[0]->id, $ids);
             $possible = $actual_page + 5;
-            if ($possible <= count($categorias)) {
+            if ($possible < count($categorias)) {
                 $exists = 1;
             }
             else {
@@ -94,12 +94,12 @@
                                         <td class="font-adjustment-crud"><?= $categoria->nome; ?></td>
                                         <td class="border-right-0">
                                         <div class="row">
-                                        <form  method="POST" action="categorias/mostrar" class="ml-4">
+                                        <form  method="POST" action="/categorias/mostrar" class="ml-4">
                                             <input  class="btn-crud-table" type="hidden" name="id" value="<?= $categoria->id ?>">
                                             <button type="submit" class="btn btn-view-crud btn-crud-table newbox-crud btn-sm view-table-crud vasco"><i class="fas fa-eye adjust-eyeicon-crud"></i></button>
                                         </form>
                                         
-                                        <form method="POST" action="categorias/editar" >
+                                        <form method="POST" action="/categorias/editar" >
                                             <input class="btn-crud-table" type="hidden" name="id" value="<?= $categoria->id ?>">
                                             <button type="submit" class="btn btn-edit-crud btn-crud-table newbox-crud btn-sm ml-2 vasco"><i class="fas fa-edit mr-1"></i></button>
                                         </form>

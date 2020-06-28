@@ -10,7 +10,7 @@
             } 
             $actual_page = array_search($produtos_limite[0]->id, $ids);
             $possible = $actual_page + 5;
-            if ($possible <= count($produtos)) {
+            if ($possible < count($produtos)) {
                 $exists = 1;
             }
             else {

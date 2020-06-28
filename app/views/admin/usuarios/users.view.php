@@ -11,7 +11,7 @@
             } 
             $actual_page = array_search($users_limite[0]->id, $ids);
             $possible = $actual_page + 5;
-            if ($possible <= count($users)) {
+            if ($possible < count($users)) {
                 $exists = 1;
             }
             else {
