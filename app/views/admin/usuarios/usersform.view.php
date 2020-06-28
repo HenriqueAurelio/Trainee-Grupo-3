@@ -13,7 +13,7 @@
         <title>Aurelio Livraria - Admin</title>    
     </head>
     <body>
-    <?php require($_SERVER['DOCUMENT_ROOT'].'/app/views/admin/includes/nav.php'); ?>
+        <?php require($_SERVER['DOCUMENT_ROOT'].'/app/views/admin/includes/nav.php'); ?>
             <div class="row">
                 <div class="col-lg-2 col-md-3"></div>
                 <div class="col-lg-10 col-md-9">

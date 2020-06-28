@@ -14,7 +14,7 @@
         <title>Aurelio Livraria - Admin</title>    
     </head>
     <body>
-    <?php require($_SERVER['DOCUMENT_ROOT'].'/app/views/admin/includes/nav.php'); ?>
+        <?php require($_SERVER['DOCUMENT_ROOT'].'/app/views/admin/includes/nav.php'); ?>
             <div class="row">
                 <div class="col-lg-2 col-md-3"></div>
                 <div class="col-lg-10 col-md-9">
@@ -29,6 +29,7 @@
                         <input type="hidden" name="id" value="<?= $categ->id; ?>">
                         <input type="text" name="nome" value="<?= $categ->nome; ?>" class="form-control" id="exampleFormControlInput2" placeholder="Categoria do livro">
                     </div>
+                </div>
                 <div class="row">
                     <div class="col-lg-11 col-8"></div>
                     <div class="col-lg-1 col-4">

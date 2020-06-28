@@ -22,19 +22,19 @@
           <div class="row">
             <a href="/"><button type="button" class="btn newbox-add-crud btn-crud btn-lg cabecalho-crud admin-init-crud-buttons mt-5 mr-5">Voltar para o site</button></a>
           </div>
-            <div class="row">
-              <div class="col text-center">
-                <img src="../../../public/img/aurelio_transparent.png" class="admin-initial-logo mt-4"></img>
-                <h1 class="admin-initial-title mt-3 mb-5">Bem vindo a área administrativa, <?= $_SESSION['nome']; ?>!</h1>
-                <a href="/admin/produtos"><button type="button" class="btn newbox-add-crud btn-crud btn-lg cabecalho-crud admin-init-crud-buttons mt-5 mr-5">Produtos</button></a>
-                <a href="/categorias"><button type="button" class="btn newbox-add-crud btn-crud btn-lg cabecalho-crud admin-init-crud-buttons mt-5 ml-5 mr-5">Categorias</button></a>
-                <a href="/usuarios"><button type="button" class="btn newbox-add-crud btn-crud btn-lg cabecalho-crud admin-init-crud-buttons mt-5 ml-5">Usuarios</button></a>
-                <form method="POST" action="/logout">
-                  <button type="submit" class="btn newbox-add-crud btn-crud btn-lg cabecalho-crud admin-init-crud-buttons mt-5">Sair</button>
-                </form>
-              </div>
+          <div class="row">
+            <div class="col text-center">
+              <img src="../../../public/img/aurelio_transparent.png" class="admin-initial-logo mt-4"></img>
+              <h1 class="admin-initial-title mt-3 mb-5">Bem vindo a área administrativa, <?= $_SESSION['nome']; ?>!</h1>
+              <a href="/admin/produtos"><button type="button" class="btn newbox-add-crud btn-crud btn-lg cabecalho-crud admin-init-crud-buttons mt-5 mr-5">Produtos</button></a>
+              <a href="/categorias"><button type="button" class="btn newbox-add-crud btn-crud btn-lg cabecalho-crud admin-init-crud-buttons mt-5 ml-5 mr-5">Categorias</button></a>
+              <a href="/usuarios"><button type="button" class="btn newbox-add-crud btn-crud btn-lg cabecalho-crud admin-init-crud-buttons mt-5 ml-5">Usuarios</button></a>
+              <form method="POST" action="/logout">
+                <button type="submit" class="btn newbox-add-crud btn-crud btn-lg cabecalho-crud admin-init-crud-buttons mt-5">Sair</button>
+              </form>
             </div>
-          </div>   
+          </div>
+        </div>   
 
 
 

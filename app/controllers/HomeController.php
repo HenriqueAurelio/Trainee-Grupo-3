@@ -6,12 +6,10 @@ use App\Core\App;
 
 class HomeController
 {
-    /**
-     * Show all users.
-     */
-    public function homeindex()
+    public function homelancamentos()
     {
-        $homeprodutos = App::get('database')->selectAll('produtos');
-        return view('site/home', compact('homeprodutos'));
+        $homelancas = App::get('database')->lancamentos('produtos');
+        $homedes = App::get('database')->showdes('produtos');
+        return view('site/home', compact('homelancas', 'homedes'));
     }
-}
+}    

@@ -87,7 +87,7 @@ class ProductsController
     public function produtoInfo()
 
     {
-
+        App::get('database')->destaques($_POST['id']);
         $produto=App::get('database')->read('produtos', $_POST['id']);
 
         return view('site/produto-info', compact('produto'));

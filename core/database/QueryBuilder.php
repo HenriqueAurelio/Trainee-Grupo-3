@@ -272,6 +272,27 @@ class QueryBuilder
         return $statement->fetchAll(PDO::FETCH_CLASS);
 
     }
+    public function lancamentos($table)
+    {
+        $statement = $this->pdo->prepare("SELECT * FROM {$table} order by id desc limit 4");
+
+        $statement->execute();
+
+        return $statement->fetchAll(PDO::FETCH_CLASS);
+    }
+    public function destaques($id)
+    {   
+        $statement = $this->pdo->prepare("UPDATE `produtos` SET `views`=views+1 WHERE id = {$id}");
+        $statement->execute();
+    }
+    public function showdes($table)
+    {
+        $statement = $this->pdo->prepare("SELECT * FROM {$table} order by views desc limit 4");
+
+        $statement->execute();
+
+        return $statement->fetchAll(PDO::FETCH_CLASS);
+    }
 
 }
 

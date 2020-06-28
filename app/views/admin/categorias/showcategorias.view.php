@@ -16,7 +16,7 @@
 	</head>
 	
 	<body>
-    <?php require($_SERVER['DOCUMENT_ROOT'].'/app/views/admin/includes/nav.php'); ?>
+        <?php require($_SERVER['DOCUMENT_ROOT'].'/app/views/admin/includes/nav.php'); ?>
 
         <div class = "container font-crud">
             <div class="row">
@@ -44,9 +44,9 @@
                                 </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <th><?= $categoriasRead->nome ?></th>
-                            </tr>
+                                <tr>
+                                    <th><?= $categoriasRead->nome ?></th>
+                                </tr>
                             </tbody>
                         </table>
                     </div>

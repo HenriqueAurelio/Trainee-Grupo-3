@@ -17,7 +17,7 @@
 	</head>
 	
 	<body>
-    <?php require($_SERVER['DOCUMENT_ROOT'].'/app/views/admin/includes/nav.php'); ?>
+        <?php require($_SERVER['DOCUMENT_ROOT'].'/app/views/admin/includes/nav.php'); ?>
         <div class = "container font-crud">
             <h1 class="mt-5 pt-3 start-crud">Usuário</h1>
             <div class="row">
@@ -25,11 +25,6 @@
                     <form method="get" action="voltar">                        
                        <button type="submit" class="btn newbox-add-crud btn-crud btn-lg mb-5 mt-5 cabecalho-crud">Voltar</button>
                     </form>
-                    </div>
-                    <div class="col-md-6" id="search-bar-crud">    
-                        <div class="input-group mt-5 mb-5 responsive-search-crud float-right">
-                            <span class = "procurar-crud">Pesquisar:</span><input type="text" class="form-control float-right newbox-crud input-crud-responsive cabecalho-crud ml-3" placeholder="Livro, Categoria..." aria-label="Recipient's username" aria-describedby="basic-addon2">
-                        </div>
                     </div>
             </div>
             <div class = "table-responsive">
