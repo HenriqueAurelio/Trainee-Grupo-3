@@ -440,6 +440,7 @@
     margin-right: 0px !important;
     margin-top: 2px;
     height: 39.52px;
+    border-right: white !important;
 }
 
 .butaoPes{
@@ -1076,6 +1077,7 @@
 .btn-search-prod{
     margin-top: 2px;
     height:40px;
+    border-color: none !important;
 }
 
 @media (max-width:1025px){

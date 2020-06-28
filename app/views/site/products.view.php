@@ -48,7 +48,7 @@
                                     <div class="input-group mb-3 mt-3">
                                     <input name="pesquisa" id="formuPes" class="form-control formuPes ml-3 pr-0" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
                                         <div class="input-group-append">
-                                            <button class="btn btn-danger btn-search-prod" type="submit"><i class="fas fa-search"></i><i</button>
+                                            <button class="btn btn-secondary btn-search-prod" type="submit"><i class="fas fa-search"></i><i</button>
                                         </div>
                                     </div>  
                                 </form>
